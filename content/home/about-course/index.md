@@ -18,7 +18,7 @@ design:
 
 ## Course Information
 
-* **Instructor**: Sabrina Nardin nardin@uchicago.edu
+* **Instructor**: Jean Clipperton clipperton@uchicago.edu
 * **Teaching Assistants**:
     * TBD
     * TBD
