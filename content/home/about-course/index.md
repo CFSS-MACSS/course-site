@@ -20,14 +20,13 @@ design:
 
 * **Instructor**: Sabrina Nardin nardin@uchicago.edu
 * **Teaching Assistants**:
-    * Yiwen Lu (email on Canvas)
-    * Yunshu Hu (email on Canvas)
-* **Meeting day/time**: Tu-Th 3:30-4:50
-* **Meeting location**: 1155 Bldg, Room 295
+    * TBD
+    * TBD
+* **Meeting day/time**: M/T/W/Th 10am-12pm central 
+* **Meeting location**: Zoom (link forthcoming)
 * **Office hours**:
-    * Sabrina: F 10:00-12:00 (MACSS Bldg, Room 221A), book [here](https://appoint.ly/s/nardin/officehours)
-    * Yiwen: M-W 10:00-11:00 (MACSS Bldg, Room 222), book [here](https://appoint.ly/s/yiwenlu/officehours)
-    * Yunshu: Tu-Th 2:00-3:00 (MACSS Bldg, Room 222), book [here](https://appoint.ly/s/yunshu/officehours)
+    * Jean Clipperton: TBD, book [here](https://appoint.ly/s/nardin/officehours)
+    
 * **Prerequisites**: None
 
 
