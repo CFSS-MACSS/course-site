@@ -40,4 +40,4 @@ authors:
 # - Visitors
 ---
 
-Sabrina Nardin is Assistant Instructional Professor at the University of Chicago.
+Jean Clipperton is an Associate Instructional Professor at the University of Chicago.
