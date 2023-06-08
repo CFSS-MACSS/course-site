@@ -19,7 +19,7 @@ abstract: ""
 summary: "Overview of programming and reproducible research, applications to social sciences, and course logistics."
 
 # Location of event.
-location: [via zoom](https://applications.zoom.us/lti/rich/home/meeting/detail)
+#location: [via zoom](https://applications.zoom.us/lti/rich/home/meeting/detail)
 
 # Is this a selected talk? (true/false)
 selected: false
