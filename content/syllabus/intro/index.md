@@ -50,7 +50,7 @@ math: false
 
 ## Before class
 
-* Read the "Welcome" page and chapter 1 "Introduction" in [R for Data Science](http://r4ds.had.co.nz/).
+* Read the "Welcome" page and chapter 1 "Introduction" in [R for Data Science](http://r4ds.had.co.nz/). (*Note that there is a new draft we'll be moving to soon: [Second Edition of R for Data Science](https://r4ds.hadley.nz/)*)
 
 ## Class materials
 
