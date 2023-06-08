@@ -1,7 +1,7 @@
 ---
 title: "Introduction to computing for the social sciences"
 date: 2023-06-12-01T12:25:00-05:00
-publishDate: 2023-06-01T12:25:00-05:00
+publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
 aliases: ["/cm001.html", "/syllabus/introduction-to-computing-for-the-social-sciences/"]
