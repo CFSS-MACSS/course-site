@@ -45,7 +45,7 @@ header:
 
 footer:
   copyright:
-    notice: 'Created by Sabrina Nardin based on © {year} Benjamin Soltoff website licensed under {license}'
+    notice: 'Adapted by Jean Clipperton based on adaptations by Sabrina Nardin © {year} Benjamin Soltoff website licensed under {license}'
     license:
       enable: true
       allow_derivatives: true
