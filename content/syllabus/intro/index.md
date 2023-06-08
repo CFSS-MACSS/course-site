@@ -1,6 +1,6 @@
 ---
 title: "Introduction to computing for the social sciences"
-date: 2023-06-19T12:25:00-05:00
+date: 2023-06-12T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
@@ -54,7 +54,7 @@ math: false
 
 ## Class materials
 
-* [Introduction to computing for the social sciences science](/notes/intro-to-course/)
+* [Introduction to computing for the social sciences](/notes/intro-to-course/)
 * [Good Enough Practices in Scientific Computing](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510). Additional resource and good summary of best computing practices
 
 ## What you need to do after class
