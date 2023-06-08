@@ -60,5 +60,5 @@ math: false
 ## What you need to do after class
 
 * Read the [Setup](/setup/) section and install the required software
-* Fill out [this survey](https://forms.gle/J8axkKpKZGxYyxYZA)
+* Fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfV_g4z7rpNWz_ONmH1oLrItXprHjo8-KBpnd19FbEJDCrEDA/viewform?usp=sf_link)
 * Explore this website
