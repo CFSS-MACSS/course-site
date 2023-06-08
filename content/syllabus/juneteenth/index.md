@@ -1,8 +1,8 @@
 ---
 title: "Juneteenth (observed)"
-date: 2022-06-20T12:25:00-05:00
+date: 2023-06-19T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
-draft: true
+draft: False
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -17,7 +17,7 @@ abstract: ""
 summary: "No class."
 
 # Location of event.
-location: "Kimball Hall B11"
+#location: "Kimball Hall B11"
 
 # Is this a selected talk? (true/false)
 selected: false

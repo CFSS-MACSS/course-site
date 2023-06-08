@@ -1,7 +1,7 @@
 ---
 title: "Introduction to computing for the social sciences"
 date: 2023-06-12-27T12:25:00-05:00
-publishDate: 2023-06-12T12:25:00-05:00
+publishDate: 2023-06-01T12:25:00-05:00
 draft: false
 
 aliases: ["/cm001.html", "/syllabus/introduction-to-computing-for-the-social-sciences/"]
@@ -19,7 +19,7 @@ abstract: ""
 summary: "Overview of programming and reproducible research, applications to social sciences, and course logistics."
 
 # Location of event.
-location: MACSS Bldg, Room 295
+location: [via zoom](https://applications.zoom.us/lti/rich/home/meeting/detail)
 
 # Is this a selected talk? (true/false)
 selected: false
