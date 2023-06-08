@@ -20,12 +20,12 @@ design:
 
 * **Instructor**: Jean Clipperton clipperton@uchicago.edu
 * **Teaching Assistants**:
-    * Loizos Bitsikokos bitsikokos@uchicago.edu, OH: 9:00-10:00 AM CST Mon-Fri [via zoom](https://uchicago.zoom.us/j/%20%207250625828?pwd=ZXlrb0hZUGZmMXZaM0%20%20tnK05zSGx0Zz09). 
-    * Bhavya Pandey bhavyapandey@uchicago.edu, OH: TBD [via zoom](https://uchicago.zoom.us/j/3713447238?pwd=VWJ6VGZqVnVZVEJRbFlNdGs3WXRXZz09)
+    * Loizos Bitsikokos bitsikokos@uchicago.edu, OH: 9:00-10:00 AM central Mon-Fri [via zoom](https://uchicago.zoom.us/j/%20%207250625828?pwd=ZXlrb0hZUGZmMXZaM0%20%20tnK05zSGx0Zz09). 
+    * Bhavya Pandey bhavyapandey@uchicago.edu, OH: 2pm-3pm central [via zoom](https://uchicago.zoom.us/j/3713447238?pwd=VWJ6VGZqVnVZVEJRbFlNdGs3WXRXZz09)
 * **Meeting day/time**: M/T/W/Th 10am-12pm central 
 * **Meeting location**: [Class sessions on zoom](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
 * **Office hours**:
-    * Jean Clipperton: M/T/W/Th 12pm-1pm central, sign up [via zoom here--click 'appointments'](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
+    * Jean Clipperton: M/T/W/Th 1pm-2pm central, sign up [via zoom here--click 'appointments'](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
     
 * **Prerequisites**: None
 
