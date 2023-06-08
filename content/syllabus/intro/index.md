@@ -1,6 +1,6 @@
 ---
 title: "Introduction to computing for the social sciences"
-date: 2023-06-12-01T12:25:00-05:00
+date: 2023-06-19T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
