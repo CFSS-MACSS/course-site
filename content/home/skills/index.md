@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9941b37fd0ed129f779756f453344a71b1f04ac03167cad784decf75e4b67728
-size 319
+---
+active: false
+feature:
+- description: 90%
+  icon: r-project
+  icon_pack: fab
+  name: R
+- description: 100%
+  icon: chart-line
+  icon_pack: fas
+  name: Statistics
+- description: 10%
+  icon: camera-retro
+  icon_pack: fas
+  name: Photography
+subtitle: ""
+title: Skills
+weight: 30
+widget: featurette
+headless: true
+---

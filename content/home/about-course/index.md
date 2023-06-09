@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be947f2b9207adc713196a3d0a43576a6cbb55782970d4b27aefcc05448fef45
-size 2689
+---
+# About/Biography widget.
+widget: "blank"
+headless: true
+active: true
+date: 2018-12-13T00:00:00
+
+# Order that this section will appear in.
+weight: 10
+
+design:
+  columns: "1"
+---
+
+# MACS 30500 - Computing for the Social Sciences 
+
+<!-- <img src="img/cis.svg" align="right" /> -->
+
+## Course Information
+
+* **Instructor**: Jean Clipperton clipperton@uchicago.edu
+* **Teaching Assistants**:
+    * Loizos Bitsikokos bitsikokos@uchicago.edu, OH: 9:00-10:00 AM central Mon-Fri [via zoom](https://uchicago.zoom.us/j/%20%207250625828?pwd=ZXlrb0hZUGZmMXZaM0%20%20tnK05zSGx0Zz09). 
+    * Bhavya Pandey bhavyapandey@uchicago.edu, OH: 2pm-3pm central [via zoom](https://uchicago.zoom.us/j/3713447238?pwd=VWJ6VGZqVnVZVEJRbFlNdGs3WXRXZz09)
+* **Meeting day/time**: M/T/W/Th 10am-12pm central 
+* **Meeting location**: [Class sessions on zoom](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
+* **Office hours**:
+    * Jean Clipperton: M/T/W/Th 1pm-2pm central, sign up [via zoom here--click 'appointments'](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
+    
+* **Prerequisites**: None
+
+
+## Course Description
+
+This is an applied course for social scientists with little-to-no programming experience who wish to harness growing digital and computational resources. The focus of the course is on analyzing data and generating reproducible research through the use of the programming language R and version control software. Topics include coding concepts (e.g., data structures, control structures, functions, etc.), data visualization, data wrangling and cleaning, exploratory data analysis, etc. Major emphasis is placed on a pragmatic understanding of core principles of programming and packaged implementations of methods.
+
+Students will leave the course with basic computational and R skills; while students will not become expert programmers, they will gain the knowledge of how to adapt and expand these skills as they are presented with new questions, methods, and data.
+
+
+## Course Objectives
+
+By the end of the course, students will:
+
+* Construct and execute basic programs in R using programming techniques (e.g. loops, conditional statements, user-defined functions), and [`tidyverse`](http://tidyverse.org/) packages
+* Identify and use external libraries to expand on R base functions
+* Apply Git and GitHub workflows for version control
+* Implement best practices for reproducible research
+* Understand approaches to debug programs for errors
+* Import data from files or the internet
+* Transform, visualize, and descriptively interpret data
+* Munge raw data into a tidy format
+* Scrape websites to collect data for analysis
+* Parse and analyze text documents

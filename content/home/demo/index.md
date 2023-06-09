@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1222eb83758801427234bb3d7b0cb6bcda6b4e7bb174bf445000377481b6d3f
-size 1012
+---
+active: false
+advanced:
+  css_class: ""
+  css_style: 'padding-top: 20px; padding-bottom: 20px;'
+design:
+  background:
+    image: headers/bubbles-wide.jpg
+    image_darken: 0.6
+    text_color_light: true
+  columns: "1"
+subtitle: ""
+title: Demos
+weight: 15
+widget: blank
+headless: true
+---
+
+Welcome to the **personal demo** of Academic. Other demos available include:
+
+- [**Project Demo** (Academic's actual site)](https://sourcethemes.com/academic/)
+
+**Over 100,000 [Amazing Websites](https://sourcethemes.com/academic/#expo) have Already Been Built with Academic**
+
+**[Join](https://sourcethemes.com/academic/docs/install/) the Most Empowered Hugo Community**
+
+{{% callout note %}}
+This homepage section is an example of adding [elements](https://sourcethemes.com/academic/docs/writing-markdown-latex/) to the [*Blank* widget](https://sourcethemes.com/academic/docs/widgets/).
+
+Backgrounds can be applied to any section. Here, the *background* option is set give an *image parallax* effect.
+{{% /callout %}}

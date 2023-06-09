@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09baa623ea84af401f45adcd0ad456a6480b8a46e6ff9a36c29e607166dd98ba
-size 384
+---
+active: true
+advanced:
+  css_class: ""
+  css_style: ""
+content:
+  count: 4
+  filters:
+    category: ""
+    exclude_featured: false
+    exclude_future: false
+    exclude_past: true
+    publication_type: ""
+    tag: ""
+  offset: 0
+  order: asc
+  page_type: syllabus
+design:
+  background: {}
+  view: 2
+subtitle: ""
+title: Upcoming Classes
+weight: 70
+widget: pages
+headless: true
+---

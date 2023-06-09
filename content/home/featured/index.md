@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6a10e4739377d09420bdcebcc77fc9eb3a68ab9fc7e205c9888550f56bc5448
-size 308
+---
+active: false
+advanced:
+  css_class: ""
+  css_style: ""
+content:
+  count: 0
+  filters:
+    category: ""
+    publication_type: ""
+    tag: ""
+  order: desc
+  page_type: publication
+design:
+  background: {}
+  view: 3
+subtitle: ""
+title: Featured Publications
+weight: 80
+widget: featured
+headless: true
+---
