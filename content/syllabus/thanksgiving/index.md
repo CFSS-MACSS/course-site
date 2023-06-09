@@ -1,3 +1,52 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ce41f323c893ecbcfc205446e19b5e62f95d13cc7c1988c026dc27bb24b1889
-size 878
+---
+title: "Thanksgiving"
+date: 2022-11-24T12:25:00-05:00
+#PublishDate: 2019-03-01T12:25:00-05:00
+draft: true
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-11-23T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "No class."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: ""
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
+
+
+<!--
+## Overview
+
+
+## Before class
+
+
+## Class materials
+
+
+## What you need to do after class
+-->
