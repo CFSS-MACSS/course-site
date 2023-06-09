@@ -26,6 +26,7 @@ Rather than installing your own copy of R and RStudio, you can access R and RStu
 The downside is that you only have access to this server for the duration of the class. If you intend to use R and RStudio in future classes/research projects, you will need to install and configure everything on your own computer after the course is completed.
 
 ## Accessing RStudio Workbench
+*Note: we had some issues with the workbench server so hold off until you see this message gone (added 6/9/23)*
 
 1. Go to https://macss-r.uchicago.edu/ to login to the server. Save the link somewhere since you will be using it frequently
 2. Use your [CNetID](https://uchicago.service-now.com/it?id=kb_article&kb=KB06000393) and password to login (this is the same username/password you use for other UChicago online services).
