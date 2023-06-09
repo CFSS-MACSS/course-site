@@ -1,10 +1,3 @@
----
-date: "2022-09-25T00:00:00-05:00"
-draft: false
-title: ""
-toc: true
-type: book
-weight: 1
----
-
-This section contains common questions and general information about the course.
+version https://git-lfs.github.com/spec/v1
+oid sha256:88e15f6c4f6c32d612c174b99ae6ca8fc05c7f18ce83169f0da91e9b3527f41d
+size 177

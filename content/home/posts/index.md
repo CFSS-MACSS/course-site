@@ -1,24 +1,3 @@
----
-active: false
-advanced:
-  css_class: ""
-  css_style: ""
-content:
-  count: 5
-  filters:
-    category: ""
-    exclude_featured: false
-    publication_type: ""
-    tag: ""
-  offset: 0
-  order: desc
-  page_type: post
-design:
-  background: {}
-  view: 2
-subtitle: ""
-title: Recent Posts
-weight: 60
-widget: pages
-headless: true
----
+version https://git-lfs.github.com/spec/v1
+oid sha256:550e5e815cfaa462cde48aaaa69c2d6d5c3c9d6afc8f45f2e2dccf7d8be7179f
+size 329

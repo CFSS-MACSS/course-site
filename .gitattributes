@@ -1,3 +1,4 @@
 sim-data-large.csv filter=lfs diff=lfs merge=lfs -text
 data/sim-data-large.csv filter=lfs diff=lfs merge=lfs -text
 data/divvy/Data_Trips_2017_Q4.csv filter=lfs diff=lfs merge=lfs -text
+*.md filter=lfs diff=lfs merge=lfs -text
