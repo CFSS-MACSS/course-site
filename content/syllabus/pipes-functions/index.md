@@ -1,6 +1,6 @@
 ---
 title: "Functions"
-date: 2022-10-25T12:25:00-05:00
+date: 2023-06-27T12:25:00-05:00
 publishDate: 2019-04-22T12:25:00-05:00
 draft: false
 
@@ -58,7 +58,7 @@ See "Data transformation" lecture for further references
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/functions")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/functions")`
 
 <!--
 * [Pipes in R](/notes/pipes/)

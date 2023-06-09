@@ -1,6 +1,6 @@
 ---
 title: "Data structures"
-date: 2022-10-27T12:25:00-05:00
+date: 2023-06-28T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
@@ -50,4 +50,4 @@ math: false
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/data-structures")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/data-structures")`

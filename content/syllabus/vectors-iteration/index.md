@@ -1,6 +1,6 @@
 ---
 title: "Control Structures"
-date: 2022-10-20T12:25:00-05:00
+date: 2023-06-26T12:25:00-05:00
 publishDate: 2019-04-24T12:25:00-05:00
 draft: false
 
@@ -65,7 +65,7 @@ math: false
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/control-structures")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/control-structures")`
 
 <!--
 * [Data storage types](/notes/vectors/)

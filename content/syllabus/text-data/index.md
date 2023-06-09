@@ -1,6 +1,6 @@
 ---
 title: "Text analysis: fundamentals"
-date: 2022-11-29T12:25:00-05:00
+date: 2023-07-16T12:25:00-05:00
 publishDate: 2019-06-03T12:25:00-05:00
 draft: false
 
@@ -58,7 +58,7 @@ For this and the following lecture we use the book [*Tidy Text Mining with R*](h
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class materials: `usethis::use_course("css-materials/text-analysis-fundamentals")`
+* Run the code below in your console to download today’s in-class materials: `usethis::use_course("CFSS-MACSS/text-analysis-fundamentals")`
 
 
 <!--

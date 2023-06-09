@@ -1,6 +1,6 @@
 ---
 title: "Getting data from the web: scraping"
-date: 2022-11-17T12:25:00-05:00
+date: 2023-07-11T12:25:00-05:00
 publishDate: 2019-05-15T12:25:00-05:00
 draft: false
 
@@ -64,7 +64,7 @@ Several packages are needed for this week's lectures (all installed on R workben
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/web-scraping")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS//web-scraping")`
 
 <!--
 * [Web scraping](/notes/web-scraping/)

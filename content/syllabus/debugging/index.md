@@ -1,6 +1,6 @@
 ---
 title: "Debugging and defensive programming"
-date: 2022-11-01T12:25:00-05:00
+date: 2023-06-29T12:25:00-05:00
 publishDate: 2019-04-29T12:25:00-05:00
 draft: false
 

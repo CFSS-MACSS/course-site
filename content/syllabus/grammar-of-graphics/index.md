@@ -1,6 +1,6 @@
 ---
 title: "Visualizations and the grammar of graphics"
-date: 2022-10-04T12:25:00-05:00
+date: 2023-06-14T12:25:00-05:00
 publishDate: 2019-04-03T12:25:00-05:00
 draft: false
 
