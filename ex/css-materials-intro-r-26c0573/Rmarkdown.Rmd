@@ -1,0 +1,95 @@
+---
+title: "Basics of R Markdown"
+output: html_document
+date: "`r format(Sys.time(), '%d %B %Y')`"
+---
+
+
+# R Markdown (`.Rmd` or `.rmd`)
+
+An R Markdown file is a plain text file that uses the extension .Rmd. 
+
+It contains three major components:
+
+* A YAML header surrounded by `---`
+* Chunks of R code surrounded by triple-backticks (see below)
+* Text and text formatting using the Markdown syntax
+  
+R Markdown files allow the generation of well-formatted documents (md, HTML, PDF, etc.) that include text, code, and output.
+
+To create such documents, you “Knit” or “render” them. You can do so in two ways: 
+* by clicking the “Knit” button in the script editor panel of your R Markdown file
+* by running the command `rmarkdown::render("example.Rmd")` as explained [here](https://pkgs.rstudio.com/rmarkdown/reference/render.html). You can either select the type of output document (PDF, HTML, md, etc.) or pre-specify it in the YAML header at the top of the file. For example: `rmarkdown::render("example.Rmd", output: html_document`)
+
+
+# Markdown (`.md`)
+
+Markdown and R Markdown are similar in that they use the same syntax: R Markdown is just an extension of the markdown syntax.
+
+The main difference is that you cannot execute R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks. 
+
+Markdown (`.md`) documents are versatile and widely used. See the [Markdown Guide](https://www.markdownguide.org/getting-started/) for more info on .md format.
+
+
+# Basic syntax
+
+### Formatting text
+
+Italics: either use `*` or `_` before and after the *section to be written in italics*. 
+
+Bold: use `**` before and **after**. 
+
+Footnotes: use `^` with the following text in brackets, like^[this]. 
+
+To strike through, use `~~` before and after the text to ~~strike through~~. 
+
+
+### Lists
+
+For unordered lists, use either `*` or `-` and then a space, and then the text (if there is no space, it will think you mean to italicize). 
+
+* item 1
+  + sub
+  + sub
+* item 2
+* item 3
+  + sub
+  
+For ordered lists, write the number followed by a period and a space, then start writing. For nested lists, indent once (or twice) on the next line and use `+` followed by a space. 
+
+1. item 1
+    + sub
+        + sub sub
+    + sub
+2. item 2
+3. item 3
+    + sub
+
+
+### Hyperlinks, tables, pictures
+
+To insert a link to external sites, put the linked text in brackets `[]`, followed immediately by the URL in parentheses `()`. 
+For example: [R Studio](https://www.rstudio.com/)
+
+For tables, use `-----` for rows and `|` for columns. See [here](https://www.markdownguide.org/extended-syntax/) for more.
+
+To insert a picture link type `![text](picture link, "title")`. The title is optional.
+
+
+### Code chunks
+
+R Markdown allows you to directly insert and evaluate code via "code chunks". To start a chunk, type ``` and then the name of the language in braces:
+
+```{r echo = FALSE}
+print("Hello, World!")
+```
+
+```{r echo = TRUE}
+# add a comment
+x <- 2 + 3
+x * 2 
+```
+
+Note `echo = FALSE` hides your code syntax but still shows the output of your code in the finished file. Use this for writing reports for people who don’t want to see the underlying R code.
+
+There are many more options to manage with your code; consult [chapter 27](https://r4ds.had.co.nz/r-markdown.html) of R for Data Science for details.
