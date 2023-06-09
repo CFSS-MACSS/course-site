@@ -14,7 +14,7 @@ summary: "Test software installation, GitHub setup, and homework submission proc
 
 # Overview
 
-**Due by 11:59 pm on Friday, October 7th.**
+**Due by 11:59 pm on Wednesday, June 14th.**
 
 The goal is to test your software installation, your GitHub setup, and the homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.
 
@@ -105,4 +105,4 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 
 * This page is derived in part from ["UBC STAT 545A and 547M"](http://stat545.com), licensed under the [CC BY-NC 3.0 Creative Commons License](https://creativecommons.org/licenses/by-nc/3.0/).
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.

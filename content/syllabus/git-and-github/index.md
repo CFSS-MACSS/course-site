@@ -1,6 +1,6 @@
 ---
 title: "R Basics, Git/GitHub, R Markdown"
-date: 2022-09-29T12:25:00-05:00
+date: 2023-06-13T12:25:00-05:00
 publishDate: 2019-05-01T12:25:00-05:00
 draft: false
 
@@ -70,7 +70,7 @@ math: false
 
 * If you haven't yet:
     * [Install and setup software](/setup/)
-    * Fill out [this survey](https://forms.gle/J8axkKpKZGxYyxYZA)
+    * Fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfV_g4z7rpNWz_ONmH1oLrItXprHjo8-KBpnd19FbEJDCrEDA/viewform?usp=sf_link)
 * Start [Homework 1](/homework/edit-readme/)
 
 [^local]: If you are using R from your local machine: first install the library by typing in your console `install.packages("usethis")`; then load it with `library(usethis)`; finally run the code
