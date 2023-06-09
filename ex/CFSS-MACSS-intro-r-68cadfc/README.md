@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dfc468ed6f60e8add1f72aa72fa75b9eb3bf2f74a8ef4f9cf3eed0edf450b77a
-size 271
+# intro-r 
+
+# Review and Practice of R Basics, Git/GitHub, R Markdown
+Documents include:
+* README (this file) to give an overview
+* introR_lecture.R (lecture for the day)
+* introR_practice.R (practice problems)
+* introR_practice_solutions (answers to practice problems) 

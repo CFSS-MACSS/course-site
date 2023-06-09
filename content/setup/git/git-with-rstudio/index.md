@@ -1,3 +1,190 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68c6c7510e2168eea6d6b3326619de2744303f762c5ffd1288cdac34903cadc6
-size 9990
+---
+date: "2018-09-09T00:00:00-05:00"
+draft: false
+weight: 50
+title: "Using Git within RStudio"
+toc: true
+type: book
+aliases: ["/git05.html", "/setup/git-with-rstudio/"]
+---
+
+
+
+Complete these steps after you have Installed Git (only if you are working with R Studio locally) and Configured Git (for both local and R Workbench option) to verify that everything works as expected. If you are not sure, begin by reading [Start here: Software Options](/setup/_index.md/).
+
+# Step 0: Make sure RStudio can find Git
+
+## If everything is installed correctly...
+
+* *File > New Project*. If you see a Version Control options, that's good. Do not select it. Instead, select *New Directory > New Project*. Do you see a check box "Create a git repository"? If yes, that's good. Check it.
+* Give this test project a name and click "Create Project". Do you see a "Git" tab in the upper right pane, the same one that has "Environment" and "History"? If yes, good.
+
+If this worked, you can delete the project. You've set everything up correctly (if you are working on R Workbench this should automatically work). To delete the project, go to the "Files" tab (bottom right corner), select the project folder and click "Delete"
+
+## If this didn't work...
+
+RStudio can only act as a GUI front-end for Git if Git has been successfully installed AND RStudio can find it.
+
+A basic test for successful installation of git is to simply enter `git` in the [shell](/setup/shell/). If you get a complaint about `git` not being found, it means installation was unsuccessful or that it is not being found, i.e. it is not on your `PATH`.
+
+If you are not sure where the git executable lives, try this in a shell:
+
+* `which git` (Mac, Linux)
+* `where git` (most versions of Windows)
+
+If Git appears to be installed and findable, launch RStudio and try again. If it still doesn't work, quit and re-launch RStudio if there's any doubt in your mind about whether you opened RStudio before or after installing Git.
+
+From RStudio, go to *Tools > Global Options > Git/SVN* and make sure that the box *Git executable* points to the Git executable. It should read something like:
+
+* `/usr/bin/git` (Mac, Linux)
+* `C:/Program Files (x86)/Git/bin/git.exe` (Windows)
+
+<!--
+On my computer, it looks like this:
+{{< figure src="git_exec.png" caption="" >}}
+-->
+
+If you make any changes, **restart RStudio and try the steps at the top of the page again**.
+
+Still not working? Try [googling](https://www.google.com) your problem or speak with myself or the TA.
+
+
+# Step 1: Make a new repository on GitHub
+
+* Go to [GitHub.com](https://www.github.com) and login. If you haven't yet, sign up and create your account
+* Click the green "New" or New Repository" button
+    * Repository name: `myrepo`
+    * Set it as Public
+    * Add a README file
+    * No need to add a .gitignore or a license
+    * Click the green "Create repository" button
+* Copy the URL to your clipboard via the green “Clone or Download” button using SSH or HTTPS. Remember which authentication method you used when you [configured Git](/setup/git-configure/) and use it accordingly:
+    * HTTPS: use `https://github.com/<OWNER>/<REPO>.git`
+    * SSH: use `git@github.com:<OWNER>/<REPO>.git`
+
+
+# Step 2: Clone the new GitHub repository to your computer via RStudio
+
+**Whenever possible, this should be your preferred route for setting up your R projects.**
+
+In RStudio (on your local computer or on R Workbench), start a new Git Project: *File > New Project > Version Control > Git* 
+
+If you do you NOT see an option to get the Project from Version Control [make sure RStudio can find Git.](/setup/git-with-rstudio/#make-sure-rstudio-can-find-git)
+
+Fill out the following fields:
+* Repository URL: paste the URL of your new GitHub repository 
+* Project directory name: it should automatically populate, do not change it
+* Create project as subdirectory of: decide where to store the local directory for the project. Don't scatter everything around your computer - have a central location, or some meaningful structure. For repositories you create in this course, you can setup a `css` directory and clone all your repos there.
+* Check the "Open in new session" box, as that's what you'll usually do in real life.
+* Before proceeding, check the little box "Open in new session", as that's what you'll usually do in real life.
+* Click "Create Project" to create a new sub-directory, which will be all of these things:
+    * a directory on your computer
+    * a Git repository, linked to a remote GitHub repository
+    * an RStudio Project
+
+
+This should open a new R session and download the `README.md` file that we created on GitHub in the previous step. Look in RStudio's files browser pane for the `README.md` file.
+
+Why setup your R projects this way? There's a big advantage to the "Github first, then Git in RStudio workflow": the remote GitHub repo is now the "upstream" remote for your local repo. In essence, you are already setup to push and pull commits to GitHub. There is no need to set anything else up through the shell or a Git client. However, you could also do the other way around (see next step, to complete as an alternative to this step).
+
+## Step 2 alternative: Connect a local RStudio project to a GitHub repository
+
+Remember, the previous step should be your preferred route. However, sometimes you cannot always setup the GitHub repo first, or you already have an RStudio project you need to connect to a GitHub repo. This workflow is the reverse of the above and cannot be executed from within RStudio.
+
+In R Studio, start a new RStudio project: *File > New Project > New Directory > Empty Project*:
+* Directory name: `myrepo` (or whatever you named the GitHub repo)
+* Decide where to store the local directory for the Project.
+* Yes, check "Create a git repository". If you do you NOT see an option to get the Project from Version Control [make sure RStudio can find Git.](/setup/git-with-rstudio/#make-sure-rstudio-can-find-git)
+* Check the "Open in new session" box, as that's what you'll usually do in real life.
+* Click "Create Project" to create a new sub-directory, which will be all of these things:
+        * a directory on your computer
+        * a Git repository  --linked to a remote GitHub repository-- in this case this isn't automatic: we still need to link it up
+        * an RStudio Project
+* Initiate the "upstream" or "tracking" relationship by adding a remote. Go to *Tools > Shell* and do this, substituting the example URL for your GitHub repo.
+
+    - HTTPS 
+        ```bash
+        git remote add origin https://github.com/brinsab/myrepo.git
+        ```
+    
+    - SSH
+        ```bash
+        git remote add origin git@github.com:brinasab/myrepo.git
+        ```
+
+* Download all the files from the online GitHub repository (possibly just README.md, at this point).
+
+    ```bash
+    git pull origin main
+    ```
+
+* Cement the tracking relationship between your GitHub repository and the local repo by pushing and setting the "upstream" remote:
+
+    ```bash
+    git push -u origin main
+    ```
+
+# Step 3: Make local changes, save, commit
+
+**Do this every time you finish a valuable chunk of work, probably many times a day.**
+
+From RStudio, modify the `README.md` file by adding the line
+    
+```
+This is a line from RStudio.
+```
+
+Save your changes. Next, you want to commit these changes to your local repo using RStudio:
+
+* From R Studio, click the "Git" tab in the upper right pane
+* Check the "Staged" box for any files whose existence or modifications you want to commit (all of them in this case)
+* Click "Commit"
+* Type a message in "Commit message". This should describe for a human what modifications you've made to the staged files
+* Click "Commit"
+    
+    
+# Step 4: Push your local changes online to GitHub
+
+**Do this a few times a day, but possibly less often than you commit.**
+
+You have new work in your local Git repository, but the changes are not online yet.
+
+Before you *push* your changes to GitHub, first you should *pull* from GitHub. Why? If you make changes to the repo in the browser (not recommended!) or one day a collaborator has pushed some new code to your repo, you need to pull those changes in before you attempt to push.
+
+* Click the blue "Pull" button in the "Git" tab in RStudio. I doubt anything will happen, i.e. you'll get the message "Already up-to-date". This is just to establish a habit.
+
+* Now click the green "Push" button to send your local changes to GitHub. You should see some message along these lines. If you have never pushed a commit to GitHub, you will be challenged to enter your username and password: enter them. 
+
+Notice this whole operation will fail if you have not configured Git and/or you have not used the correct authentication method (SSH or HTTPS): see [Configure Git](/setup/git/git-configure) and repeat.
+
+
+
+# The end
+
+Now just rinse and repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote "synced up".
+
+Since this was a test, there is no need to keep `myrepo`. Because we stored the repo on both our computer and GitHub, we need to remove it from both locations.
+
+* Delete the local repository: find where you stored it on your computer and delete it
+
+* Delete the repository from GitHub:
+    * In the browser, viewing your repository's landing page on GitHub, click on "Settings", near the bottom of the right sidebar.
+    * Scroll down, click on "Delete this repository", and follow the instructions
+
+<!--
+* Delete the local repository in the shell:
+
+
+```bash
+cd ..
+rm -rf myrepo/
+```
+-->
+
+
+# Acknowledgments
+
+
+* This page is derived in part from ["UBC STAT 545A and 547M"](http://stat545.com), licensed under the [CC BY-NC 3.0 Creative Commons License](https://creativecommons.org/licenses/by-nc/3.0/).
+
+* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.

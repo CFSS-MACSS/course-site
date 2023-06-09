@@ -1,3 +1,76 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd6985bafe0b9370aa06a119286a787ca7e07378fd6afd585b2d374a3b65526e
-size 2286
+---
+title: "Getting data from the web: scraping"
+date: 2022-11-17T12:25:00-05:00
+publishDate: 2019-05-15T12:25:00-05:00
+draft: false
+
+aliases: ["/cm016.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-11-02T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Practice scraping content from web pages using rvest."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/getting-data-from-the-web-scraping/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
+
+
+## Overview
+
+* Define HTML and CSS selectors
+* Introduce the `rvest` package
+* Demonstrate how to extract information from HTML pages
+* Practice scraping data
+
+## Before class
+
+* Chapter 1 and 4 in [Web Scraping with R](https://steviep42.github.io/webscraping/book/)
+
+Several packages are needed for this week's lectures (all installed on R workbench). If you are using R from your laptop (VS. R Workbench), I'd suggest following the lectures using R Workbench and installing the packages after class. 
+
+
+## Additional Resources 
+
+* [`rvest` documentation](https://rvest.tidyverse.org/articles/harvesting-the-web.html)
+* [`httr` documentation](https://cran.r-project.org/web/packages/httr/)
+* [Web Scraping using R Cheat Sheet](https://github.com/yusuzech/r-web-scraping-cheat-sheet/blob/master/README.md)
+* [More install-and-play API packages for R](https://github.com/ropensci/webservices)
+
+
+## Class materials
+
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/web-scraping")`
+
+<!--
+* [Web scraping](/notes/web-scraping/)
+* `rvest`
+    * Load the library (`library(rvest)`)
+    * `demo("tripadvisor")` - scraping a Trip Advisor page
+    * `demo("united")` - how to scrape a web page which requires a login
+    * [Scraping IMDB](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/)
+-->

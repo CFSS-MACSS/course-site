@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:104b92bc68b8dc0184317984abb25a1d39ae7de9be88141de1ea7af105be18d8
-size 883
+---
+title: "Memorial Day"
+date: 2020-05-25T12:25:00-05:00
+publishDate: 2019-03-01T12:25:00-05:00
+draft: true
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+time_end: 2020-05-25T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "No class."
+
+# Location of event.
+location: "Kimball Hall B11"
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: ""
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
+
+
+## Overview
+
+
+## Before class
+
+
+## Class materials
+
+
+## What you need to do after class
