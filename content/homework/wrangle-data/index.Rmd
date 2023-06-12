@@ -1,6 +1,6 @@
 ---
 title: "HW03: Wrangling and visualizing data"
-date: 2022-10-13T13:30:00-06:00  # Schedule page publish date
+date: 2023-06-27T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-03-01
 
 draft: false
@@ -10,20 +10,18 @@ aliases: ["/hw03-wrangle-data.html"]
 summary: "Wrangle and explore messy datasets in practical research environments."
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 # Overview
 
-**Due by 11:59 pm on Saturday, October 22nd.** 
+**Due by 11:59 pm on June 27th.** 
 
 The goal of this assignment is to practice wrangling and exploring social science data in a research context.
 
 
 # Accessing the `hw03` repository
 
-* Go [at this link](https://classroom.github.com/a/UIkBZDK4) to accept and create your private `hw3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw3-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept and create your private `hw3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw3-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -47,12 +45,14 @@ Your general workflow will be:
 
 In the `rcis` package, there is a data frame called `dadmom`.
 
-```{r, echo = FALSE, message = FALSE}
-library(tidyverse)
-library(rcis)
 
-data("dadmom")
-dadmom
+```
+## # A tibble: 3 x 5
+##   famid named  incd namem  incm
+##   <dbl> <chr> <dbl> <chr> <dbl>
+## 1     1 Bill  30000 Bess  15000
+## 2     2 Art   22000 Amy   18000
+## 3     3 Paul  25000 Pat   50000
 ```
 
 Tidy this data frame so that it adheres to the tidy data principles:
@@ -63,30 +63,15 @@ Tidy this data frame so that it adheres to the tidy data principles:
 
 Your final product (tidy data frame) should look like this:
 
-```{r, echo = FALSE}
-ex <- dadmom %>%
-  # use pivot_longer() to collect the relevant columns
-  pivot_longer(
-    cols = named:incm,
-    names_to = c("variable"),
-    values_to = "value",
-    # name and inc store data in separate column types
-    # simplify everything to character columns to avoid an error
-    values_transform = as.character
-  ) %>%
-  # use separate() to split variable into name/inc column and d/m column
-  separate(col = variable, into = c("variable", "parent"), sep = -1) %>%
-  # now pivot the name/inc variables into separate columns
-  pivot_wider(
-    names_from = variable,
-    values_from = value
-  ) %>%
-  # ensure income is stored as a numeric column
-  # alas there is no way to do this within pivot_wider()
-  mutate(inc = parse_number(inc)) 
 
-ex2 <- as.data.frame(ex)
-ex2
+```
+##   famid parent name   inc
+## 1     1      d Bill 30000
+## 2     1      m Bess 15000
+## 3     2      d  Art 22000
+## 4     2      m  Amy 18000
+## 5     3      d Paul 25000
+## 6     3      m  Pat 50000
 ```
 
 You can accomplish this task using a single or multiple piped operations using only `tidyr` functions. Code that does not use any `tidyr` functions is not acceptable. Check the [Data wrangling: tidy data](/syllabus/data-wrangling-tidy-data) lecture, readings, and in-class exercises before starting this part.
@@ -161,7 +146,7 @@ Pay careful attention to the unit of analysis required to answer each question. 
 
 To submit the assignment, simply push to your repository the last version of your assignment before the deadline. 
 
-Then copy your repository URL (e.g., `https://github.com/css-fall22/hw3-brinasab`) and submit it to Canvas under HW03 before the deadline.
+Then copy your repository URL (e.g., `https://github.com/cfss-hmwks/hw3-jmclip`) and submit it to Canvas under HW03 before the deadline.
 
 Make sure to stage-commit-push:
 
@@ -186,5 +171,5 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 
 
 # Acknowledgments
-```{r child = here::here("R", "_ack_ben.Rmd")}
-```
+
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.

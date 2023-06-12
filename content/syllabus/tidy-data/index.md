@@ -76,6 +76,6 @@ math: false
 
 ## What you need to do after class
 
-* Submit homework 2
+* Complete [Homework 2](/homework/explore-data/)
 * Review today’s lecture materials, and prepare for next class
-* Start homework 3
+* Start [Homework 3](/homework/wrangle-data/)

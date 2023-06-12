@@ -1,6 +1,6 @@
 ---
 title: "HW03: Wrangling and visualizing data"
-date: 2022-10-13T13:30:00-06:00  # Schedule page publish date
+date: 2023-06-27T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-03-01
 
 draft: false
@@ -14,14 +14,14 @@ summary: "Wrangle and explore messy datasets in practical research environments.
 
 # Overview
 
-**Due by 11:59 pm on Saturday, October 22nd.** 
+**Due by 11:59 pm on June 27th.** 
 
 The goal of this assignment is to practice wrangling and exploring social science data in a research context.
 
 
 # Accessing the `hw03` repository
 
-* Go [at this link](https://classroom.github.com/a/UIkBZDK4) to accept and create your private `hw3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw3-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept and create your private `hw3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw3-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -146,7 +146,7 @@ Pay careful attention to the unit of analysis required to answer each question. 
 
 To submit the assignment, simply push to your repository the last version of your assignment before the deadline. 
 
-Then copy your repository URL (e.g., `https://github.com/css-fall22/hw3-brinasab`) and submit it to Canvas under HW03 before the deadline.
+Then copy your repository URL (e.g., `https://github.com/cfss-hmwks/hw3-jmclip`) and submit it to Canvas under HW03 before the deadline.
 
 Make sure to stage-commit-push:
 
@@ -172,4 +172,4 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 
 # Acknowledgments
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
