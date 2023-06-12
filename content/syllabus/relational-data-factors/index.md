@@ -72,7 +72,7 @@ math: false
 
 ## What you need to do after class
 
-* Keep working on [Homework 3](homework/wrangle-data/)
+* Keep working on [Homework 3](/homework/wrangle-data/)
 * Review lectures and readings
 
 <!--
