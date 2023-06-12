@@ -28,10 +28,10 @@ To ensure minimal challenges using Git during the class, we want to configure Gi
 In order to track changes and attribute them to the correct user, we need to tell Git your name and email address. Run the following commands from the R console:
 
 ```r
-usethis::use_git_config(user.name = "Sabrina Nardin", user.email = "email@gmail.com")
+usethis::use_git_config(user.name = "Jean Clipperton", user.email = "email@gmail.com")
 ```
 
-Replace `Sabrina Nardin` and `email@gmail.com` with your name and email address. Your name could be your GitHub username, or your actual first and last name. **Your email address must be the email address associated with your GitHub account.**
+Replace `Jean Clipperton` and `email@gmail.com` with your name and email address. Your name could be your GitHub username, or your actual first and last name. **Your email address must be the email address associated with your GitHub account.**
 
 To check that Git got your credentials, in R Studio go to Tools > Shell and run the following command in the shell/terminal tab that opened up:
 

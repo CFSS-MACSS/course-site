@@ -24,10 +24,10 @@ from the console in RStudio. Then run the following commands:
 
 ```r
 library(usethis)
-use_git_config(user.name = "Benjamin Soltoff", user.email = "ben@bensoltoff.com")
+use_git_config(user.name = "Jean Clipperton", user.email = "user@emai.com")
 ```
 
-Replace `Benjamin Soltoff` and `ben@bensoltoff.com` with your name and email address. Your name could be your GitHub username, or your actual first and last name. **Your email address must be the email address associated with your GitHub account.**
+Replace `Jean Clipperton` and `user@email.com` with your name and email address. Your name could be your GitHub username, or your actual first and last name. **Your email address must be the email address associated with your GitHub account.**
 
 ## Acknowledgments
 

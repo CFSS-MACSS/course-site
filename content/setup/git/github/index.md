@@ -33,7 +33,7 @@ aliases: ["/git04.html", "/setup/github/"]
 ## Clone the repository to your computer
 
 * Go to the [shell](/setup/shell/) (one way to open: In RStudio, **Tools > Shell**).
-* Determine where you are in the file directory by typing `pwd`. To change directory, type `cd` and the directory path where you want to clone the directory. You can clone this repository wherever you want, though eventually you'll want to develop a system for storing your repos in a consistent manner. Here, I stored mine in `c/Users/Sabrina Nardin/Desktop`.
+* Determine where you are in the file directory by typing `pwd`. To change directory, type `cd` and the directory path where you want to clone the directory. You can clone this repository wherever you want, though eventually you'll want to develop a system for storing your repos in a consistent manner. Here, I stored mine in `c/Users/Jean Clipperton/Desktop`.
 * Clone `myrepo` from GitHub to your computer with `git clone`. Cloning simply downloads a copy of the repository to your computer. Remember the URL you copied? It should contain your GitHub username and the name of your practice repository. Copy + paste the URL into your shell; if cntr+v does not work for paste, try right-clicking with your mouse and select "paste"; if the clipboard doesn't work at all retype the URL manually. Make sure it is accurate.
 
 
