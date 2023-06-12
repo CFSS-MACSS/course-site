@@ -1,6 +1,6 @@
 ---
 title: "HW04: Programming in R"
-date: 2022-10-21T13:30:00-06:00  # Schedule page publish date
+date: 2023-06-29T13:30:00-06:00  # Schedule page publish date
 draft: false
 aliases: ["/hw04-programming.html"]
 
@@ -11,14 +11,14 @@ summary: "Practice programming techniques in R."
 
 # Overview
 
-**Due by 11:59 pm on ~~Friday, October 28th~~ Saturday, October 29th.**
+**Due by 11:59 pm on June 29th .**
 
 The goal of this assignment is to practice basic R programming skills (control structures and functions).
 
 
 # Accessing the `hw04` repository
 
-* Go [at this link](https://classroom.github.com/a/U-kxzdwT) to accept and create your private `hw4` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw4-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/Sf56MFXl) to accept and create your private `hw4` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw4-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -131,7 +131,7 @@ Your function should be able to correctly handle the examples below:
 
 To submit the assignment, simply push to your repository the last version of your assignment before the deadline. 
 
-Then copy your repository URL (e.g., `https://github.com/css-fall22/hw4-brinasab`) and submit it to Canvas under HW04 before the deadline.
+Then copy your repository URL (e.g., `https://github.com/cfss-hmwks/hw4-jmclip`) and submit it to Canvas under HW04 before the deadline.
 
 Make sure to stage-commit-push:
 

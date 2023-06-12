@@ -75,5 +75,6 @@ math: false
 
 ## What you need to do after class
 
-* Complete/Start Homework assignments
+* Finish working on [Homework 3](/homework/wrangle-data/)
 * Review today’s lecture materials, and prepare for next class
+* Begin [Homework 4](/homework/programming/)
