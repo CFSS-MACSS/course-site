@@ -106,12 +106,12 @@ In R Studio, start a new RStudio project: *File > New Project > New Directory > 
 
     - HTTPS 
         ```bash
-        git remote add origin https://github.com/brinsab/myrepo.git
+        git remote add origin https://github.com/jmclip/myrepo.git
         ```
     
     - SSH
         ```bash
-        git remote add origin git@github.com:brinasab/myrepo.git
+        git remote add origin git@github.com:jmclip/myrepo.git
         ```
 
 * Download all the files from the online GitHub repository (possibly just README.md, at this point).
