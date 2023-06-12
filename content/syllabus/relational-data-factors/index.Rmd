@@ -1,6 +1,6 @@
 ---
 title: "Data wrangling: relational data"
-date: 2022-10-18T12:25:00-05:00
+date: 2023-06-22T12:25:00-05:00
 publishDate: 2019-04-17T12:25:00-05:00
 draft: false
 
