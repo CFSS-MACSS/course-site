@@ -1,6 +1,6 @@
 ---
 title: "A deep dive into Git/GitHub"
-date: 2022-11-10T12:25:00-05:00
+date: 2023-07-06T12:25:00-05:00
 publishDate: 2019-05-01T12:25:00-05:00
 draft: false
 

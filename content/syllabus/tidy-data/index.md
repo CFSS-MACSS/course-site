@@ -1,6 +1,6 @@
 ---
 title: "Data wrangling: tidy data"
-date: 2022-10-13T12:25:00-05:00
+date: 2023-06-21T12:25:00-05:00
 publishDate: 2019-04-15T12:25:00-05:00
 draft: false
 
