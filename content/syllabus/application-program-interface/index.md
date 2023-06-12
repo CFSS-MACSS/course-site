@@ -1,6 +1,6 @@
 ---
 title: "Getting data from the web: API access"
-date: 2022-11-15T12:25:00-05:00
+date: 2023-07-10T12:25:00-05:00
 publishDate: 2019-06-01T12:25:00-05:00
 draft: false
 
@@ -76,7 +76,7 @@ Several packages are needed for this week's lectures (all installed on R workben
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/web-api-access")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("cfss-materials/web-api-access")`
 
 <!--
 * [Practice getting data from the Twitter API](/notes/twitter-api-practice/)
