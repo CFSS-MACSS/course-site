@@ -1,7 +1,7 @@
 ---
 title: "HW01: Practice editing .md and .Rmd"
 date: 2023-06-12T13:30:00-06:00  # Schedule page publish date
-#publishdate: 2019-03-01
+publishdate: 2019-03-01
 
 draft: false
 #type: post
@@ -20,7 +20,7 @@ The goal is to test your software installation, your GitHub setup, and the homew
 
 # Accessing your `hw01` repository
 
-* Go  to accept and create your private `hw01` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw01-<USERNAME>`  
+* Go (link forthcoming!) to accept and create your private `hw01` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw01-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
