@@ -123,22 +123,23 @@ class: inverse, middle
 
 ## Instructor
 
-- Sabrina Nardin
+- Jean Clipperton
 ```{r out.height = "50%", out.width = "50%", include = FALSE}
-include_graphics(path = "/img/add-image-name.jpg", error = FALSE)
+#include_graphics(path = "/img/add-image-name.jpg", error = FALSE)
 ```
 
 
 ## TAs
 
-- Yunshu Hu
-- Yiwen Lu
+- Bhavya Pandey
+- Loizos Bitsikokos
 
 
 ## You
 ---
 
 ```{r bruce, include = FALSE}
+getwd()
 include_graphics(path = "/img/bruce_computer.gif", error = FALSE)
 ```
 
@@ -197,7 +198,7 @@ class: inverse, middle
 .pull-left[
 
 ```{r jeri}
-include_graphics(path = "/img/stock-photos/000022.jpg", error = FALSE)
+include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000022.jpg", error = FALSE)
 ```
 
 ]
@@ -226,7 +227,7 @@ include_graphics(path = "/img/stock-photos/000022.jpg", error = FALSE)
 .pull-left[
 
 ```{r ryan}
-include_graphics(path = "/img/stock-photos/000284.jpg", error = FALSE)
+include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000284.jpg", error = FALSE)
 ```
 
 ]
@@ -255,7 +256,7 @@ include_graphics(path = "/img/stock-photos/000284.jpg", error = FALSE)
 .pull-left[
 
 ```{r fernando}
-include_graphics(path = "/img/stock-photos/000232.jpg", error = FALSE)
+include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000232.jpg", error = FALSE)
 ```
 
 ]
@@ -284,7 +285,7 @@ include_graphics(path = "/img/stock-photos/000232.jpg", error = FALSE)
 .pull-left[
 
 ```{r fang}
-include_graphics(path = "/img/stock-photos/000251.jpg", error = FALSE)
+include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000251.jpg", error = FALSE)
 ```
 
 ]
@@ -346,8 +347,8 @@ When stuck, you HAVE to try on your own for 15 min. After 15 min, you HAVE to as
 
 * Fellow students (e.g. study groups)
 
-* [Class discussion page on Ed Discussion](https://edstem.org/us/courses/29905/discussion/)
-    * [How to ask for help](https://computing-soc-sci.netlify.app/faq/asking-questions/)
+* [Class discussion page on Ed Discussion](https://edstem.org/us/courses/40496/discussion/)
+    * [How to ask for help](https://macs30500.netlify.app/faq/asking-questions/)
 
 ---
 
@@ -377,19 +378,19 @@ include_graphics(path = "/img/plagiarism.jpg", error = FALSE)
 ## Homework and Evaluation
 
 
-* **Weekly programming assignments**: eight in total.
+* **Regular programming assignments**: eight in total.
 
 * **Late Work Policy**: you can submit up to two assignments up to 24 hours late without penalty; no questions asked. After 24 hours, we do not accept late work. 
 
 * **Extraordinary circumstances** (illness, family emergency, etc.): I may grant additional extensions on a case-by-case basis. Whenever possible, inform me before the deadline. Please, note that having a heavy workload in a given week does not qualify as an extraordinary circumstance. The purpose of the two extensions is precisely to give you some flexibility in weeks when you are busier than usual.
 
-* **[Rubric](https://computing-soc-sci.netlify.app/faq/homework-evaluations/)** 
+* **[Rubric](https://macs30500.netlify.app/faq/homework-evaluations/)** 
 
 ---
 
 ## Software Set up
 
-Go to our course website under **[Setup](https://computing-soc-sci.netlify.app/setup/)**
+Go to our course website under **[Setup](https://macs30500.netlify.app/setup/)**
 
 Two options:
 
@@ -481,7 +482,7 @@ A GUI software runs using all the basic programming elements, but the end user i
 
 **TASK**: Write a report analyzing the relationship between ice cream consumption and crime rates in New York City.
 
-**APPROACH**: Read how Jane and Sally approach this task [in our website](https://computing-soc-sci.netlify.app/notes/intro-to-course/#benefits-to-programming-vs-gui-software) (5 min readings start from "Benefits to programming vs. GUI software")
+**APPROACH**: Read how Jane and Sally approach this task [in our website](https://macs30500.netlify.app/notes/intro-to-course/#benefits-to-programming-vs-gui-software) (5 min readings start from "Benefits to programming vs. GUI software")
 
 --
 
@@ -647,10 +648,10 @@ bind_rows(
 
 # To complete by next class 
 
-See today's topic, under [Schedule of Topics](https://computing-soc-sci.netlify.app/syllabus/introduction-to-computing-for-the-social-sciences/)
+See today's topic, under [Schedule of Topics](https://macs30500.netlify.app/syllabus/introduction-to-computing-for-the-social-sciences/)
 
 ---
 
 # Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
