@@ -1,7 +1,7 @@
 ---
 title: "HW02: Exploring and visualizing data"
-date: 2022-10-06T13:30:00-06:00  # Schedule page publish date
-#publishdate: 2019-03-01
+date: 2023-06-20T13:30:00-06:00  # Schedule page publish date
+publishdate: 2019-03-01
 
 draft: false
 #type: post
@@ -14,14 +14,14 @@ summary: "Transform and explore a cleaned dataset on gun deaths in the United St
 
 # Overview
 
-**Due by 11:59 pm on Friday, October 14th.**
+**Due by 11:59 pm on June20th.**
 
 Now that you've demonstrated knowledge of your software is setup, the goal of this assignment is to practice transforming and visually exploring data.
 
 
 # Accessing your `hw02` repository
 
-* Go [at this link](https://classroom.github.com/a/gtGAnmOx) to accept and create your private `hw02` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw02-<USERNAME>`  
+* Go [at this link](https://classroom.github.com/a/J7TCyxwa) to accept and create your private `hw02` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw02-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -59,11 +59,11 @@ In July 2012, in the aftermath of a mass shooting in a movie theater in Aurora, 
 
 ## Obtain the data
 
-I have included this dataset in the [`rcis`](https://github.com/css-materials/rcis) library on GitHub. 
+I have included this dataset in the [`rcis`](https://github.com/CFSS-MACSS/rcis) library on GitHub. 
 
 * If you are working on R workbench, you should have everything already installed. Simply load the library by typing in your console `library(rcis)` and then load the dataset by typing `data("mass_shootings")`.  Use the help function in R `?mass_shootings` to get detailed information on the variables and coding information.
 
-* If you are using R on your local computer, you first need to install the `rcis` package. Type in your console `remotes::install_github("css-materials/rcis")`. If you don't already have the `remotes` library installed, you will get an error. Go back and install this first using `install.packages()`, then install `rcis`. Finally, the mass shootings dataset can be loaded using `data("mass_shootings")`. Use the help function in R `?mass_shootings` to get detailed information on the variables and coding information.
+* If you are using R on your local computer, you first need to install the `rcis` package. Type in your console `remotes::install_github("CFSS-MACSS/rcis")`. If you don't already have the `remotes` library installed, you will get an error. Go back and install this first using `install.packages()`, then install `rcis`. Finally, the mass shootings dataset can be loaded using `data("mass_shootings")`. Use the help function in R `?mass_shootings` to get detailed information on the variables and coding information.
 
 
 ## Explore the data
@@ -156,7 +156,7 @@ Run `?kable` in the console to see how additional options.
 
 # Submit the assignment
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw2-brinasab`) and submit it to Canvas under HW02 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw2-jmclip`) and submit it to Canvas under HW02 before the deadline.
 
 Your assignment should be submitted as a R Markdown document `.Rmd`. Need a refresher on R Markdown? [Read this](http://rmarkdown.rstudio.com/lesson-1.html) or [this](http://r4ds.had.co.nz/r-markdown.html). 
 
@@ -185,8 +185,8 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 # Acknowledgments
 
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
 
 <!--
-[^clean]: For the purposes of this assignment, some data cleaning of the underlying raw data have been performed. You can view the data cleaning code [here](https://github.com/cis-ds/rcis/blob/master/data-raw/mass-shootings.R).
+[^clean]: For the purposes of this assignment, some data cleaning of the underlying raw data have been performed. You can view the data cleaning code [here](https://github.com/CFSS-MACSS/rcis/blob/main/data-raw/mass-shootings.R).
 -->
