@@ -1,6 +1,6 @@
 ---
 title: "HW07: Machine learning"
-date: 2022-10-26T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-13T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: true
@@ -14,11 +14,11 @@ summary: "Implement machine learning methods for regression and classification."
 
 # Overview
 
-Due by 11:59pm on November 1st.
+Due by 11:59pm on July 13.
 
 # Accessing the `hw07` repository
 
-Go [here](https://github.coecis.cornell.edu/cis-fa22) and find your copy of the `hw07` repository. It follows the naming convention `hw07-<USERNAME>`. Clone the repository to your computer.
+Go [here](https://classroom.github.com/a/ZuGDMiSQ) and find your copy of the `hw07` repository. It follows the naming convention `hw07-<USERNAME>`. Clone the repository to your computer.
 
 # Part 1: Student debt
 
@@ -110,3 +110,8 @@ Excellent: Interpretation is clear and in-depth. Accurately interprets the resul
 [^rmse]: View the [documentation for `yardstick`](https://yardstick.tidymodels.org/reference/index.html#section-regression-metrics) to find the appropriate function for RMSE.
 [^norc]: Conducted by NORC at the University of Chicago.
 [^ridge]: `logistic_reg(penalty = .01, mixture = 0)`
+
+
+# Acknowledgments
+
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.

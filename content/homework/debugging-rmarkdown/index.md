@@ -2,6 +2,7 @@
 title: "HW05: Debugging and practice working with functions"
 date: 2023-07-05T13:30:00-06:00  # Schedule page publish date
 draft: false
+publishdate: 2019-04-01
 
 summary: "Resolve code errors and practice writing and using functions with social science data."
 ---

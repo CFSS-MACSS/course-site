@@ -1,6 +1,6 @@
 ---
 title: "HW8: Analyzing textual data"
-date: 2022-11-29T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-16T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: false
@@ -13,14 +13,14 @@ summary: "Collect text data and analyze it."
 
 # Overview
 
-**Due by 11:59 pm on Tuesday, December 6th.**
+**Due by 11:59 pm on July 16th.**
 
 The goal of this assignment is to practice the fundamentals of text analysis in R tidyverse.
 
 
 # Accessing the `hw08` repository
 
-* Go [at this link](https://classroom.github.com/a/_IRchBke) to accept and create your private `hw8` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw8-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/eey4atfa) to accept and create your private `hw08` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw08-<USERNAME>`  
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -29,7 +29,7 @@ Notice the repo you clone for this assignment is empty: **add your data and code
 
 # Cloning your `hw08` repository
 
-After you have accessed the `hw8` repository (see above), follow the [same steps you completed for `hw1`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `hw08` repository (see above), follow the [same steps you completed for `hw01`](/homework/edit-readme/) to clone the repository.
 
 
 # General workflow
@@ -118,3 +118,8 @@ Needs improvement: Not all elements listed in the instructions are addressed. Co
 Satisfactory: Solid effort. Hits all the elements. Finished all components of the assignment with only minor deficiencies. Easy to follow (both the code and the output). 
 
 Excellent: Displays in-depth understanding of course materials, including data analysis and coding skills. Code to process and analyze the data is complex/refined. Visualizations are excellent. Explanation of the chosen technique is accurate with an assessment of the appropriate caveats for what the technique can and cannot do. Interpretation of the results is clear and in-depth and shows engagement with the content of the textual data. Code is reproducible. Uses a sentiment analysis or topic model example not directly covered in class or considerably expands on the provided examples.
+
+
+# Acknowledgments
+
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
