@@ -1,6 +1,6 @@
 ---
 title: "HW05: Debugging and practice working with functions"
-date: 2022-10-28T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-05T13:30:00-06:00  # Schedule page publish date
 draft: false
 
 summary: "Resolve code errors and practice writing and using functions with social science data."
@@ -10,21 +10,21 @@ summary: "Resolve code errors and practice writing and using functions with soci
 
 # Overview
 
-**Due by 11:59 pm on Friday, November 4th.**
+**Due by 11:59 pm on July 5.**
 
 The goal of this assignment is to practice debugging common errors in code, and writing/using functions with social science data.
 
 
 # Accessing the `hw05` repository
 
-* Go [at this link](https://classroom.github.com/a/swMrs2jm) to accept and create your private `hw5` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw5-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/7REwA96x) to accept and create your private `hw05` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw05-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
 
 # Cloning your `hw05` repository
 
-After you have accessed the `hw5` repository (see above), follow the [same steps you completed for `hw1`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `hw05` repository (see above), follow the [same steps you completed for `hw01`](/homework/edit-readme/) to clone the repository.
 
 
 # General workflow
@@ -62,7 +62,7 @@ Its author made some mistakes and the script currently does not work. Fix the er
 
 # Submit the assignment
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw5-brinasab`) and submit it to Canvas under HW05 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw05-jmclip`) and submit it to Canvas under HW05 before the deadline.
 
 Make sure to stage-commit-push:
 
@@ -82,4 +82,4 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 
 # Acknowledgments
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.

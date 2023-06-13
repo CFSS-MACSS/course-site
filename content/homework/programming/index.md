@@ -153,4 +153,4 @@ For further details, see the [general rubric](/faq/homework-evaluations/) we ado
 
 # Acknowledgments
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
