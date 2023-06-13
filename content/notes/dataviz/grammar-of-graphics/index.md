@@ -1,6 +1,6 @@
 ---
 title: "The Grammar of Graphics"
-date: 2022-10-04
+date: 2023-06-14
 type: book
 toc: true
 draft: false

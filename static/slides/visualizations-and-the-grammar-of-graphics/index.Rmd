@@ -2,7 +2,7 @@
 title: "Visualizations and the Grammar of Graphics"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
-  xaringan::moon_reader:
+  xaringan::inf_mr():
     css: xaringan-themer.css
     nature:
       highlightStyle: magula
@@ -112,6 +112,7 @@ library(knitr)
 library(stringr)
 library(broom)
 library(datasauRus)
+library(ggplot2)
 library(gganimate)
 library(countdown)
 library(colorspace)
@@ -239,7 +240,16 @@ class: inverse, middle
 
 # Main components of the Grammar of Graphics
 
-> Go to "The Grammar of Graphics" notes in our website
+> Go to "The Grammar of Graphics" notes in our website to follow along
+
+
+---
+
+class: inverse, middle
+
+# Elements of a graphic:
+
+* 
 
 ---
 
@@ -255,6 +265,7 @@ class: inverse, middle
 # Exercise: Gapminder
 
 ```{r gapminder-over-time, echo = FALSE, out.width = "80%"}
+
 # generate animation of income vs. life expectancy over time
 ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
   geom_point(alpha = 0.5) +
@@ -270,20 +281,17 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
        y = 'Life expectancy',
        size = "Population",
        caption = "Source: Gapminder") +
-  theme_xaringan(
-    text_font_size = 16,
-    title_font_size = 20
-  ) +
   theme(
     legend.position = "bottom"
   ) +
   # animation components
   transition_time(year) +
   ease_aes('linear') +
-  shadow_wake(wake_length = 0.1) +
 
 # restore defaults
 theme_xaringan_restore_defaults()
+
+ 
 ```
 
 ---
