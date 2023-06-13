@@ -1,6 +1,6 @@
 ---
 title: "HW06: Generating reproducible social science research"
-date: 2022-11-04T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-10T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: false
@@ -13,14 +13,14 @@ summary: "Synthesize everything we have learned thus far."
 
 # Overview
 
-**Due by 11:59 pm on Friday, November 11th.**
+**Due by 11:59 pm on July 10th.**
 
 The goal of this assignment is to practice and further consolidate what we have been learning so far, by applying these skills and tools to a social science research context.
 
 
 # Accessing the `hw06` repository
 
-* Go [at this link](https://classroom.github.com/a/WmmLg5Bw) to accept and create your private `hw6` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw6-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/ZuGDMiSQ) to accept and create your private `hw06` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw06-<USERNAME>`  
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -29,7 +29,7 @@ Notice the repo you clone for this assignment is empty: **you will have to fill 
 
 # Cloning your `hw06` repository
 
-After you have accessed the `hw6` repository (see above), follow the [same steps you completed for `hw1`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `hw06` repository (see above), follow the [same steps you completed for `hw01`](/homework/edit-readme/) to clone the repository.
 
 
 # General workflow
@@ -153,7 +153,7 @@ Your repo should include everything you have used to produce your analyses (R sc
 
 Make sure to stage-commit-push your original `.Rmd` file (or files if you used more than one Rmd or R script), and the report you generate from it as a `github_document` or a `pdf` document
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw6-brinasab`) and submit it to Canvas under HW06 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw06-jmclip`) and submit it to Canvas under HW06 before the deadline.
 
 
 # Rubric
@@ -171,4 +171,4 @@ Excellent: Repository contains a detailed `README.md` explaining how the files i
 * This page is derived in part from ["UBC STAT 545A and 547M"](http://stat545.com), licensed under the [CC BY-NC 3.0 Creative Commons License](https://creativecommons.org/licenses/by-nc/3.0/).
 
 
-* This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
+* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
