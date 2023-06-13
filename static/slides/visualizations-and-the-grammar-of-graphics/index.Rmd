@@ -243,13 +243,6 @@ class: inverse, middle
 > Go to "The Grammar of Graphics" notes in our website to follow along
 
 
----
-
-class: inverse, middle
-
-# Elements of a graphic:
-
-* 
 
 ---
 
