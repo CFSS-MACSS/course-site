@@ -248,16 +248,235 @@ class: inverse, middle
 
 class: inverse, middle
 
+<<<<<<< HEAD
+Gapminder data cover multiple countries over multiple years and include information on life expectancy and population. This is one of multiple 'sample' datasets available for R (others including iris and mtcars). It's neat because to use it, you can just call `install.packages("gapminder")` and then `data(gapminder)`. 
+=======
 # Practice: Gapminder
+>>>>>>> parent of 508d6198 (Update ggplot examples)
 
 > Go to "Practice generating graphics with ggplot2" notes in our website
 
 
 ---
 
+<<<<<<< HEAD
+# Basic graph: preloaded data
+
+Let's start with mtcars (you will see MANY EXAMPLES using this on stackoverflow). In a fresh Rmd file, create a code chunk that calls `data(mtcars)`
+
+```{r, echo = TRUE}
+data(mtcars)
+head(mtcars)
+```
+
+---
+
+# Where we're going: graph somewhat prettiness
+
+```{r, echo = FALSE}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+                      #label = rownames(mtcars), check_overlap = TRUE) +
+  theme_bw() +
+  scale_color_manual(values = c("black", "gray", "blue") ) +
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars")
+
+```
+
+---
+  
+# ggplot layer
+  This layer sets up the graph itself. Note that if you just set the data, as I do here, you basically get a blank slate. 
+  
+--
+  I have told it what I want for the data and my respective axes but I haven't actually plotted anything yet!
+```{r, echo = TRUE, out.width = "50%"}
+ggplot(mtcars, aes(x = mpg, y = wt))
+       
+```
+
+---
+# graph layer
+  Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 1: points. (note, there are multiple ways we could choose to set this up).
+  
+```{r, echo = TRUE, out.width = "50%"}
+ggplot(mtcars, aes(x = mpg, y = wt)) +
+       geom_point()
+   
+```
+---
+# graph layer
+  Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 2: text (note, there are multiple ways we could choose to set this up).
+  
+```{r, echo = TRUE, out.width = "50%"}
+ggplot(mtcars, aes(x = mpg, y = wt)) +
+       geom_text(label = rownames(mtcars), check_overlap = TRUE) 
+```
+
+
+---
+
+# points (intermediate / advanced) layer (back to points!)
+Here, we can see our points colored by different criteria. 
+
+```{r, echo = TRUE, out.width = "50%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp)) 
+
+```
+
+
+---
+
+# label layer 
+
+```{r, echo = TRUE, out.width = "50%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars")
+
+```
+
+---
+  
+# theme layer
+
+```{r, echo = TRUE, out.width = "40%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars") +
+  theme_bw()
+
+  
+
+```
+
+---
+  
+# others
+
+```{r, echo = TRUE, out.width = "40%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars") +
+  theme_bw() +
+  scale_color_manual(values = c("black", "gray", "blue") ) 
+```
+
+---
+  
+# Final version!
+
+.pull-left[
+
+```{r, echo = TRUE, eval = FALSE, out.width = "60%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars") +
+  theme_bw() +
+  scale_color_manual(values = c("black", "gray", "blue") ) 
+```
+
+]
+
+
+.pull-right[
+```{r, echo = FALSE, out.width = "90%"}
+ggplot(mtcars)+ 
+       geom_point(aes(x = mpg, y = wt, 
+                      color = factor(cyl),
+                      shape = factor(cyl),
+                      size = hp))+ 
+  labs(title = "Car MPG vs weight", 
+       x = 'Miles per gallon',
+       y = 'Car weight',
+       shape="Cylinders", size="Horsepower", color = "Cylinders",
+       caption = "Source: mtcars") +
+  theme_bw() +
+  scale_color_manual(values = c("black", "gray", "blue") ) 
+```
+]
+---
+  
+# Basic graph: gapminder 
+  
+
+>  Which is the best name for our dataset?    
+   a) df or dat    
+   b) gapminder   
+   c) gapminder_2007   
+   d) (something else)   
+ 
+
+---
+  
+# Basic graph: gapminder 
+
+(NOTE: BAD CODE (why?))  
+```{r, echo = TRUE}
+data(gapminder) # note: not necessary but this will have it show up in your environment like with 'regular' data
+```
+
+--
+
+### Why is this code better? 
+```{r, echo = TRUE, out.width="70%" }
+data(gapminder) # note: not necessary but this will 
+                                # have it show up in your environment 
+                                # like with 'regular' data
+```
+
+--
+
+Now, use yesterday's skills to explore the dataset. What might make a good `x' or 'y'? 
+
+--- 
+
+---
+
+=======
+>>>>>>> parent of 508d6198 (Update ggplot examples)
 # Exercise: Gapminder
 
-```{r gapminder-over-time, echo = FALSE, out.width = "80%"}
+```{r gapminder-over-time, echo = FALSE, out.width = "60%"}
 
 # generate animation of income vs. life expectancy over time
 ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
