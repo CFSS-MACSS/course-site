@@ -311,6 +311,7 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_point()
    
 ```
+
 ---
 # graph layer
   Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 2: text (note, there are multiple ways we could choose to set this up).
