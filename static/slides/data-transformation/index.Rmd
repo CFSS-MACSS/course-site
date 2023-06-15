@@ -341,7 +341,7 @@ include_graphics("https://media.giphy.com/media/8KnfG3knLExpu/giphy.gif")
 ---
 
 # dplyr in action: trying out functions:
-```{r, echo = FALSE}
+```{r, echo = TRUE, eval = FALSE}
 penguins2<-filter(penguins, sex == "female")
 arrange(penguins, bill_length_mm) # notice: what did this do?
 favorite_penguins <- select(penguins, sex) #how is this different from filter?
