@@ -41,7 +41,7 @@ class: center, middle, inverse, title-slide
   - practice practice practice
   
   
-- Homework 2 opens today
+- Homework 2 opens today (due date shift?)
   - covers data visualization, transformation, and exploration
   
 ---
@@ -54,7 +54,7 @@ class: inverse, middle
 
 ## `penguins`
 
-&lt;img src="../../../../../../../img/lter_penguins.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../../../static/img/lter_penguins.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -66,21 +66,21 @@ penguins
 ```
 
 ```
-## # A tibble: 344 x 8
-##    species island    bill_length_mm bill_depth_mm flipper_~1 body_~2 sex    year
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;      &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
-##  2 Adelie  Torgersen           39.5          17.4        186    3800 fema~  2007
-##  3 Adelie  Torgersen           40.3          18          195    3250 fema~  2007
-##  4 Adelie  Torgersen           NA            NA           NA      NA &lt;NA&gt;   2007
-##  5 Adelie  Torgersen           36.7          19.3        193    3450 fema~  2007
-##  6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
-##  7 Adelie  Torgersen           38.9          17.8        181    3625 fema~  2007
-##  8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
-##  9 Adelie  Torgersen           34.1          18.1        193    3475 &lt;NA&gt;   2007
-## 10 Adelie  Torgersen           42            20.2        190    4250 &lt;NA&gt;   2007
-## # ... with 334 more rows, and abbreviated variable names 1: flipper_length_mm,
-## #   2: body_mass_g
+## # A tibble: 344 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # ℹ 334 more rows
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 ---
@@ -96,15 +96,15 @@ penguins
 
 
 ```
-## # A tibble: 5 x 8
-##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
-## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
-## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
-## 4 Adelie  Torgersen           NA            NA            NA      NA &lt;NA&gt;   2007
-## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
-## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+## # A tibble: 5 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 ]
@@ -120,7 +120,7 @@ summarize(.data = penguins_adelie, avg_mass = mean(body_mass_g, na.rm = TRUE))
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   avg_mass
 ##      &lt;dbl&gt;
 ## 1    3701.
@@ -142,15 +142,15 @@ summarize(.data = penguins_adelie, avg_mass = mean(body_mass_g, na.rm = TRUE))
 
 
 ```
-## # A tibble: 5 x 8
-##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
-## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
-## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
-## 4 Adelie  Torgersen           NA            NA            NA      NA &lt;NA&gt;   2007
-## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
-## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+## # A tibble: 5 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 ]
@@ -166,7 +166,7 @@ summarize(.data = penguins_species, avg_mass = mean(body_mass_g, na.rm = TRUE))
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   species   avg_mass
 ##   &lt;fct&gt;        &lt;dbl&gt;
 ## 1 Adelie       3701.
@@ -197,9 +197,14 @@ Documentation: **https://dplyr.tidyverse.org/**
 
 
 1. The first argument is a data frame
-1. Subsequent arguments describe what to do with the data frame
-1. The result is a new data frame
+--
 
+1. Subsequent arguments describe what to do with the data frame
+
+--
+1. The result is a **new data frame**
+
+--
 
 `dplyr` contains useful functions for transforming and manipulating data frames. 
 
@@ -213,7 +218,7 @@ All of the dplyr verbs (all the verbs in the wider tidyverse) work similarly.
 ## Key functions in `dplyr`
 
 
-`function()`  | Action performed
+`function()`  | **Action performed**
 --------------|--------------------------------------------------------
 `filter()`    | Picks observations from the data frame based on their values (operates on rows)
 `arrange()`   | Changes the order of observations based on their values
@@ -231,8 +236,7 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 .pull-left[
 
-&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;The holy grail: &amp;quot;For consistency, aim to use British (rather than American) spelling.&amp;quot; &lt;a href="https://twitter.com/hashtag/rstats?src=hash"&gt;#rstats&lt;/a&gt; &lt;a href="http://t.co/7qQSWIowcl"&gt;http://t.co/7qQSWIowcl&lt;/a&gt;. Colour is right!&lt;/p&gt;&amp;mdash; Hadley Wickham (@hadleywickham) &lt;a href="https://twitter.com/hadleywickham/status/405707093770244097"&gt;November 27, 2013&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="http://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+<blockquote class="twitter-tweet" data-width="550" data-lang="en" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">The holy grail: &quot;For consistency, aim to use British (rather than American) spelling.&quot; <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="http://t.co/7qQSWIowcl">http://t.co/7qQSWIowcl</a>. Colour is right!</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/405707093770244097?ref_src=twsrc%5Etfw">November 27, 2013</a></blockquote>
 
 ]
 
@@ -268,7 +272,7 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 ## What is the average bill length and body mass for each Adelie penguin by sex?
 
-<div class="countdown" id="timer_15474ba3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_59458c0f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -293,7 +297,7 @@ summarize(
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##   sex    avg_bill avg_mass
 ##   &lt;fct&gt;     &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 female     37.3    3369.
@@ -320,7 +324,7 @@ summarize(
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##   sex    avg_bill avg_mass
 ##   &lt;fct&gt;     &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 female     37.3    3369.
@@ -346,7 +350,7 @@ filter(diamonds, cut == "Ideal")
 ```
 
 ```
-## # A tibble: 21,551 x 10
+## # A tibble: 21,551 × 10
 ##    carat cut   color clarity depth table price     x     y     z
 ##    &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ##  1  0.23 Ideal E     SI2      61.5    55   326  3.95  3.98  2.43
@@ -359,7 +363,7 @@ filter(diamonds, cut == "Ideal")
 ##  8  0.23 Ideal G     VS1      61.9    54   404  3.93  3.95  2.44
 ##  9  0.32 Ideal I     SI1      60.9    55   404  4.45  4.48  2.72
 ## 10  0.3  Ideal I     SI2      61      59   405  4.3   4.33  2.63
-## # ... with 21,541 more rows
+## # ℹ 21,541 more rows
 ```
 
 ]
@@ -381,7 +385,7 @@ diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal")
 ```
 
 ```
-## # A tibble: 21,551 x 10
+## # A tibble: 21,551 × 10
 ##    carat cut   color clarity depth table price     x     y     z
 ##    &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ##  1  0.23 Ideal E     SI2      61.5    55   326  3.95  3.98  2.43
@@ -394,7 +398,7 @@ diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal")
 ##  8  0.23 Ideal G     VS1      61.9    54   404  3.93  3.95  2.44
 ##  9  0.32 Ideal I     SI1      60.9    55   404  4.45  4.48  2.72
 ## 10  0.3  Ideal I     SI2      61      59   405  4.3   4.33  2.63
-## # ... with 21,541 more rows
+## # ℹ 21,541 more rows
 ```
 
 ]
@@ -412,7 +416,7 @@ count(x = diamonds, color)
 ```
 
 ```
-## # A tibble: 7 x 2
+## # A tibble: 7 × 2
 ##   color     n
 ##   &lt;ord&gt; &lt;int&gt;
 ## 1 D      6775
@@ -439,7 +443,7 @@ count(x = diamonds, color)
 ```
 
 ```
-## # A tibble: 7 x 2
+## # A tibble: 7 × 2
 ##   color     n
 ##   &lt;ord&gt; &lt;int&gt;
 ## 1 D      6775
@@ -486,7 +490,7 @@ count(x = diamonds, `color`)
 ```
 
 ```
-## # A tibble: 7 x 2
+## # A tibble: 7 × 2
 ##   color     n
 ##   &lt;ord&gt; &lt;int&gt;
 ## 1 D      6775
@@ -512,7 +516,7 @@ count(x = diamonds, "color")
 ```
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 1 × 2
 ##   `"color"`     n
 ##   &lt;chr&gt;     &lt;int&gt;
 ## 1 color     53940
@@ -606,7 +610,7 @@ print(penguins_3)
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   island    body_mass
 ##   &lt;fct&gt;         &lt;dbl&gt;
 ## 1 Biscoe        3710.
@@ -629,7 +633,7 @@ penguins &lt;- group_by(penguins, island)
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   island    body_mass
 ##   &lt;fct&gt;         &lt;dbl&gt;
 ## 1 Biscoe        3710.
@@ -652,7 +656,7 @@ summarize(group_by(filter(penguins, species == "Adelie"), island),
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   island    body_mass
 ##   &lt;fct&gt;         &lt;dbl&gt;
 ## 1 Biscoe        3710.
@@ -675,7 +679,7 @@ penguins %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   island    body_mass
 ##   &lt;fct&gt;         &lt;dbl&gt;
 ## 1 Biscoe        3710.
@@ -894,6 +898,8 @@ class: inverse, middle
    * take some time to think at how you can approach the assignment into small steps
 - form a study group! 
 
+--
+
 **got stack?** 
 - take a break and come back with fresh eyes
 - write down the problem with pen and paper and/or explain it out loud to yourself, your roommate, your dog, cat, fish, etc.
@@ -904,7 +910,7 @@ class: inverse, middle
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

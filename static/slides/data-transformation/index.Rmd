@@ -110,6 +110,8 @@ xaringanExtra::use_panelset()
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
+# devtools::install_github("gadenbuie/tweetrmd")
+library(tweetrmd)
 library(tidyverse)
 library(palmerpenguins)
 library(nycflights13)
@@ -133,7 +135,7 @@ theme_set(theme_gray(base_size = 16))
   - practice practice practice
   
   
-- Homework 2 opens today
+- Homework 2 opens today (due date shift?)
   - covers data visualization, transformation, and exploration
   
 ---
@@ -147,7 +149,7 @@ class: inverse, middle
 ## `penguins`
 
 ```{r out.width = "80%"}
-include_graphics(path = "/img/lter_penguins.png", error = FALSE)
+include_graphics(path = "../../../static/img/lter_penguins.png")
 ```
 
 ---
@@ -238,9 +240,14 @@ Documentation: **https://dplyr.tidyverse.org/**
 
 
 1. The first argument is a data frame
-1. Subsequent arguments describe what to do with the data frame
-1. The result is a new data frame
+--
 
+1. Subsequent arguments describe what to do with the data frame
+
+--
+1. The result is a **new data frame**
+
+--
 
 `dplyr` contains useful functions for transforming and manipulating data frames. 
 
@@ -254,7 +261,7 @@ All of the dplyr verbs (all the verbs in the wider tidyverse) work similarly.
 ## Key functions in `dplyr`
 
 
-`function()`  | Action performed
+`function()`  | **Action performed**
 --------------|--------------------------------------------------------
 `filter()`    | Picks observations from the data frame based on their values (operates on rows)
 `arrange()`   | Changes the order of observations based on their values
@@ -272,9 +279,9 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 .pull-left[
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The holy grail: &quot;For consistency, aim to use British (rather than American) spelling.&quot; <a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> <a href="http://t.co/7qQSWIowcl">http://t.co/7qQSWIowcl</a>. Colour is right!</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/405707093770244097">November 27, 2013</a></blockquote>
-<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+```{r tweet}
+include_tweet("https://twitter.com/hadleywickham/status/405707093770244097", plain = TRUE)
+```
 ]
 
 --
@@ -784,6 +791,8 @@ class: inverse, middle
    * take some time to think at how you can approach the assignment into small steps
 - form a study group! 
 
+--
+
 **got stack?** 
 - take a break and come back with fresh eyes
 - write down the problem with pen and paper and/or explain it out loud to yourself, your roommate, your dog, cat, fish, etc.
@@ -794,4 +803,4 @@ class: inverse, middle
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
