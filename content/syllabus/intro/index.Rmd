@@ -1,7 +1,7 @@
 ---
 title: "Introduction to computing for the social sciences"
-date: 2022-09-27T12:25:00-05:00
-publishDate: 2019-08-01T12:25:00-05:00
+date: 2023-06-12T12:25:00-05:00
+publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
 aliases: ["/cm001.html", "/syllabus/introduction-to-computing-for-the-social-sciences/"]
@@ -19,7 +19,7 @@ abstract: ""
 summary: "Overview of programming and reproducible research, applications to social sciences, and course logistics."
 
 # Location of event.
-location: MACSS Bldg, Room 295
+#location: [via zoom](https://applications.zoom.us/lti/rich/home/meeting/detail)
 
 # Is this a selected talk? (true/false)
 selected: false
@@ -38,9 +38,7 @@ url_code: ""
 math: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 ## Overview
 
@@ -52,15 +50,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Before class
 
-* Read the "Welcome" page and chapter 1 "Introduction" in [R for Data Science](http://r4ds.had.co.nz/).
+* Read the "Welcome" page and chapter 1 "Introduction" in [R for Data Science](http://r4ds.had.co.nz/). (*Note that there is a new draft we'll be moving to soon: [Second Edition of R for Data Science](https://r4ds.hadley.nz/)*)
 
 ## Class materials
 
-* [Introduction to computing for the social sciences science](/notes/intro-to-course/)
+* [Introduction to computing for the social sciences](/notes/intro-to-course/)
 * [Good Enough Practices in Scientific Computing](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510). Additional resource and good summary of best computing practices
 
 ## What you need to do after class
 
 * Read the [Setup](/setup/) section and install the required software
-* Fill out [this survey](https://forms.gle/J8axkKpKZGxYyxYZA)
+* Fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfV_g4z7rpNWz_ONmH1oLrItXprHjo8-KBpnd19FbEJDCrEDA/viewform?usp=sf_link)
 * Explore this website
