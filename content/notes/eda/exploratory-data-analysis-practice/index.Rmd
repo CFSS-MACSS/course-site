@@ -21,15 +21,15 @@ library(tidyverse)
 {{% callout note %}}
 Run the code below in your console to download this exercise as a set of R scripts.
 ```r
-usethis::use_course("css-materials/exploratory-data-analysis")
+usethis::use_course("CFSS-MACSS/exploratory-data-analysis")
 ```
 {{% /callout %}}
 
 
-The Department of Education collects [annual statistics on colleges and universities in the United States](https://collegescorecard.ed.gov/). A subset of this data from 2018-19 is included in the [`rcis`](https://github.com/css-materials/rcis) library from GitHub. 
+The Department of Education collects [annual statistics on colleges and universities in the United States](https://collegescorecard.ed.gov/). A subset of this data from 2018-19 is included in the [`rcis`](https://github.com/CFSS-MACSS/rcis) library from GitHub. 
 
 {{% callout note %}}
-If you are working on your local R you need to install the package first by running the command `remotes::install_github("css-materials/rcis")` in the console. If you don't already have the `remotes` library installed, you will get an error. Go back and install this first using `install.packages("remotes")`, then run `remotes::install_github("css-materials/rcis")`.
+If you are working on your local R you need to install the package first by running the command `remotes::install_github("CFSS-MACSS/rcis")` in the console. If you don't already have the `remotes` library installed, you will get an error. Go back and install this first using `install.packages("remotes")`, then run `remotes::install_github("CFSS-MACSS/rcis")`.
 {{% /callout %}}
 
 
