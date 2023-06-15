@@ -41,9 +41,18 @@ class: center, middle, inverse, title-slide
   - practice practice practice
   
   
-- Homework 2 opens today (due date shift?)
+- Homework 2 opens today  
   - covers data visualization, transformation, and exploration
-  
+
+
+---
+# Editing your files: Script and RMD structure
+
+
+* [Consider how to structure your R scripts](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html)
+* [Rmarkdown (intermediate)](https://posit.co/blog/r-markdown-tips-tricks-2-cleaning-up-your-code/)
+* [Rmarkdown resources](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
 ---
 
 class: inverse, middle
@@ -94,6 +103,12 @@ penguins
 1. Next we need to **select** only the observations classified as species Adelie penguins
 1. Finally we need to calculate the average value, or **mean**, of the variable `body_mass_g`
 
+
+
+
+```r
+head(penguins, 5)
+```
 
 ```
 ## # A tibble: 5 × 8
@@ -270,15 +285,59 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 ---
 
-## What is the average bill length and body mass for each Adelie penguin by sex?
+# dplyr in action: trying out functions:
 
-<div class="countdown" id="timer_59458c0f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
+* filter(data, criteria) (other rows discarded)
+* arrange(.data, by, how) (sort your table by value(s))
+* select() (select the columns you wish to keep DANGER!)
+* rename(.data, newvarname = oldvarname) (rename variables)
+* mutate() (create variable based on prior variable(s))
+* group_by() (get ready to do math/mutations/etc based on some kind of aggregate factor)
+* summarize() (do that math!)
+
 
 ---
 
+# dplyr in action: trying out functions:
+
+```
+## # A tibble: 344 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Dream               32.1          15.5               188        3050
+##  2 Adelie  Dream               33.1          16.1               178        2900
+##  3 Adelie  Torgersen           33.5          19                 190        3600
+##  4 Adelie  Dream               34            17.1               185        3400
+##  5 Adelie  Torgersen           34.1          18.1               193        3475
+##  6 Adelie  Torgersen           34.4          18.4               184        3325
+##  7 Adelie  Biscoe              34.5          18.1               187        2900
+##  8 Adelie  Torgersen           34.6          21.1               198        4400
+##  9 Adelie  Torgersen           34.6          17.2               189        3200
+## 10 Adelie  Biscoe              35            17.9               190        3450
+## # ℹ 334 more rows
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+```
+## # A tibble: 3 × 3
+##   species   avg_bill avg_mass
+##   &lt;fct&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Adelie        38.8    3701.
+## 2 Chinstrap     48.8    3733.
+## 3 Gentoo        47.5    5076.
+```
+
+
+
+## What is the average bill length and body mass for each Adelie penguin by sex?
+
+<div class="countdown" id="timer_21771cdf" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+### What is the average bill length and body mass for each Adelie penguin by sex?
 .panelset[
 .panel[.panel-name[Filter, then group by]
 
@@ -882,6 +941,17 @@ class: inverse, middle
 ## Practice transforming data
 
 ---
+### Exercise: built-in datasets
+(group work)
+
+* Call `data()` in R
+* Look over list of data options
+* Choose a dataset
+* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #13)
+* Post on [ed discussion thread for today](https://edstem.org/us/courses/40496/discussion/3207082)
+
+---
+
 
 class: inverse, middle
 

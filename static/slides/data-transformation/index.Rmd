@@ -143,7 +143,9 @@ theme_set(theme_gray(base_size = 16))
 # Editing your files: Script and RMD structure
 
 
-[Consider how to structure your R scripts](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html)
+* [Consider how to structure your R scripts](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html)
+* [Rmarkdown (intermediate)](https://posit.co/blog/r-markdown-tips-tricks-2-cleaning-up-your-code/)
+* [Rmarkdown resources](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 ---
 
@@ -178,7 +180,9 @@ penguins
 1. Next we need to **select** only the observations classified as species Adelie penguins
 1. Finally we need to calculate the average value, or **mean**, of the variable `body_mass_g`
 
-```{r echo = FALSE}
+
+
+```{r echo = TRUE}
 head(penguins, 5)
 ```
 
@@ -323,14 +327,44 @@ include_graphics("https://media.giphy.com/media/8KnfG3knLExpu/giphy.gif")
 
 ---
 
-## What is the average bill length and body mass for each Adelie penguin by sex?
+# dplyr in action: trying out functions:
 
-```{r cache = FALSE}
-countdown(minutes = 3)
-```
+* filter(data, criteria) (other rows discarded)
+* arrange(.data, by, how) (sort your table by value(s))
+* select() (select the columns you wish to keep DANGER!)
+* rename(.data, newvarname = oldvarname) (rename variables)
+* mutate() (create variable based on prior variable(s))
+* group_by() (get ready to do math/mutations/etc based on some kind of aggregate factor)
+* summarize() (do that math!)
+
 
 ---
 
+# dplyr in action: trying out functions:
+```{r, echo = FALSE}
+penguins2<-filter(penguins, sex == "female")
+arrange(penguins, bill_length_mm) # notice: what did this do?
+favorite_penguins <- select(penguins, sex) #how is this different from filter?
+oops <-rename(penguins, KINDofPENGUIN = species) #what is wrong here -- what mistakes did I make?
+penguins$bill_in <- mutate(penguins, bill_depth_in = bill_depth_mm/25.4) 
+penguins_species <- group_by(.data = penguins, species)
+summarize(
+  .data = penguins_species,
+  avg_bill = mean(bill_length_mm, na.rm = TRUE),
+  avg_mass = mean(body_mass_g, na.rm = TRUE)
+)
+```
+
+
+
+## What is the average bill length and body mass for each Adelie penguin by sex?
+
+```{r cache = FALSE}
+countdown(minutes = 5)
+```
+
+---
+### What is the average bill length and body mass for each Adelie penguin by sex?
 .panelset[
 .panel[.panel-name[Filter, then group by]
 
@@ -782,6 +816,17 @@ class: inverse, middle
 ## Practice transforming data
 
 ---
+### Exercise: built-in datasets
+(group work)
+
+* Call `data()` in R
+* Look over list of data options
+* Choose a dataset
+* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #13)
+* Post on [ed discussion thread for today](https://edstem.org/us/courses/40496/discussion/3207082)
+
+---
+
 
 class: inverse, middle
 
