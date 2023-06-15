@@ -176,10 +176,10 @@ Make sure the file is located in the given path and you are typing the path corr
 
 
 1. Create a `testdata.csv` file on your desktop, and save it as plain `csv` [Try to have at least three columns, including integers, characters, and maybe a factor/categorical variable. Include at least one NA.]
-#testfile <- data.frame(num_teas = c(5,3,2,4,5,na,NA),
+<!--#testfile <- data.frame(num_teas = c(5,3,2,4,5,na,NA),
 #                       days = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"),
 #                       favorite = c("matcha", "black", "green", "chai", "black", "matcha", ""))
-# write_csv(testfile, "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv")
+# write_csv(testfile, "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv") -->
 
 1. Open R Workbench: upload the file to the server (skip this step if you are using R locally)
 
@@ -790,17 +790,18 @@ unite(
 ```
 ]
 
-<!--
+---
 
 # Let's get messy!
 
-```{r echo = FALSE, out.width = "50%"}
+```{r echo = FALSE, out.width = "40%"}
 include_graphics(path = "https://media.giphy.com/media/fCUCbWXe9JONVsJSUd/giphy.gif")
 ```
--->
+
+[https://macs30500.netlify.app/notes/data-wrangle/tidy-exercise/](https://macs30500.netlify.app/notes/data-wrangle/tidy-exercise/)
 
 ---
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
