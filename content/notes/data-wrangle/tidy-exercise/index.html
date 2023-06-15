@@ -1,0 +1,500 @@
+---
+title: "Practice tidying data"
+date: 2022-10-13
+
+type: book
+toc: true
+draft: false
+aliases: ["/datawrangle_tidy_exercise.html", "/notes/tidy-exercise/"]
+categories: ["datawrangle"]
+
+weight: 38
+---
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<div id="TOC">
+<ul>
+<li><a href="#race-data" id="toc-race-data"><span class="toc-section-number">0.1</span> Race data</a></li>
+<li><a href="#grades" id="toc-grades"><span class="toc-section-number">0.2</span> Grades</a></li>
+<li><a href="#activities" id="toc-activities"><span class="toc-section-number">0.3</span> Activities</a></li>
+<li><a href="#session-info" id="toc-session-info"><span class="toc-section-number">0.4</span> Session Info</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments"><span class="toc-section-number">0.5</span> Acknowledgments</a></li>
+</ul>
+</div>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>{{% callout note %}}
+Run the code below in your console to download this exercise as a set of R scripts.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_course</span>(<span class="st">&quot;CFSS-MACSS/data-wrangling-tidy-data&quot;</span>)</span></code></pre></div>
+<p>{{% /callout %}}</p>
+<p>For each exercise, tidy the data frame. Before you write any code examine the structure of the data frame and mentally (or with pen-and-paper) sketch out what you think the tidy data structure should be.</p>
+<div id="race-data" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> Race data</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(rcis)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>race</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 8
+##   Name   `50` `100` `150` `200` `250` `300` `350`
+##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Carla   1.2   1.8   2.2   2.3   3     2.5   1.8
+## 2 Mace    1.5   1.1   1.9   2     3.6   3     2.5
+## 3 Lea     1.7   1.6   2.3   2.7   2.6   2.2   2.6
+## 4 Karen   1.3   1.7   1.9   2.2   3.2   1.5   1.9</code></pre>
+<p>Important info:</p>
+<ul>
+<li><code>Name</code> - pretty obvious</li>
+<li><code>50</code>:<code>350</code> - column names define different lengths of time</li>
+<li>Cell values are scores associated with each name and length of time</li>
+</ul>
+<p>{{&lt; spoiler text=“Click for a hint” &gt;}}</p>
+<p><strong>Tidy data structure</strong></p>
+<pre><code>## # A tibble: 28 × 3
+##    Name   Time Score
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 Carla    50   1.2
+##  2 Carla   100   1.8
+##  3 Carla   150   2.2
+##  4 Carla   200   2.3
+##  5 Carla   250   3  
+##  6 Carla   300   2.5
+##  7 Carla   350   1.8
+##  8 Mace     50   1.5
+##  9 Mace    100   1.1
+## 10 Mace    150   1.9
+## # ℹ 18 more rows</code></pre>
+<p>{{&lt; /spoiler &gt;}}</p>
+<p>{{&lt; spoiler text=“Click for the solution” &gt;}}</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="at">data =</span> race,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="sc">-</span>Name,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;Time&quot;</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;Score&quot;</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>  <span class="co"># ensure the Time column is stored as a numeric column</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="at">names_transform =</span> parse_number</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## # A tibble: 28 × 3
+##    Name   Time Score
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 Carla    50   1.2
+##  2 Carla   100   1.8
+##  3 Carla   150   2.2
+##  4 Carla   200   2.3
+##  5 Carla   250   3  
+##  6 Carla   300   2.5
+##  7 Carla   350   1.8
+##  8 Mace     50   1.5
+##  9 Mace    100   1.1
+## 10 Mace    150   1.9
+## # ℹ 18 more rows</code></pre>
+<p>Except for the <code>Name</code> column, the remaining columns are actually one variable spread across multiple columns. The column names are a distinct variable, and the columns’ values are another variable. <code>pivot_longer()</code> is the appropriate function.</p>
+<p>{{% callout note %}}</p>
+<p>Because the column names are actually numeric values, we use <code>names_transform = parse_number</code> to coerce the new <code>Time</code> column into a numeric column. <code>names_transform</code> allows us to manually specify the column type for the <code>names_to</code> column. <code>parse_number()</code> is a function from the <code>readr</code> package for converting a character vector to a numeric vector, so <code>names_transform = parse_number</code> ensures the <code>Time</code> column is stored as a numeric column.</p>
+<p>{{% /callout %}}</p>
+<p>{{&lt; /spoiler &gt;}}</p>
+</div>
+<div id="grades" class="section level2" number="0.2">
+<h2><span class="header-section-number">0.2</span> Grades</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>grades</span></code></pre></div>
+<pre><code>## # A tibble: 12 × 6
+##       ID Test     Year  Fall Spring Winter
+##    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1     1 Math     2008    15     16     19
+##  2     1 Math     2009    12     13     27
+##  3     1 Writing  2008    22     22     24
+##  4     1 Writing  2009    10     14     20
+##  5     2 Math     2008    12     13     25
+##  6     2 Math     2009    16     14     21
+##  7     2 Writing  2008    13     11     29
+##  8     2 Writing  2009    23     20     26
+##  9     3 Math     2008    11     12     22
+## 10     3 Math     2009    13     11     27
+## 11     3 Writing  2008    17     12     23
+## 12     3 Writing  2009    14      9     31</code></pre>
+<p>This one is a bit tougher. Important info:</p>
+<ul>
+<li><strong>The unit of analysis is ID-Year-Quarter.</strong> That is, in the tidy formulation each observation represents one individual during one quarter in a given year.</li>
+<li><strong>Each test is unique.</strong> As in they should be treated as two separate variables.</li>
+</ul>
+<p>{{&lt; spoiler text=“Click for a hint” &gt;}}</p>
+<p><strong>Tidy data structure</strong></p>
+<pre><code>## # A tibble: 18 × 5
+##       ID  Year Quarter  Math Writing
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1     1  2008 Fall       15      22
+##  2     1  2008 Spring     16      22
+##  3     1  2008 Winter     19      24
+##  4     1  2009 Fall       12      10
+##  5     1  2009 Spring     13      14
+##  6     1  2009 Winter     27      20
+##  7     2  2008 Fall       12      13
+##  8     2  2008 Spring     13      11
+##  9     2  2008 Winter     25      29
+## 10     2  2009 Fall       16      23
+## 11     2  2009 Spring     14      20
+## 12     2  2009 Winter     21      26
+## 13     3  2008 Fall       11      17
+## 14     3  2008 Spring     12      12
+## 15     3  2008 Winter     22      23
+## 16     3  2009 Fall       13      14
+## 17     3  2009 Spring     11       9
+## 18     3  2009 Winter     27      31</code></pre>
+<p>{{&lt; /spoiler &gt;}}</p>
+<p>{{&lt; spoiler text=“Click for the solution” &gt;}}</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="at">data =</span> grades,</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(Fall<span class="sc">:</span>Winter),</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;Quarter&quot;</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;Score&quot;</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    <span class="at">names_from =</span> Test,</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>    <span class="at">values_from =</span> Score</span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 18 × 5
+##       ID  Year Quarter  Math Writing
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1     1  2008 Fall       15      22
+##  2     1  2008 Spring     16      22
+##  3     1  2008 Winter     19      24
+##  4     1  2009 Fall       12      10
+##  5     1  2009 Spring     13      14
+##  6     1  2009 Winter     27      20
+##  7     2  2008 Fall       12      13
+##  8     2  2008 Spring     13      11
+##  9     2  2008 Winter     25      29
+## 10     2  2009 Fall       16      23
+## 11     2  2009 Spring     14      20
+## 12     2  2009 Winter     21      26
+## 13     3  2008 Fall       11      17
+## 14     3  2008 Spring     12      12
+## 15     3  2008 Winter     22      23
+## 16     3  2009 Fall       13      14
+## 17     3  2009 Spring     11       9
+## 18     3  2009 Winter     27      31</code></pre>
+<p>In this example, the basic unit of observation is the test. Each individual takes two separate tests (<code>Math</code> or <code>Writing</code>) at multiple points in time: during each quarter (<code>Fall</code>, <code>Winter</code>, <code>Spring</code>) as well as in multiple years (<code>2008</code> and <code>2009</code>). So our final data frame should contain five columns: <code>ID</code> (identifying the student), <code>Year</code> (year the test was taken), <code>Quarter</code> (quarter in which the test was taken), <code>Math</code> (score on the math test), and <code>Writing</code> (score on the writing test).</p>
+<p>Where can we begin? Initially we can make the data frame longer by making <code>Fall</code>, <code>Winter</code>, and <code>Spring</code> into a single column (we can use the inclusive select function <code>:</code> to gather these three columns):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="at">data =</span> grades,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(Fall<span class="sc">:</span>Winter),</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;Quarter&quot;</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;Score&quot;</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## # A tibble: 36 × 5
+##       ID Test     Year Quarter Score
+##    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+##  1     1 Math     2008 Fall       15
+##  2     1 Math     2008 Spring     16
+##  3     1 Math     2008 Winter     19
+##  4     1 Math     2009 Fall       12
+##  5     1 Math     2009 Spring     13
+##  6     1 Math     2009 Winter     27
+##  7     1 Writing  2008 Fall       22
+##  8     1 Writing  2008 Spring     22
+##  9     1 Writing  2008 Winter     24
+## 10     1 Writing  2009 Fall       10
+## # ℹ 26 more rows</code></pre>
+<p>Good, but now we have observations spread across multiple rows. Remember that we want each test to be a separate variable. To do that, we can <code>pivot_wider()</code> those values across two columns.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="at">data =</span> grades,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(Fall<span class="sc">:</span>Winter),</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;Quarter&quot;</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;Score&quot;</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>    <span class="at">names_from =</span> Test,</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>    <span class="at">values_from =</span> Score</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 18 × 5
+##       ID  Year Quarter  Math Writing
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1     1  2008 Fall       15      22
+##  2     1  2008 Spring     16      22
+##  3     1  2008 Winter     19      24
+##  4     1  2009 Fall       12      10
+##  5     1  2009 Spring     13      14
+##  6     1  2009 Winter     27      20
+##  7     2  2008 Fall       12      13
+##  8     2  2008 Spring     13      11
+##  9     2  2008 Winter     25      29
+## 10     2  2009 Fall       16      23
+## 11     2  2009 Spring     14      20
+## 12     2  2009 Winter     21      26
+## 13     3  2008 Fall       11      17
+## 14     3  2008 Spring     12      12
+## 15     3  2008 Winter     22      23
+## 16     3  2009 Fall       13      14
+## 17     3  2009 Spring     11       9
+## 18     3  2009 Winter     27      31</code></pre>
+<p>{{&lt; /spoiler &gt;}}</p>
+</div>
+<div id="activities" class="section level2" number="0.3">
+<h2><span class="header-section-number">0.3</span> Activities</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>activities</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 8
+##    id    trt   work.T1 play.T1 talk.T1 work.T2 play.T2 talk.T2
+##    &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 x1    cnt    0.652    0.865  0.536   0.275    0.354  0.0319
+##  2 x2    cnt    0.568    0.615  0.0931  0.229    0.936  0.114 
+##  3 x3    tr     0.114    0.775  0.170   0.0144   0.246  0.469 
+##  4 x4    tr     0.596    0.356  0.900   0.729    0.473  0.397 
+##  5 x5    tr     0.358    0.406  0.423   0.250    0.192  0.834 
+##  6 x6    cnt    0.429    0.707  0.748   0.161    0.583  0.761 
+##  7 x7    tr     0.0519   0.838  0.823   0.0170   0.459  0.573 
+##  8 x8    tr     0.264    0.240  0.955   0.486    0.467  0.448 
+##  9 x9    cnt    0.399    0.771  0.685   0.103    0.400  0.0838
+## 10 x10   cnt    0.836    0.356  0.501   0.802    0.505  0.219</code></pre>
+<p>This one is also pretty difficult, but if you think it through conceptually it is doable. The unit of analysis is a single individual (identified by <code>id</code>) observed at two different times (<code>T1</code> and <code>T2</code>) performing different actions (<code>work</code>, <code>play</code>, <code>talk</code>, and <code>total</code> - note that <code>total</code> is not merely the sum of the first three values). Individuals in this experiment were assigned to either treatment or control (<code>trt</code>) and this information should be preserved in the final data frame.</p>
+<p>{{&lt; spoiler text=“Click for a hint” &gt;}}</p>
+<p><strong>Tidy data structure</strong></p>
+<pre><code>## # A tibble: 20 × 6
+##    id    trt   time    work  play   talk
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 x1    cnt   T1    0.652  0.865 0.536 
+##  2 x1    cnt   T2    0.275  0.354 0.0319
+##  3 x2    cnt   T1    0.568  0.615 0.0931
+##  4 x2    cnt   T2    0.229  0.936 0.114 
+##  5 x3    tr    T1    0.114  0.775 0.170 
+##  6 x3    tr    T2    0.0144 0.246 0.469 
+##  7 x4    tr    T1    0.596  0.356 0.900 
+##  8 x4    tr    T2    0.729  0.473 0.397 
+##  9 x5    tr    T1    0.358  0.406 0.423 
+## 10 x5    tr    T2    0.250  0.192 0.834 
+## 11 x6    cnt   T1    0.429  0.707 0.748 
+## 12 x6    cnt   T2    0.161  0.583 0.761 
+## 13 x7    tr    T1    0.0519 0.838 0.823 
+## 14 x7    tr    T2    0.0170 0.459 0.573 
+## 15 x8    tr    T1    0.264  0.240 0.955 
+## 16 x8    tr    T2    0.486  0.467 0.448 
+## 17 x9    cnt   T1    0.399  0.771 0.685 
+## 18 x9    cnt   T2    0.103  0.400 0.0838
+## 19 x10   cnt   T1    0.836  0.356 0.501 
+## 20 x10   cnt   T2    0.802  0.505 0.219</code></pre>
+<p>{{&lt; /spoiler &gt;}}</p>
+<p>{{&lt; spoiler text=“Click for the solution” &gt;}}</p>
+<p>This is a more complex operation. The basic problem is that we have variables stored in multiple columns (location, with possible values of <code>work</code>, <code>play</code>, and <code>talk</code>). We need to combine these columns into a single column for each variable. But what happens if we just make the data frame longer in this way?</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  <span class="at">data =</span> activities,</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(work.T1<span class="sc">:</span>talk.T2),</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## # A tibble: 60 × 4
+##    id    trt   variable  value
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;
+##  1 x1    cnt   work.T1  0.652 
+##  2 x1    cnt   play.T1  0.865 
+##  3 x1    cnt   talk.T1  0.536 
+##  4 x1    cnt   work.T2  0.275 
+##  5 x1    cnt   play.T2  0.354 
+##  6 x1    cnt   talk.T2  0.0319
+##  7 x2    cnt   work.T1  0.568 
+##  8 x2    cnt   play.T1  0.615 
+##  9 x2    cnt   talk.T1  0.0931
+## 10 x2    cnt   work.T2  0.229 
+## # ℹ 50 more rows</code></pre>
+<p>We’ve created a new problem! Actually, two problems:</p>
+<ol style="list-style-type: decimal">
+<li>We have a single observation stored across multiple rows: we want a single row for each <code>id</code> x <code>trt</code> pairing</li>
+<li>We have two variables stored in a single column: <code>variable</code> contains the information on both location (<code>work</code>, <code>play</code>, and <code>talk</code>) as well as when the measurement was taken (<code>T1</code> or <code>T2</code>)</li>
+</ol>
+<p>The best approach is to fix the second problem by separating the columns, then spreading the different types of measurements back into their own columns.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>  <span class="at">data =</span> activities,</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(work.T1<span class="sc">:</span>talk.T2),</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>  <span class="fu">separate</span>(variable, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;time&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 60 × 5
+##    id    trt   location time   value
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;
+##  1 x1    cnt   work     T1    0.652 
+##  2 x1    cnt   play     T1    0.865 
+##  3 x1    cnt   talk     T1    0.536 
+##  4 x1    cnt   work     T2    0.275 
+##  5 x1    cnt   play     T2    0.354 
+##  6 x1    cnt   talk     T2    0.0319
+##  7 x2    cnt   work     T1    0.568 
+##  8 x2    cnt   play     T1    0.615 
+##  9 x2    cnt   talk     T1    0.0931
+## 10 x2    cnt   work     T2    0.229 
+## # ℹ 50 more rows</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>  <span class="at">data =</span> activities,</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>  <span class="at">cols =</span> <span class="fu">c</span>(work.T1<span class="sc">:</span>talk.T2),</span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>  <span class="fu">separate</span>(variable, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;time&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> location, <span class="at">values_from =</span> value)</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 6
+##    id    trt   time    work  play   talk
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 x1    cnt   T1    0.652  0.865 0.536 
+##  2 x1    cnt   T2    0.275  0.354 0.0319
+##  3 x2    cnt   T1    0.568  0.615 0.0931
+##  4 x2    cnt   T2    0.229  0.936 0.114 
+##  5 x3    tr    T1    0.114  0.775 0.170 
+##  6 x3    tr    T2    0.0144 0.246 0.469 
+##  7 x4    tr    T1    0.596  0.356 0.900 
+##  8 x4    tr    T2    0.729  0.473 0.397 
+##  9 x5    tr    T1    0.358  0.406 0.423 
+## 10 x5    tr    T2    0.250  0.192 0.834 
+## 11 x6    cnt   T1    0.429  0.707 0.748 
+## 12 x6    cnt   T2    0.161  0.583 0.761 
+## 13 x7    tr    T1    0.0519 0.838 0.823 
+## 14 x7    tr    T2    0.0170 0.459 0.573 
+## 15 x8    tr    T1    0.264  0.240 0.955 
+## 16 x8    tr    T2    0.486  0.467 0.448 
+## 17 x9    cnt   T1    0.399  0.771 0.685 
+## 18 x9    cnt   T2    0.103  0.400 0.0838
+## 19 x10   cnt   T1    0.836  0.356 0.501 
+## 20 x10   cnt   T2    0.802  0.505 0.219</code></pre>
+<p>{{&lt; /spoiler &gt;}}</p>
+</div>
+<div id="session-info" class="section level2" number="0.4">
+<h2><span class="header-section-number">0.4</span> Session Info</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
+<pre><code>## ─ Session info ───────────────────────────────────────────────────────────────
+##  setting  value
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
+##  system   aarch64, darwin20
+##  ui       X11
+##  language (EN)
+##  collate  en_US.UTF-8
+##  ctype    en_US.UTF-8
+##  tz       America/Chicago
+##  date     2023-06-15
+##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
+## 
+## ─ Packages ───────────────────────────────────────────────────────────────────
+##  package     * version date (UTC) lib source
+##  blogdown      1.17    2023-05-16 [1] CRAN (R 4.3.0)
+##  bookdown      0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib         0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  codetools     0.2-19  2023-02-01 [1] CRAN (R 4.3.0)
+##  colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
+##  evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
+##  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
+##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
+##  ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
+##  gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  here          1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite      1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr         1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
+##  lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
+##  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
+##  pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
+##  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)
+##  purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  rcis        * 0.2.7   2023-06-14 [1] Github (CFSS-MACSS/rcis@a4b198f)
+##  readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)
+##  rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown     2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass          0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
+##  stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)
+##  tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
+##  tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)
+##  tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
+##  tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
+##  timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
+##  tzdb          0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
+##  utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
+##  vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
+##  xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
+## 
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
+## 
+## ──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+<div id="acknowledgments" class="section level2" number="0.5">
+<h2><span class="header-section-number">0.5</span> Acknowledgments</h2>
+<ul>
+<li>This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.</li>
+</ul>
+</div>
