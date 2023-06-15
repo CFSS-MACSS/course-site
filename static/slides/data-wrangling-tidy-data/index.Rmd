@@ -157,12 +157,12 @@ The `file` argument must specified, the other arguments can be left as default:
 library(readr)
 
 # load data into my local R Studio
-test <- read_csv(file = "/Users/Sabrina Nardin/Desktop/testdata.csv")
+test <- read_csv(file = "/Users/jclip/Desktop/testdata.csv")
 
 # load data into my R Workbench 
-test <- read_csv(file = "/home/nardin/lecture/testdata.csv")
+test <- read_csv(file = "/home/jclip/lecture/testdata.csv")
 
-# trick
+# trick if you're not sure where it is / want to select it
 test <- read_csv(file = file.choose())
 ```
 
@@ -175,7 +175,11 @@ Make sure the file is located in the given path and you are typing the path corr
 ## Practice
 
 
-1. Create a `testdata.csv` file on your desktop, and save it as plain `csv`
+1. Create a `testdata.csv` file on your desktop, and save it as plain `csv` [Try to have at least three columns, including integers, characters, and maybe a factor/categorical variable. Include at least one NA.]
+#testfile <- data.frame(num_teas = c(5,3,2,4,5,na,NA),
+#                       days = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"),
+#                       favorite = c("matcha", "black", "green", "chai", "black", "matcha", ""))
+# write_csv(testfile, "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv")
 
 1. Open R Workbench: upload the file to the server (skip this step if you are using R locally)
 
@@ -195,19 +199,24 @@ read_csv(file, col_names = TRUE, col_types = NULL, na = c("", "NA"))
 
 ```{r}
 # set col_types option 1
-test <- read_csv("/Users/Sabrina Nardin/Desktop/testdata.csv",
+test <- read_csv("test.csv", #note: if I don't specify the location, it assumes my working directory
                  col_types = cols(
-                   id = col_integer(),
-                   name = col_character(),
-                   age = col_integer())
+                   num_teas = col_integer(),
+                   days = readr::col_factor( #ASK ME ABOUT THIS!!
+                     c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+                     ),
+                   favorite = col_character()
+                   )
                  )
+test
 ```
 
 ```{r}
 # set col_types option 2
-test <- read_csv("/Users/Sabrina Nardin/Desktop/testdata.csv",
-                 col_types = ("ici")
+test <- read_csv("test.csv",
+                 col_types = ("ifc") #i(integer)f(factor)c(character)
                  )
+test
 ```
 
 ---
@@ -223,7 +232,7 @@ Load the data and leave the `na` argument as default. Check your loaded data and
 Load the data again, but this time modify the `na` argument as follows:
 
 ```
-test <- read_csv("/Users/Sabrina Nardin/Desktop/testdata.csv",
+test <- read_csv("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv",
                 na = c("na", "NA")
                  )
 ```
@@ -231,8 +240,8 @@ test <- read_csv("/Users/Sabrina Nardin/Desktop/testdata.csv",
 Check your loaded data and notice what happened to the missing values. Then modify the `na` argument again using the code below, and check:
 
 ```
-test <- read_csv("/Users/Sabrina Nardin/Desktop/testdata.csv",
-                 na = c("na", "NA", "N/A")
+test <- read_csv("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv",
+                 na = c("na", "NA", "N/A", "")
                  )
 ```
 
@@ -462,10 +471,10 @@ Documentation: https://readr.tidyverse.org/reference/write_delim.html
 
 ```
 # import
-test <- read_csv(file = "/Users/Sabrina Nardin/Desktop/testdata.csv")
+test <- read_csv(file = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv)
 
 # export
-write_csv(test, file = "/Users/Sabrina Nardin/Desktop/testdata_cleaned.csv")
+write_csv(test, file = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/testdata_cleaned.csv")
 ```
 
 
