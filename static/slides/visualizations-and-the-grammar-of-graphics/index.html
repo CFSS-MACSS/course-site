@@ -58,7 +58,7 @@ class: center, middle
 
 If we estimate linear regression models for each dataset, we obtain virtually identical coefficients, again suggesting the relationships are identical
 
-&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -107,27 +107,25 @@ class: inverse, middle
 
 # Main components of the Grammar of Graphics
 
-&gt; Go to "The Grammar of Graphics" notes in our website
-
----
-
-class: inverse, middle
-
-# Practice: Gapminder
-
-&gt; Go to "Practice generating graphics with ggplot2" notes in our website
+&gt; Go to "The Grammar of Graphics" notes in our website to follow along
 
 
 ---
 
-<<<<<<< HEAD
-# Basic graph: gapminder &amp; preloaded data
+# Grammar of Graphics: the layer cake approach 
+.footnote[*Thanks to Jennifer Lin for this metaphor*]
+* graph layer +
+* data layer + 
+* label layer + 
+* theme layer + 
+* other layer + 
 
+
+
+---
+
+# Data: Gapminder and other data
 Gapminder data cover multiple countries over multiple years and include information on life expectancy and population. This is one of multiple 'sample' datasets available for R (others including iris and mtcars). It's neat because to use it, you can just call `install.packages("gapminder")` and then `data(gapminder)`. 
-
---
-&gt; Question: what might be a disadvantage of only calling the code as we do above? (hint: look at your environment)
-
 
 ---
 
@@ -155,7 +153,7 @@ head(mtcars)
 
 # Where we're going: graph somewhat prettiness
 
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
   
@@ -169,7 +167,7 @@ head(mtcars)
 ggplot(mtcars, aes(x = mpg, y = wt))
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 # graph layer
@@ -181,7 +179,8 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_point()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
 ---
 # graph layer
   Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 2: text (note, there are multiple ways we could choose to set this up).
@@ -192,7 +191,7 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_text(label = rownames(mtcars), check_overlap = TRUE) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -209,7 +208,7 @@ ggplot(mtcars)+
                       size = hp)) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -230,7 +229,7 @@ ggplot(mtcars)+
        caption = "Source: mtcars")
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
   
@@ -251,7 +250,7 @@ ggplot(mtcars)+
   theme_bw()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
   
@@ -273,7 +272,7 @@ ggplot(mtcars)+
   scale_color_manual(values = c("black", "gray", "blue") ) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
   
@@ -301,7 +300,7 @@ ggplot(mtcars)+
 
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="90%" style="display: block; margin: auto;" /&gt;
 ]
 ---
   
@@ -343,8 +342,6 @@ Now, use yesterday's skills to explore the dataset. What might make a good `x' o
 
 ---
 
-=======
->>>>>>> parent of 508d6198 (Update ggplot examples)
 # Exercise: Gapminder
 
 &lt;img src="index_files/figure-html/gapminder-over-time-1.gif" width="60%" style="display: block; margin: auto;" /&gt;

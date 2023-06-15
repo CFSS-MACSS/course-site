@@ -2,7 +2,7 @@
 title: "Visualizations and the Grammar of Graphics"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
-  xaringan::inf_mr():
+  xaringan::moon_reader:
     css: xaringan-themer.css
     nature:
       highlightStyle: magula
@@ -134,7 +134,7 @@ class: center, middle
 
 Consider the following 13 datasets:
 
-```{r datasaurus-sum-stats, echo = FALSE, message = FALSE}
+```{r datasaurus-sum-stats, echo = FALSE, message = FALSE, out.width="70%"}
 datasaurus_dozen %>%
   group_by(dataset) %>%
   summarize(n = n(),
@@ -156,7 +156,7 @@ class: center, middle
 
 If we estimate linear regression models for each dataset, we obtain virtually identical coefficients, again suggesting the relationships are identical
 
-```{r datasaurus-lm, echo = FALSE, results = "asis", out.width = "90%"}
+```{r datasaurus-lm, echo = FALSE, results = "asis", out.width = "80%"}
 # estimate linear model
 datasaurus_model <- datasaurus_dozen %>%
   group_by(dataset) %>%
@@ -243,23 +243,25 @@ class: inverse, middle
 > Go to "The Grammar of Graphics" notes in our website to follow along
 
 
+---
+
+# Grammar of Graphics: the layer cake approach 
+.footnote[*Thanks to Jennifer Lin for this metaphor*]
+* graph layer +
+* data layer + 
+* label layer + 
+* theme layer + 
+* other layer + 
+
+
 
 ---
 
-class: inverse, middle
-
-<<<<<<< HEAD
+# Data: Gapminder and other data
 Gapminder data cover multiple countries over multiple years and include information on life expectancy and population. This is one of multiple 'sample' datasets available for R (others including iris and mtcars). It's neat because to use it, you can just call `install.packages("gapminder")` and then `data(gapminder)`. 
-=======
-# Practice: Gapminder
->>>>>>> parent of 508d6198 (Update ggplot examples)
-
-> Go to "Practice generating graphics with ggplot2" notes in our website
-
 
 ---
 
-<<<<<<< HEAD
 # Basic graph: preloaded data
 
 Let's start with mtcars (you will see MANY EXAMPLES using this on stackoverflow). In a fresh Rmd file, create a code chunk that calls `data(mtcars)`
@@ -473,8 +475,6 @@ Now, use yesterday's skills to explore the dataset. What might make a good `x' o
 
 ---
 
-=======
->>>>>>> parent of 508d6198 (Update ggplot examples)
 # Exercise: Gapminder
 
 ```{r gapminder-over-time, echo = FALSE, out.width = "60%"}
@@ -497,6 +497,7 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
   theme(
     legend.position = "bottom"
   ) +
+  theme_classic() +
   # animation components
   transition_time(year) +
   ease_aes('linear') +
