@@ -135,9 +135,16 @@ theme_set(theme_gray(base_size = 16))
   - practice practice practice
   
   
-- Homework 2 opens today (due date shift?)
+- Homework 2 opens today  
   - covers data visualization, transformation, and exploration
-  
+
+
+---
+# Editing your files: Script and RMD structure
+
+
+[Consider how to structure your R scripts](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html)
+
 ---
 
 class: inverse, middle

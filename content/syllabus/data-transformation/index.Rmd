@@ -1,6 +1,6 @@
 ---
 title: "Data transformation"
-date: 2022-10-06T12:25:00-05:00
+date: 2023-06-15T12:25:00-05:00
 publishDate: 2019-04-08T12:25:00-05:00
 draft: false
 
@@ -38,9 +38,7 @@ url_code: ""
 math: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 ## Overview
 
@@ -74,7 +72,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## What you need to do after class
 
-* Submit Homework 1
 * Start Homework 2
 * Review this week's readings and notes
 
