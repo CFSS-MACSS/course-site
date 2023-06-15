@@ -107,16 +107,16 @@ head(penguins)
 ```
 
 ```
-## # A tibble: 6 x 8
-##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
-## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
-## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
-## 4 Adelie  Torgersen           NA            NA            NA      NA &lt;NA&gt;   2007
-## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
-## 6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
-## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+## # A tibble: 6 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## 6 Adelie  Torgersen           39.3          20.6               190        3650
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 We want build a plot of two continuous variables: penguins body mass (in grams) and penguins flipper length (in millimeters)
@@ -414,22 +414,22 @@ glimpse(scorecard)
 ```
 
 ```
-## Rows: 1,732
+## Rows: 1,721
 ## Columns: 14
-## $ unitid    &lt;dbl&gt; 100654, 100663, 100706, 100724, 100751, 100830, 100858, 1009~
-## $ name      &lt;chr&gt; "Alabama A &amp; M University", "University of Alabama at Birmin~
-## $ state     &lt;chr&gt; "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", ~
-## $ type      &lt;fct&gt; "Public", "Public", "Public", "Public", "Public", "Public", ~
-## $ admrate   &lt;dbl&gt; 0.9175, 0.7366, 0.8257, 0.9690, 0.8268, 0.9044, 0.8067, 0.53~
-## $ satavg    &lt;dbl&gt; 939, 1234, 1319, 946, 1261, 1082, 1300, 1230, 1066, NA, 1076~
-## $ cost      &lt;dbl&gt; 23053, 24495, 23917, 21866, 29872, 19849, 31590, 32095, 3431~
-## $ netcost   &lt;dbl&gt; 14990, 16953, 15860, 13650, 22597, 13987, 24104, 22107, 2071~
-## $ avgfacsal &lt;dbl&gt; 69381, 99441, 87192, 64989, 92619, 71343, 96642, 56646, 5400~
-## $ pctpell   &lt;dbl&gt; 0.7019, 0.3512, 0.2536, 0.7627, 0.1772, 0.4644, 0.1455, 0.23~
-## $ comprate  &lt;dbl&gt; 0.2974, 0.6340, 0.5768, 0.3276, 0.7110, 0.3401, 0.7911, 0.69~
-## $ firstgen  &lt;dbl&gt; 0.3658281, 0.3412237, 0.3101322, 0.3434343, 0.2257127, 0.381~
-## $ debt      &lt;dbl&gt; 15250, 15085, 14000, 17500, 17671, 12000, 17500, 16000, 1425~
-## $ locale    &lt;fct&gt; City, City, City, City, City, City, City, City, City, Suburb~
+## $ unitid    &lt;dbl&gt; 100654, 100663, 100706, 100724, 100751, 100830, 100858, 1009…
+## $ name      &lt;chr&gt; "Alabama A &amp; M University", "University of Alabama at Birmin…
+## $ state     &lt;chr&gt; "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", …
+## $ type      &lt;fct&gt; "Public", "Public", "Public", "Public", "Public", "Public", …
+## $ admrate   &lt;dbl&gt; 0.8965, 0.8060, 0.7711, 0.9888, 0.8039, 0.9555, 0.8507, 0.60…
+## $ satavg    &lt;dbl&gt; 959, 1245, 1300, 938, 1262, 1061, 1302, 1202, 1068, NA, 1101…
+## $ cost      &lt;dbl&gt; 23445, 25542, 24861, 21892, 30016, 20225, 32196, 32514, 3483…
+## $ netcost   &lt;dbl&gt; 15529, 16530, 17208, 19534, 20917, 13678, 24018, 19808, 2050…
+## $ avgfacsal &lt;dbl&gt; 68391, 102420, 87273, 64746, 93141, 69561, 96498, 62649, 533…
+## $ pctpell   &lt;dbl&gt; 0.7095, 0.3397, 0.2403, 0.7368, 0.1718, 0.4654, 0.1343, 0.22…
+## $ comprate  &lt;dbl&gt; 0.2866, 0.6117, 0.5714, 0.3177, 0.7214, 0.3040, 0.7870, 0.70…
+## $ firstgen  &lt;dbl&gt; 0.3658281, 0.3412237, 0.3101322, 0.3434343, 0.2257127, 0.381…
+## $ debt      &lt;dbl&gt; 15250, 15085, 14000, 17500, 17671, 12000, 17500, 16000, 1425…
+## $ locale    &lt;fct&gt; City, City, City, City, City, City, City, City, City, Suburb…
 ```
 
 ---
@@ -712,12 +712,12 @@ scorecard %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   type                    n
 ##   &lt;fct&gt;               &lt;int&gt;
-## 1 Public                536
-## 2 Private, nonprofit   1110
-## 3 Private, for-profit    86
+## 1 Public                533
+## 2 Private, nonprofit   1103
+## 3 Private, for-profit    85
 ```
 
 Unless we explicitly tell `geom_bar()` not to do so with `geom_bar(stats = "identity")`
