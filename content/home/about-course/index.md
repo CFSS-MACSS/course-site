@@ -25,7 +25,7 @@ design:
 * **Meeting day/time**: M/T/W/Th 10am-12pm central 
 * **Meeting location**: [Class sessions on zoom](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
 * **Office hours**:
-    * Jean Clipperton: M/T/W/Th 1pm-2pm central, sign up [via zoom here--click 'appointments'](https://canvas.uchicago.edu/courses/50338/external_tools/2028)
+    * Jean Clipperton: M/T/W/Th 1pm-2pm central, [drop-in on zoom (no appointment needed!)](https://uchicago.zoom.us/j/7738348343?pwd=bjdOa0ZSczBiVC9GTEpuNTY1SGE4QT09)
     
 * **Prerequisites**: None
 
