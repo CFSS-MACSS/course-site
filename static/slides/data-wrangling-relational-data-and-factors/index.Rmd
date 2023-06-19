@@ -132,7 +132,6 @@ class: inverse, middle
 * Relational data
 * Practice from webpage
 * Factors
-* Practice from webpage
 
 
 ---
