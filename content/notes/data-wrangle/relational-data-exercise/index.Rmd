@@ -5,6 +5,7 @@ date: 2019-03-01
 type: book
 toc: true
 draft: false
+output: md_document
 aliases: ["/datawrangle_relational_data_exercise.html", "/notes/relational-data-exercise/"]
 categories: ["datawrangle"]
 
@@ -26,7 +27,7 @@ theme_set(theme_minimal())
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
-usethis::use_course("css-materials/data-wrangling-relational-data-and-factors")
+usethis::use_course("CFSS-MACSS/data-wrangling-relational-data-and-factors")
 ```
 
 {{% /callout %}}
