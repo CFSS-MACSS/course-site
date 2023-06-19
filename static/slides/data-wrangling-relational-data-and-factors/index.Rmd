@@ -126,6 +126,23 @@ class: inverse, middle
 # Relational data structures
 
 ---
+# Agenda
+
+* Recap
+* Relational data
+* Practice from webpage
+* Factors
+* Practice from webpage
+
+
+---
+## Recap
+
+* Loading data
+* Plotting
+* PIPES!
+
+---
 
 ## Introduction to relational data
 
@@ -538,4 +555,4 @@ class: inverse, middle
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
