@@ -1,0 +1,433 @@
+---
+title: "What is exploratory data analysis?"
+date: 2022-10-11
+type: book
+toc: true
+draft: false
+aliases: ["/eda_defined.html", "/notes/exploratory-data-analysis/"]
+categories: ["eda"]
+
+weight: 41
+---
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<div id="TOC">
+<ul>
+<li><a href="#characteristics-of-exploratory-graphs" id="toc-characteristics-of-exploratory-graphs"><span class="toc-section-number">1</span> Characteristics of exploratory graphs</a></li>
+<li><a href="#scorecard-data" id="toc-scorecard-data"><span class="toc-section-number">2</span> Scorecard data</a>
+<ul>
+<li><a href="#import-the-data" id="toc-import-the-data"><span class="toc-section-number">2.1</span> Import the data</a></li>
+<li><a href="#assessing-variation" id="toc-assessing-variation"><span class="toc-section-number">2.2</span> Assessing variation</a>
+<ul>
+<li><a href="#histogram" id="toc-histogram"><span class="toc-section-number">2.2.1</span> Histogram</a></li>
+<li><a href="#bar-chart" id="toc-bar-chart"><span class="toc-section-number">2.2.2</span> Bar chart</a></li>
+</ul></li>
+<li><a href="#assessing-covariation" id="toc-assessing-covariation"><span class="toc-section-number">2.3</span> Assessing covariation</a>
+<ul>
+<li><a href="#two-dimensional-graphs-box-plot" id="toc-two-dimensional-graphs-box-plot"><span class="toc-section-number">2.3.1</span> Two-dimensional graphs: Box plot</a></li>
+<li><a href="#two-dimensional-graphs-scatterplot" id="toc-two-dimensional-graphs-scatterplot"><span class="toc-section-number">2.3.2</span> Two-dimensional graphs: Scatterplot</a></li>
+<li><a href="#multiple-window-plots-faceted-histogram" id="toc-multiple-window-plots-faceted-histogram"><span class="toc-section-number">2.3.3</span> Multiple window plots: faceted histogram</a></li>
+<li><a href="#multiple-window-plots-faceted-scatterplot" id="toc-multiple-window-plots-faceted-scatterplot"><span class="toc-section-number">2.3.4</span> Multiple window plots: faceted scatterplot</a></li>
+</ul></li>
+<li><a href="#utilizing-additional-channels" id="toc-utilizing-additional-channels"><span class="toc-section-number">2.4</span> Utilizing additional channels</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments"><span class="toc-section-number">2.5</span> Acknowledgments</a></li>
+<li><a href="#session-info" id="toc-session-info"><span class="toc-section-number">2.6</span> Session Info</a></li>
+<li><a href="#acknowledgments-1" id="toc-acknowledgments-1"><span class="toc-section-number">2.7</span> Acknowledgments</a></li>
+</ul></li>
+</ul>
+</div>
+
+<p><strong>Exploratory data analysis</strong> (EDA) is often the first step to visualizing and transforming your data.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Hadley Wickham <a href="http://r4ds.had.co.nz/exploratory-data-analysis.html">defines EDA as an iterative cycle</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Generate questions about your data</li>
+<li>Search for answers by visualising, transforming, and modeling your data</li>
+<li>Use what you learn to refine your questions and or generate new questions</li>
+<li>Rinse and repeat</li>
+</ol>
+<p>EDA is fundamentally a creative process - it is not an exact science. It requires knowledge of your data and a lot of time. At the most basic level, it involves answering two questions</p>
+<ol style="list-style-type: decimal">
+<li>What type of <strong>variation</strong> occurs <strong>within</strong> my variables?</li>
+<li>What type of <strong>covariation</strong> occurs <strong>between</strong> my variables?</li>
+</ol>
+<p>EDA relies heavily on visualizations and graphical interpretations of data. While statistical modeling provides a “simple” low-dimensional representation of relationships between variables, they generally require advanced knowledge of statistical techniques and mathematical principles. Visualizations and graphs are typically much more interpretable and easy to generate, so you can rapidly explore many different aspects of a dataset. The ultimate goal is to generate simple summaries of the data that inform your question(s). It is not the final stop in the data science pipeline, but still an important one.</p>
+<div id="characteristics-of-exploratory-graphs" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Characteristics of exploratory graphs</h1>
+<p>{{&lt; figure src=“allison_horst_art/ggplot2_exploratory.png” caption=“Artwork by <span class="citation">@allison_horst</span>” &gt;}}</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
+<p>Graphs generated through EDA are distinct from final graphs. You will typically generate dozens, if not hundreds, of exploratory graphs in the course of analyzing a dataset. Of these graphs, you may end up publishing one or two in a final format. One purpose of EDA is to develop a personal understanding of the data, so all your code and graphs should be geared towards that purpose. Important details that you might add if you were to publish a graph<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> are not necessary in an exploratory graph.</p>
+<p>For example, say I want to explore how the flipper length of a penguin varies with it’s body mass size. An appropriate technique would be a scatterplot:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">data =</span> penguins,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/penguins-eda-1.png" width="672" /></p>
+<p>This is a great exploratory graph: it took just three lines of code and clearly establishes a positive relationship between the flipper length and body mass of a penguin. But what if I were publishing this graph in a research note? I would probably submit something to the editor that looks like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="at">data =</span> penguins,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship between body mass and flipper length of a penguin&quot;</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Sample of 344 penguins&quot;</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Body mass(g)&quot;</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Flipper length(mm)&quot;</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/penguins-final-1.png" width="672" /></p>
+<p>These additional details are very helpful in communicating the meaning of the graph, but take a substantial amount of time and code to write. For EDA, you don’t have to add this detail to every exploratory graph.</p>
+</div>
+<div id="scorecard-data" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Scorecard data</h1>
+<p>The Department of Education collects <a href="https://collegescorecard.ed.gov/">annual statistics on colleges and universities in the United States</a>. I have included a subset of this data from 2018-19 in the <a href="https://github.com/css-materials/rcis"><code>rcis</code></a> library from GitHub. Here let’s examine the data to answer the following question: <strong>how does cost of attendance vary across universities?</strong></p>
+<div id="import-the-data" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Import the data</h2>
+<p>The <code>scorecard</code> dataset is included as part of the <code>rcis</code> library:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(rcis)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;scorecard&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>scorecard</span></code></pre></div>
+<pre><code>## # A tibble: 1,721 × 14
+##    unitid name        state type  admrate satavg  cost netcost avgfacsal pctpell
+##     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;fct&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+##  1 100654 Alabama A … AL    Publ…   0.896    959 23445   15529     68391   0.710
+##  2 100663 University… AL    Publ…   0.806   1245 25542   16530    102420   0.340
+##  3 100706 University… AL    Publ…   0.771   1300 24861   17208     87273   0.240
+##  4 100724 Alabama St… AL    Publ…   0.989    938 21892   19534     64746   0.737
+##  5 100751 The Univer… AL    Publ…   0.804   1262 30016   20917     93141   0.172
+##  6 100830 Auburn Uni… AL    Publ…   0.956   1061 20225   13678     69561   0.465
+##  7 100858 Auburn Uni… AL    Publ…   0.851   1302 32196   24018     96498   0.134
+##  8 100937 Birmingham… AL    Priv…   0.604   1202 32514   19808     62649   0.226
+##  9 101189 Faulkner U… AL    Priv…   0.758   1068 34835   20500     53334   0.501
+## 10 101365 Herzing Un… AL    Priv…   0.915     NA 30319   25741     56736   0.697
+## # ℹ 1,711 more rows
+## # ℹ 4 more variables: comprate &lt;dbl&gt;, firstgen &lt;dbl&gt;, debt &lt;dbl&gt;, locale &lt;fct&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="at">x =</span> scorecard)</span></code></pre></div>
+<pre><code>## Rows: 1,721
+## Columns: 14
+## $ unitid    &lt;dbl&gt; 100654, 100663, 100706, 100724, 100751, 100830, 100858, 1009…
+## $ name      &lt;chr&gt; &quot;Alabama A &amp; M University&quot;, &quot;University of Alabama at Birmin…
+## $ state     &lt;chr&gt; &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, &quot;AL&quot;, …
+## $ type      &lt;fct&gt; &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, …
+## $ admrate   &lt;dbl&gt; 0.8965, 0.8060, 0.7711, 0.9888, 0.8039, 0.9555, 0.8507, 0.60…
+## $ satavg    &lt;dbl&gt; 959, 1245, 1300, 938, 1262, 1061, 1302, 1202, 1068, NA, 1101…
+## $ cost      &lt;dbl&gt; 23445, 25542, 24861, 21892, 30016, 20225, 32196, 32514, 3483…
+## $ netcost   &lt;dbl&gt; 15529, 16530, 17208, 19534, 20917, 13678, 24018, 19808, 2050…
+## $ avgfacsal &lt;dbl&gt; 68391, 102420, 87273, 64746, 93141, 69561, 96498, 62649, 533…
+## $ pctpell   &lt;dbl&gt; 0.7095, 0.3397, 0.2403, 0.7368, 0.1718, 0.4654, 0.1343, 0.22…
+## $ comprate  &lt;dbl&gt; 0.2866, 0.6117, 0.5714, 0.3177, 0.7214, 0.3040, 0.7870, 0.70…
+## $ firstgen  &lt;dbl&gt; 0.3658281, 0.3412237, 0.3101322, 0.3434343, 0.2257127, 0.381…
+## $ debt      &lt;dbl&gt; 15250, 15085, 14000, 17500, 17671, 12000, 17500, 16000, 1425…
+## $ locale    &lt;fct&gt; City, City, City, City, City, City, City, City, City, Suburb…</code></pre>
+<p>Each row represents a different four-year university in the U.S. <code>cost</code> identifies the average annual total cost of attendance. How does cost of attendance vary across universities?</p>
+</div>
+<div id="assessing-variation" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Assessing variation</h2>
+<p>Assessing <strong>variation</strong> requires examining the values of a variable as they change from measurement to measurement. Here, let’s examine variation in cost of attendance and related variables using a few different graphical techniques.</p>
+<div id="histogram" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Histogram</h3>
+<p>To examine the distribution of a continuous variable, we can use a <strong>histogram</strong>. It splits the input variable into n sets of equal width, and performs a frequency count within each set.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 51 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/histogram-1.png" width="672" /></p>
+<p>What does this histogram tell us? It appears there are three sets of peak values for cost of attendance, around 20,000, 40,000, and 65,000 dollars in declining overall frequency. This could suggest some underlying factor or set of differences between the universities that clusters them into separate groups based on cost of attendance.</p>
+<p>By default, <code>geom_histogram()</code> bins the observations into 30 intervals of equal width. You can adjust this using the <code>bins</code> parameter:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost)</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/histogram-bins-50-1.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/histogram-bins-10-1.png" width="672" /></p>
+<p>Different <code>bins</code> can lead to different inferences about the data. Here if we set a larger number of bins, the overall picture seems to be the same - the distribution is trimodal. But if we collapse the number of bins to 10, we lose the clarity of each of these peaks.</p>
+</div>
+<div id="bar-chart" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Bar chart</h3>
+<p>To examine the distribution of a categorical variable, we can use a <strong>bar chart</strong>. It takes each category of the variable and automatically applies a frequency count to aggregate the data by variable.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> type)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/barplot-1.png" width="672" /></p>
+<p>What does this bar chart tell us? Here we see the most common type of four-year college is a private, nonprofit institution.</p>
+<p>For other types of univariate graphs check out the <strong>Data Visualization with ggplot2 cheat sheet</strong> available for download from RStudio &gt; Help &gt; Cheat Sheets &gt; Data Visualization with ggplot2</p>
+</div>
+</div>
+<div id="assessing-covariation" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Assessing covariation</h2>
+<p><strong>Covariation</strong> is the tendency for the values of two or more variables to vary together in a related way. Visualizing data in two or more dimensions allows us to assess covariation and differences in variation across groups. There are a few major approaches to visualizing two dimensions:</p>
+<ol style="list-style-type: decimal">
+<li>Two-dimensional graphs</li>
+<li>Multiple window plots</li>
+<li>Utilizing additional channels</li>
+</ol>
+<div id="two-dimensional-graphs-box-plot" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Two-dimensional graphs: Box plot</h3>
+<p><strong>Two-dimensional graphs</strong> are visualizations that are naturally designed to visualize two variables.</p>
+<p>For instance, if you have a discrete variable and a continuous variable, you could use a <strong>box plot</strong> to visualize the distribution of the values of the continuous variable for each category in the discrete variable. For more information on box plots see <a href="https://r4ds.had.co.nz/exploratory-data-analysis.html">Chapter 7 “Exploratory Data Analysis”</a> in the <em>R for Data Science</em> book.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> cost)</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/boxplot-1.png" width="672" /></p>
+<p>What does this box plot tell us? Here we see that on average, public universities are least expensive, followed by private for-profit institutions.Is there an explanation for these differences? Another question you could explore after viewing this visualization.</p>
+</div>
+<div id="two-dimensional-graphs-scatterplot" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Two-dimensional graphs: Scatterplot</h3>
+<p>If you have two continuous variables, you may use a <strong>scatterplot</strong> which maps each variable to an <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span>-axis coordinate. Here we visualize the relationship between annual cost of attendance (sticker price) and net cost of attendance (average amount actually paid by a student):</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost, <span class="at">y =</span> netcost)</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/scatterplot-1.png" width="672" /></p>
+<p>What does this scatterplot tell us? As the sticker price increases, the net cost also increases though with significant variation. Some schools have a much lower net cost than their advertised price.</p>
+</div>
+<div id="multiple-window-plots-faceted-histogram" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Multiple window plots: faceted histogram</h3>
+<p>Sometimes you want to compare the conditional distribution of a variable across specific groups or subsets of the data. To do that, we implement a <strong>multiple window plot</strong> (also known as a <strong>trellis</strong> or <strong>facet</strong> graph). This involves drawing the same plot repeatedly, using a separate window for each category defined by a variable.</p>
+<p>For instance, if we want to examine variation in cost of attendance separately for college type, we could draw a graph like this:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost)</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="fu">vars</span>(type))</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 51 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/histogram-facet-1.png" width="672" /></p>
+<p>This helps answer one of our earlier questions. Colleges in the 20,000 dollar range tend to be public universities, while the heaps around 40,000 and 65,000 dollars are from private nonprofits.</p>
+</div>
+<div id="multiple-window-plots-faceted-scatterplot" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Multiple window plots: faceted scatterplot</h3>
+<p>You may also want to use a multiple windows plot with a two-dimensional graph. For example, the relationship between annual cost and net cost of attendance by college type:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cost, <span class="at">y =</span> netcost)</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="fu">vars</span>(type))</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/scatterplot-facet-1.png" width="672" /></p>
+</div>
+</div>
+<div id="utilizing-additional-channels" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Utilizing additional channels</h2>
+<p>If you want to visualize three or more dimensions of data without resorting to 3D animations<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> or window plots, the best approach is to incorporate additional <strong>channels</strong> into the visualization. Channels are used to encode variables inside of a graphic. For instance, a scatterplot uses vertical and horizontal spatial position channels to encode the values for two variables in a visually intuitive manner.</p>
+<p>Depending on the type of graph and variables you wish to encode, there are several different channels you can use to encode additional information. For instance, <strong>color</strong> can be used to distinguish between classes in a categorical variable.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>    <span class="at">x =</span> cost,</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>    <span class="at">y =</span> netcost,</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>    <span class="at">color =</span> type</span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>  )</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 51 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/scatterplot-color-1.png" width="672" /></p>
+<p>We can even use a fourth channel to communicate another variable (median debt load after leaving school) by making use of the size channel:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  <span class="at">data =</span> scorecard,</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="at">x =</span> cost,</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>    <span class="at">y =</span> netcost,</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>    <span class="at">color =</span> type,</span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>    <span class="at">size =</span> debt</span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a>  )</span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 139 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/scatterplot-color-size-1.png" width="672" /></p>
+<p>Note that some channels are not always appropriate, even if they can technically be implemented. For example, the graph above has become quite challenging to read due to so many overlapping data points. Just because one <strong>can</strong> construct a graph does not mean one <strong>should</strong> construct a graph.</p>
+</div>
+<div id="acknowledgments" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Acknowledgments</h2>
+<ul>
+<li>Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"><span class="citation">@allison_horst</span></a></li>
+</ul>
+</div>
+<div id="session-info" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Session Info</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
+<pre><code>## ─ Session info ───────────────────────────────────────────────────────────────
+##  setting  value
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
+##  system   aarch64, darwin20
+##  ui       X11
+##  language (EN)
+##  collate  en_US.UTF-8
+##  ctype    en_US.UTF-8
+##  tz       America/Chicago
+##  date     2023-06-16
+##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
+## 
+## ─ Packages ───────────────────────────────────────────────────────────────────
+##  package        * version date (UTC) lib source
+##  blogdown         1.17    2023-05-16 [1] CRAN (R 4.3.0)
+##  bookdown         0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib            0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem           1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  codetools        0.2-19  2023-02-01 [1] CRAN (R 4.3.0)
+##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
+##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
+##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.3.0)
+##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
+##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
+##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)
+##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
+##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  here             1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  highr            0.10    2022-12-22 [1] CRAN (R 4.3.0)
+##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  htmltools        0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib        0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite         1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr            1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  labeling         0.4.2   2020-10-20 [1] CRAN (R 4.3.0)
+##  lattice          0.21-8  2023-04-05 [1] CRAN (R 4.3.0)
+##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
+##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)
+##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
+##  Matrix           1.5-4   2023-04-04 [1] CRAN (R 4.3.0)
+##  mgcv             1.8-42  2023-03-02 [1] CRAN (R 4.3.0)
+##  munsell          0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
+##  nlme             3.1-162 2023-01-31 [1] CRAN (R 4.3.0)
+##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.3.0)
+##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
+##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.3.0)
+##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
+##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  rcis           * 0.2.7   2023-06-14 [1] Github (CFSS-MACSS/rcis@a4b198f)
+##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)
+##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown        2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot        2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass             0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  scales           1.2.1   2022-08-20 [1] CRAN (R 4.3.0)
+##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
+##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)
+##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
+##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)
+##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
+##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
+##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
+##  tzdb             0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
+##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
+##  vctrs            0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
+##  xfun             0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
+## 
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
+## 
+## ──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+<div id="acknowledgments-1" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Acknowledgments</h2>
+<ul>
+<li>This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.</li>
+</ul>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>After any necessary data importation and wrangling.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>In perhaps an academic journal, or maybe a homework submission.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Though with the growth of virtual reality technology and 3D printing, perhaps this isn’t a bad idea.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
