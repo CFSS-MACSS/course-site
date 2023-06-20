@@ -6,6 +6,9 @@ toc: true
 draft: false
 aliases: ["/eda_college.html", "/notes/exploratory-data-analysis-practice/"]
 categories: ["eda"]
+output:
+  html_document:
+    code_folding: hide
 
 weight: 42
 ---
