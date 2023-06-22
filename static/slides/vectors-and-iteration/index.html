@@ -454,16 +454,16 @@ head(penguins)
 ```
 
 ```
-## # A tibble: 6 x 8
-##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
-## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
-## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
-## 4 Adelie  Torgersen           NA            NA            NA      NA &lt;NA&gt;   2007
-## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
-## 6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
-## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+## # A tibble: 6 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## 6 Adelie  Torgersen           39.3          20.6               190        3650
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 
 ---
@@ -480,7 +480,7 @@ head(penguins_clean)
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
 ## 1           39.1          18.7               181        3750
@@ -965,7 +965,7 @@ mtcars %&gt;%
 ```
 
 ```
-## # A tibble: 3 x 11
+## # A tibble: 3 × 11
 ##     cyl   mpg  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1     4  26.7  105.  82.6  4.07  2.29  19.1 0.909 0.727  4.09  1.55
@@ -988,23 +988,23 @@ worldbank
 ```
 
 ```
-## # A tibble: 78 x 14
-##    iso3c date  iso2c country   perc_en~1 rnd_g~2 percg~3 real_~4 gdp_c~5 top10~6
-##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-##  1 ARG   2005  AR    Argentina      89.1   0.379    15.5   6198.   5110.    35  
-##  2 ARG   2006  AR    Argentina      88.7   0.400    22.1   7388.   5919.    33.9
-##  3 ARG   2007  AR    Argentina      89.2   0.402    22.8   8182.   7245.    33.8
-##  4 ARG   2008  AR    Argentina      90.7   0.421    21.6   8576.   9021.    32.5
-##  5 ARG   2009  AR    Argentina      89.6   0.519    18.9   7904.   8225.    31.4
-##  6 ARG   2010  AR    Argentina      89.5   0.518    17.9   8803.  10386.    32  
-##  7 ARG   2011  AR    Argentina      88.9   0.537    17.9   9528.  12849.    31  
-##  8 ARG   2012  AR    Argentina      89.0   0.609    16.5   9301.  13083.    29.7
-##  9 ARG   2013  AR    Argentina      89.0   0.612    15.3   9367.  13080.    29.4
-## 10 ARG   2014  AR    Argentina      87.7   0.613    16.1   8903.  12335.    29.9
-## # ... with 68 more rows, 4 more variables: employment_ratio &lt;dbl&gt;,
-## #   life_exp &lt;dbl&gt;, pop_growth &lt;dbl&gt;, pop &lt;dbl&gt;, and abbreviated variable names
-## #   1: perc_energy_fosfuel, 2: rnd_gdpshare, 3: percgni_adj_gross_savings,
-## #   4: real_netinc_percap, 5: gdp_capita, 6: top10perc_incshare
+## # A tibble: 78 × 14
+##    iso3c date  iso2c country   perc_energy_fosfuel rnd_gdpshare
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                   &lt;dbl&gt;        &lt;dbl&gt;
+##  1 ARG   2005  AR    Argentina                89.1        0.379
+##  2 ARG   2006  AR    Argentina                88.7        0.400
+##  3 ARG   2007  AR    Argentina                89.2        0.402
+##  4 ARG   2008  AR    Argentina                90.7        0.421
+##  5 ARG   2009  AR    Argentina                89.6        0.519
+##  6 ARG   2010  AR    Argentina                89.5        0.518
+##  7 ARG   2011  AR    Argentina                88.9        0.537
+##  8 ARG   2012  AR    Argentina                89.0        0.609
+##  9 ARG   2013  AR    Argentina                89.0        0.612
+## 10 ARG   2014  AR    Argentina                87.7        0.613
+## # ℹ 68 more rows
+## # ℹ 8 more variables: percgni_adj_gross_savings &lt;dbl&gt;,
+## #   real_netinc_percap &lt;dbl&gt;, gdp_capita &lt;dbl&gt;, top10perc_incshare &lt;dbl&gt;,
+## #   employment_ratio &lt;dbl&gt;, life_exp &lt;dbl&gt;, pop_growth &lt;dbl&gt;, pop &lt;dbl&gt;
 ```
 
 ---
@@ -1022,19 +1022,18 @@ worldbank %&gt;%
 ```
 
 ```
-## # A tibble: 6 x 11
-##   country        perc_~1 rnd_g~2 percg~3 real_~4 gdp_c~5 top10~6 emplo~7 life_~8
-##   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 Argentina         89.1  0.501     17.5   8560.  10648.    31.6    55.4    75.4
-## 2 China             87.6  1.67      48.3   3661.   5397.    30.8    69.8    74.7
-## 3 Indonesia         65.3  0.0841    30.5   2041.   2881.    31.2    62.5    69.5
-## 4 Norway            58.9  1.60      37.2  70775.  85622.    21.9    67.3    81.3
-## 5 United Kingdom    86.3  1.68      13.5  34542.  43416.    26.2    58.7    80.4
-## 6 United States     84.2  2.69      17.6  42824.  51285.    30.1    60.2    78.4
-## # ... with 2 more variables: pop_growth &lt;dbl&gt;, pop &lt;dbl&gt;, and abbreviated
-## #   variable names 1: perc_energy_fosfuel, 2: rnd_gdpshare,
-## #   3: percgni_adj_gross_savings, 4: real_netinc_percap, 5: gdp_capita,
-## #   6: top10perc_incshare, 7: employment_ratio, 8: life_exp
+## # A tibble: 6 × 11
+##   country        perc_energy_fosfuel rnd_gdpshare percgni_adj_gross_savings
+##   &lt;chr&gt;                        &lt;dbl&gt;        &lt;dbl&gt;                     &lt;dbl&gt;
+## 1 Argentina                     89.1       0.501                       17.5
+## 2 China                         87.6       1.67                        48.3
+## 3 Indonesia                     65.3       0.0841                      30.5
+## 4 Norway                        58.9       1.60                        37.2
+## 5 United Kingdom                86.3       1.68                        13.5
+## 6 United States                 84.2       2.69                        17.6
+## # ℹ 7 more variables: real_netinc_percap &lt;dbl&gt;, gdp_capita &lt;dbl&gt;,
+## #   top10perc_incshare &lt;dbl&gt;, employment_ratio &lt;dbl&gt;, life_exp &lt;dbl&gt;,
+## #   pop_growth &lt;dbl&gt;, pop &lt;dbl&gt;
 ```
 ]
 
@@ -1051,7 +1050,7 @@ worldbank %&gt;%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##   country        perc_energy_fosfuel percgni_adj_gross_savings
 ##   &lt;chr&gt;                        &lt;dbl&gt;                     &lt;dbl&gt;
 ## 1 Argentina                     89.1                      17.5
@@ -1097,7 +1096,7 @@ class: inverse, middle
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
