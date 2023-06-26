@@ -313,7 +313,7 @@ R accepts `if()` and `else()` statements, but also statements using the built-in
 .small[
 Syntax:
 ```
-if (condition to be evaluated,
+ifelse (condition to be evaluated,
     action performed when condition is TRUE,
     action performed when condition is FALSE)
 }
@@ -396,9 +396,13 @@ Practice Qs:
 * `ifelse(sqrt(9)<2,sqrt(9),0)`
 * `x=12`  
   `if(is.numeric(x)) y=x*2`
-* `x=letters[20]`  
-`if (is.numeric(x)) print('is numeric') 
-'else if(is.character(x)) print('is character')`
+* `x=letters[20]`
+`if (is.numeric(x)){ `
+  `print('is numeric') `
+`} else { `
+  `(is.character(x))` 
+  `print('is character')`
+`}`
 
 **Task** flip the results from above
 ---
