@@ -136,7 +136,7 @@ Debugging has two goals:
 * Fix bugs once they occur
 
 **Debugging (like programming) requires patience!** 
-.
+
 
 ---
 
@@ -323,9 +323,26 @@ RStudio helps out with these issues:
 
 * `Code > Reformat Code` (Shift + Cmd/Ctrl + A)
 * `Code > Reindent Lines` (Cmd/Ctrl + I)
-* For better help see [`styler`](http://styler.r-lib.org/)
+* For better help see [`styler`](http://styler.r-lib.org/) 
 
 <!-- * [This code example](/notes/style-guide/#exercise-style-this-code) -->
+
+
+---
+
+## Auto-formatting in RStudio
+Try it out!
+* option 1: `Code > Reformat Code` (Shift + Cmd/Ctrl + A)
+* option 2: `Code > Reindent Lines` (Cmd/Ctrl + I)
+* option 3: `install.packages("styler")` (should be abel to find it under addins at top right)
+
+```{r, eval = FALSE}
+  y<-10
+if (y < 20) {
+  x <- "Too low" 
+  }   else {
+  x <-"Too high"}
+```
 
 ---
 
@@ -547,5 +564,5 @@ traceback()
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
 

@@ -44,7 +44,7 @@ Debugging has two goals:
 * Fix bugs once they occur
 
 **Debugging (like programming) requires patience!** 
-.
+
 
 ---
 
@@ -231,9 +231,27 @@ RStudio helps out with these issues:
 
 * `Code &gt; Reformat Code` (Shift + Cmd/Ctrl + A)
 * `Code &gt; Reindent Lines` (Cmd/Ctrl + I)
-* For better help see [`styler`](http://styler.r-lib.org/)
+* For better help see [`styler`](http://styler.r-lib.org/) 
 
 &lt;!-- * [This code example](/notes/style-guide/#exercise-style-this-code) --&gt;
+
+
+---
+
+## Auto-formatting in RStudio
+Try it out!
+* option 1: `Code &gt; Reformat Code` (Shift + Cmd/Ctrl + A)
+* option 2: `Code &gt; Reindent Lines` (Cmd/Ctrl + I)
+* option 3: `install.packages("styler")` (should be abel to find it under addins at top right)
+
+
+```r
+  y&lt;-10
+if (y &lt; 20) {
+  x &lt;- "Too low" 
+  }   else {
+  x &lt;-"Too high"}
+```
 
 ---
 
@@ -276,7 +294,7 @@ addition(3, "2")
 ```
 
 ```
-## Error in addition(3, "2"): One of your inputs is not a number
+## Error in is_numeric(c(x, y)): could not find function "is_numeric"
 ```
 
 ---
@@ -409,7 +427,7 @@ ggplot(diamonds, aes(carat, price)) +
 ```
 
 ```
-## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+## `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 ```
 
 &lt;img src="index_files/figure-html/message_ggplot-1.png" width="35%" style="display: block; margin: auto;" /&gt;
@@ -502,7 +520,7 @@ traceback()
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
