@@ -1,6 +1,6 @@
 ---
 title: "Data structures"
-date: 2023-06-28T12:25:00-05:00
+date: 2022-10-27T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
@@ -45,9 +45,13 @@ math: false
 
 ## Before class
 
-* Read Chapter 20 “Vectors” in [R for Data Science](https://r4ds.had.co.nz/strings.html)
+* Read Chapter 20 “Vectors” in [R for Data Science](https://r4ds.had.co.nz/vectors.html)
 * Optional: Chapter 14 "Strings" in [R for Data Science](https://r4ds.had.co.nz/strings.html)
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/data-structures")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/data-structures")`
+
+## What you need to do after class
+
+* Work on [Homework 5](/homework/debugging-rmarkdown/) 
