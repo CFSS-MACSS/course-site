@@ -27,6 +27,15 @@ class: center, middle, inverse, title-slide
 
 class: inverse, middle
 
+# Agenda
+* Homeworks: HW 3 due today and HW 4 due Thurs!
+* Explanation of functions
+* Creating your own function
+* Practice
+* Functions + for loops = party
+* Anonymous functions
+
+---
 # Functions
 
 ---
@@ -70,6 +79,7 @@ To use a function, we need to know its arguments and pass them correctly. In the
 ```r
 help(mean)
 help(sqrt)
+help(max)
 ```
 
 --
@@ -454,14 +464,14 @@ head(simulated_df, n = 5)
 ```
 
 ```
-## # A tibble: 5 x 4
-##        a      b       c      d
-##    &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-## 1  0.506 -0.110 -1.45   -1.17 
-## 2 -0.575 -0.511  0.575  -2.18 
-## 3 -0.547 -0.911 -1.02   -1.34 
-## 4 -0.564 -0.837 -0.0151 -0.294
-## 5 -0.890  2.42  -0.936  -0.466
+## # A tibble: 5 × 4
+##        a       b      c      d
+##    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 -1.21  -0.477   0.134  1.10 
+## 2  0.277 -0.998  -0.491 -0.476
+## 3  1.08  -0.776  -0.441 -0.709
+## 4 -2.35   0.0645  0.460 -0.501
+## 5  0.429  0.959  -0.694 -1.63
 ```
 
 ---
@@ -481,7 +491,7 @@ output
 ```
 
 ```
-## [1] -0.32976859 -0.09851033 -0.50612789 -0.71983177
+## [1] -0.3831574 -0.1181707 -0.3879468 -0.7661931
 ```
 
 ---
@@ -505,7 +515,7 @@ col_mean(simulated_df)
 ```
 
 ```
-## [1] -0.32976859 -0.09851033 -0.50612789 -0.71983177
+## [1] -0.3831574 -0.1181707 -0.3879468 -0.7661931
 ```
 
 ---
@@ -560,7 +570,7 @@ col_summary(simulated_df, median)
 ```
 
 ```
-## [1] -0.5555419 -0.4656169 -0.6053490 -0.9248524
+## [1] -0.5555419 -0.4941011 -0.4656169 -0.6053490
 ```
 
 ```r
@@ -568,7 +578,7 @@ col_summary(simulated_df, mean)
 ```
 
 ```
-## [1] -0.32976859 -0.09851033 -0.50612789 -0.71983177
+## [1] -0.3831574 -0.1181707 -0.3879468 -0.7661931
 ```
 
 ---
@@ -657,7 +667,7 @@ https://github.com/annakrystalli/UNAM/blob/master/Functions_in_R.Rmd
 
 ### Anonymous functions 
 
-That is **functions without a name**.
+That is **functions without a name**. (AKA lambda expressions)
 
 You probably won't define anonymous functions a lot, but you need to know they exist and recognize their syntax.
 
@@ -720,6 +730,34 @@ lapply(l, FUN = function(x){sum(x)/length(x)})
 
 see http://adv-r.had.co.nz/Functional-programming.html#anonymous-functions
 --&gt;
+
+---
+
+### Anonymous functions: purrr
+The purrr package in R (hello again, map function!) offers a different way to write anonymous functions: `~.` syntax. 
+
+Example:
+
+```r
+# most efficient code
+purrr::map_int(1:2, ~.x + 1L)
+
+# middle-of-the-road code
+(function(x) x + 1)(1:2)
+(function(x) x + 1L)(1:2) #what is the difference here?
+
+# most cumbersome code
+xadd &lt;-function(xadd) {
+  xadd + 1
+}
+
+xadd(1:2)
+```
+
+---
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

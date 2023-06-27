@@ -117,6 +117,15 @@ theme_set(theme_minimal(base_size = rcis::base_size))
 
 class: inverse, middle
 
+# Agenda
+* Homeworks: HW 3 due today and HW 4 due Thurs!
+* Explanation of functions
+* Creating your own function
+* Practice
+* Functions + for loops = party
+* Anonymous functions
+
+---
 # Functions
 
 ---
@@ -139,6 +148,7 @@ To use a function, we need to know its arguments and pass them correctly. In the
 ```{r}
 help(mean)
 help(sqrt)
+help(max)
 ```
 
 --
@@ -589,7 +599,7 @@ https://github.com/annakrystalli/UNAM/blob/master/Functions_in_R.Rmd
 
 ### Anonymous functions 
 
-That is **functions without a name**.
+That is **functions without a name**. (AKA lambda expressions)
 
 You probably won't define anonymous functions a lot, but you need to know they exist and recognize their syntax.
 
@@ -628,3 +638,31 @@ lapply(l, FUN = function(x){sum(x)/length(x)})
 
 see http://adv-r.had.co.nz/Functional-programming.html#anonymous-functions
 -->
+
+---
+
+### Anonymous functions: purrr
+The purrr package in R (hello again, map function!) offers a different way to write anonymous functions: `~.` syntax. 
+
+Example:
+```{r, eval = FALSE}
+# most efficient code
+purrr::map_int(1:2, ~.x + 1L)
+
+# middle-of-the-road code
+(function(x) x + 1)(1:2)
+(function(x) x + 1L)(1:2) #what is the difference here?
+
+# most cumbersome code
+xadd <-function(xadd) {
+  xadd + 1
+}
+
+xadd(1:2)
+
+```
+
+---
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
