@@ -393,16 +393,24 @@ class: inverse, middle
 ---
 Practice Qs:
 
-* `ifelse(sqrt(9)<2,sqrt(9),0)`
-* `x=12`  
-  `if(is.numeric(x)) y=x*2`
-* `x=letters[20]`
-`if (is.numeric(x)){ `
-  `print('is numeric') `
-`} else { `
-  `(is.character(x))` 
-  `print('is character')`
-`}`
+```{r, eval=FALSE}
+ifelse(sqrt(9)<2,sqrt(9),0)
+```
+
+```{r}
+x=12
+if(is.numeric(x)) y=x*2
+```
+
+```{r, eval=FALSE}
+x=letters[20]
+if (is.numeric(x)){ 
+  print('is numeric') 
+} else { 
+  (is.character(x)) 
+  print('is character')
+}
+```
 
 **Task** flip the results from above
 ---

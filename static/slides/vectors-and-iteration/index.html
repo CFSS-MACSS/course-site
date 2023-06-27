@@ -230,7 +230,7 @@ R accepts `if()` and `else()` statements, but also statements using the built-in
 .small[
 Syntax:
 ```
-if (condition to be evaluated,
+ifelse (condition to be evaluated,
     action performed when condition is TRUE,
     action performed when condition is FALSE)
 }
@@ -313,13 +313,27 @@ class: inverse, middle
 ---
 Practice Qs:
 
-* `ifelse(sqrt(9)&lt;2,sqrt(9),0)`
-* `x=12`  
-  `if(is.numeric(x)) y=x*2`
-* `x=letters[20]`  
-`if (is.numeric(x)) print('is numeric') else`
 
-`if(is.character(x)) print('is character')`
+```r
+ifelse(sqrt(9)&lt;2,sqrt(9),0)
+```
+
+
+```r
+x=12
+if(is.numeric(x)) y=x*2
+```
+
+
+```r
+x=letters[20]
+if (is.numeric(x)){ 
+  print('is numeric') 
+} else { 
+  (is.character(x)) 
+  print('is character')
+}
+```
 
 **Task** flip the results from above
 ---
@@ -596,7 +610,7 @@ mpg_preall &lt;- bind_rows(mpg_preall)
 ]
 
 .panel[.panel-name[Plot]
-&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 ]
 
