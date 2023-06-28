@@ -50,7 +50,7 @@ math: false
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/data-structures")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/data-structures")`
 
 ## What you need to do after class
 
