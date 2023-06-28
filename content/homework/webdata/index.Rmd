@@ -1,6 +1,6 @@
 ---
 title: "HW07: Collecting and analyzing data from the web"
-date: 2022-11-15T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-13T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: false
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Overview
 
-**Due by 11:59 pm on Tuesday, November 22nd.**
+**Due by 11:59 pm on July 13th**
 
 We learned two main ways of collecting data from the web:
 
@@ -30,7 +30,7 @@ For the homework, you will create a new dataset using an API or web scraping and
 
 # Accessing the `hw07` repository
 
-* Go [at this link](https://classroom.github.com/a/pHFIjv3m) to accept and create your private `hw7` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw7-<USERNAME>`  
+Go [to this link](https://classroom.github.com/a/ZuGDMiSQ) and find your copy of the `hw07` repository. It follows the naming convention `hw07-<USERNAME>`. Clone the repository to your computer.
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -114,7 +114,7 @@ In your `README.md`:
 
 Make sure to stage-commit-push your original `.Rmd` file, knit it as `.md` (e.g., `github_document`) and submit both the `.Rmd` and `.md`
 
-To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw7-brinasab`) and submit it to Canvas under HW07 before the deadline.
+To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw07-jmclip`) and submit it to Canvas under HW07 before the deadline.
 
 
 # Rubric

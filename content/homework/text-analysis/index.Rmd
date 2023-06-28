@@ -1,6 +1,6 @@
 ---
 title: "HW8: Analyzing textual data"
-date: 2022-11-29T13:30:00-06:00  # Schedule page publish date
+date: 2023-07-16T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: false
@@ -15,14 +15,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Overview
 
-**Due by 11:59 pm on Tuesday, December 6th.**
+**Due by 11:59 pm on July 16th.**
 
 The goal of this assignment is to practice the fundamentals of text analysis in R tidyverse.
 
 
 # Accessing the `hw08` repository
 
-* Go [at this link](https://classroom.github.com/a/_IRchBke) to accept and create your private `hw8` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw8-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/eey4atfa) to accept and create your private `hw08` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw08-<USERNAME>`   
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -110,7 +110,7 @@ In your `README.md`:
 * quote all resources you consulted to complete the assignment
 * provide 1-2 paragraphs of reflections on what was hard/easy about this homework, what was enjoyable, problems you solved and how you solved them, helpful resources, etc. + list any collaborators and their role
 
-To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw8-brinasab`) and submit it to Canvas under HW08 before the deadline.
+To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw08-jmclip`) and submit it to Canvas under HW08 before the deadline.
 
 
 # Rubric

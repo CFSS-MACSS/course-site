@@ -20,7 +20,7 @@ The goal of this assignment is to practice the fundamentals of text analysis in 
 
 # Accessing the `hw08` repository
 
-* Go [to this link](https://classroom.github.com/a/eey4atfa) to accept and create your private `hw08` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw08-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/eey4atfa) to accept and create your private `hw08` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `hw08-<USERNAME>`   
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -29,7 +29,7 @@ Notice the repo you clone for this assignment is empty: **add your data and code
 
 # Cloning your `hw08` repository
 
-After you have accessed the `hw08` repository (see above), follow the [same steps you completed for `hw01`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `hw8` repository (see above), follow the [same steps you completed for `hw1`](/homework/edit-readme/) to clone the repository.
 
 
 # General workflow
@@ -108,7 +108,7 @@ In your `README.md`:
 * quote all resources you consulted to complete the assignment
 * provide 1-2 paragraphs of reflections on what was hard/easy about this homework, what was enjoyable, problems you solved and how you solved them, helpful resources, etc. + list any collaborators and their role
 
-To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw8-brinasab`) and submit it to Canvas under HW08 before the deadline.
+To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw08-jmclip`) and submit it to Canvas under HW08 before the deadline.
 
 
 # Rubric
@@ -118,8 +118,3 @@ Needs improvement: Not all elements listed in the instructions are addressed. Co
 Satisfactory: Solid effort. Hits all the elements. Finished all components of the assignment with only minor deficiencies. Easy to follow (both the code and the output). 
 
 Excellent: Displays in-depth understanding of course materials, including data analysis and coding skills. Code to process and analyze the data is complex/refined. Visualizations are excellent. Explanation of the chosen technique is accurate with an assessment of the appropriate caveats for what the technique can and cannot do. Interpretation of the results is clear and in-depth and shows engagement with the content of the textual data. Code is reproducible. Uses a sentiment analysis or topic model example not directly covered in class or considerably expands on the provided examples.
-
-
-# Acknowledgments
-
-* This page has been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
