@@ -112,7 +112,7 @@ In your `README.md`:
 
 Make sure to stage-commit-push your original `.Rmd` file, knit it as `.md` (e.g., `github_document`) and submit both the `.Rmd` and `.md`
 
-To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw7-brinasab`) and submit it to Canvas under HW07 before the deadline.
+To submit the assignment, push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw07-jmclip`) and submit it to Canvas under HW07 before the deadline.
 
 
 # Rubric
@@ -128,8 +128,6 @@ Excellent: Displays in-depth understanding of course materials, including data a
 
 
 * This page is derived in part from ["UBC STAT 545A and 547M"](http://stat545.com), licensed under the [CC BY-NC 3.0 Creative Commons License](https://creativecommons.org/licenses/by-nc/3.0/).
-
-* This page has also been developed starting from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.
 
 [^repro]: If you are scraping from a web page that frequently updates its content, we may not perfectly reproduce your results. That's fine - just make sure you've saved a copy of the data frame in the repo (as a `.csv`).
 [^key]: Also if you [write your own API function for a site that requires authentication](https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html#authentication), make sure to include instructions about where to store my API key so we can run your code **without sharing your private key**.
