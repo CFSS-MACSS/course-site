@@ -20,7 +20,7 @@ weight: 94
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
-usethis::use_course("cis-ds/a-deep-dive-into-r-markdown")
+usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")
 ```
 
 {{% /callout %}}
@@ -96,7 +96,7 @@ R Markdown documents contain 3 major components:
 
 Code chunks are interspersed with text throughout the document. To complete the document, you "Knit" or "render" the document. Most of you probably knit the document by clicking the "Knit" button in the script editor panel. You can also do this programmatically from the console by running the command `rmarkdown::render("example.Rmd")`.
 
-When you **knit** the document you send your `.Rmd` file to [`knitr`](https://yihui.name/knitr/), a package for R that executes all the code chunks and creates a second **markdown** document (`.md`). That markdown document is then passed onto [**pandoc**](http://pandoc.org/), a document rendering software program independent from R. Pandoc allows users to convert back and forth between many different document formats such as HTML, $\LaTeX$, Microsoft Word, etc. By splitting the workflow up, you can convert your R Markdown document into a wide range of output formats.
+When you **knit** the document you send your `.Rmd` file to [`knitr`](https://yihui.name/knitr/), a package for R that executes all the code chunks and creates a second **markdown** document (`.md`). That markdown document is then passed onto [**pandoc**](http://pandoc.org/), a document rendering software program independent from R. Pandoc allows users to convert back and forth between many different document formats such as HTML, `\(\LaTeX\)`, Microsoft Word, etc. By splitting the workflow up, you can convert your R Markdown document into a wide range of output formats.
 
 {{< figure src="https://r4ds.had.co.nz/images/RMarkdownFlow.png" caption="" >}}
 
@@ -213,7 +213,7 @@ We have data about 100798 individuals killed by guns. Only 15687 are older than 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output: github_document
 ---
@@ -231,7 +231,7 @@ For your homework assignments, we have used `github_document` to generate a [Mar
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output: html_document
 ---
@@ -247,7 +247,7 @@ Each output format has various options to customize the appearance of the final 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   html_document:
@@ -269,7 +269,7 @@ There are several options that control the visual appearance of HTML documents.
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   html_document:
@@ -286,7 +286,7 @@ Sometimes when knitting an R Markdown document you want to include your R source
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   html_document:
@@ -302,7 +302,7 @@ When `knitr` processes your `.Rmd` document, it creates a Markdown (`.md`) file 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   html_document:
@@ -318,19 +318,19 @@ output:
 
 ## PDF document
 
-[`pdf_document`](http://rmarkdown.rstudio.com/pdf_document_format.html) converts the `.Rmd` file to a $\LaTeX$ file which is used to generate a PDF.
+[`pdf_document`](http://rmarkdown.rstudio.com/pdf_document_format.html) converts the `.Rmd` file to a `\(\LaTeX\)` file which is used to generate a PDF.
 
 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output: pdf_document
 ---
 ```
 
-You do need to have a full installation of TeX on your computer to generate PDF output. However the nice thing is that because it uses the $\LaTeX$ rendering engine, you can use raw $\LaTeX$ code in your `.Rmd` file (if you know how to use it).
+You do need to have a full installation of TeX on your computer to generate PDF output. However the nice thing is that because it uses the `\(\LaTeX\)` rendering engine, you can use raw `\(\LaTeX\)` code in your `.Rmd` file (if you know how to use it).
 
 ### Table of contents
 
@@ -340,7 +340,7 @@ Many options for HTML documents also work for PDFs. For instance, you create a t
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   pdf_document:
@@ -357,7 +357,7 @@ You cannot customize the `theme` of a `pdf_document` (at least not in the same w
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   pdf_document:
@@ -365,15 +365,15 @@ output:
 ---
 ```
 
-### $\LaTeX$ options
+### `\(\LaTeX\)` options
 
-You can also directly control options in the $\LaTeX$ template itself via the YAML options. Note that these options are passed as top-level YAML metadata, not underneath the `output` section:
+You can also directly control options in the `\(\LaTeX\)` template itself via the YAML options. Note that these options are passed as top-level YAML metadata, not underneath the `output` section:
 
 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output: pdf_document
 geometry: margin=1in
@@ -383,13 +383,13 @@ fontsize: 11pt
 
 ### Keep intermediate TeX
 
-R Markdown documents are converted first to a `.tex` file, and then use the $\LaTeX$ engine to convert to PDF. To keep the `.tex` file, use the `keep_tex` option:
+R Markdown documents are converted first to a `.tex` file, and then use the `\(\LaTeX\)` engine to convert to PDF. To keep the `.tex` file, use the `keep_tex` option:
 
 
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   pdf_document:
@@ -404,7 +404,7 @@ You can use R Markdown not only to generate full documents, but also slide prese
 * [ioslides](http://rmarkdown.rstudio.com/ioslides_presentation_format.html) - HTML presentation with ioslides
 * [reveal.js](http://rmarkdown.rstudio.com/revealjs_presentation_format.html) - HTML presentation with reveal.js
 * [Slidy](http://rmarkdown.rstudio.com/slidy_presentation_format.html) - HTML presentation with W3C Slidy
-* [Beamer](http://rmarkdown.rstudio.com/beamer_presentation_format.html) - PDF presentation with $\LaTeX$ Beamer
+* [Beamer](http://rmarkdown.rstudio.com/beamer_presentation_format.html) - PDF presentation with `\(\LaTeX\)` Beamer
 
 Each as their own strengths and weaknesses. ioslides and Slidy are probably the easiest to use initially, but are more difficult to customize. reveal.js is more complex, but allows for more customization (this is the format I use for my slides in this class). Beamer is the only presentation format that creates a PDF document and is probably a smoother transition for those already used to Beamer.
 
@@ -416,7 +416,7 @@ You can even render your document into multiple output formats by supplying a li
 ```
 ---
 author: Benjamin Soltoff
-date: '2022-01-06'
+date: '2023-06-29'
 title: Gun deaths
 output:
   pdf_document: default
@@ -438,7 +438,7 @@ When rendering multiple output formats, you cannot just click the "Knit" button.
 
 {{% callout warning %}}
 
-If you do not have $\LaTeX$ installed on your computer, render `gun-deaths.Rmd` as both an HTML document and a [Word document](http://rmarkdown.rstudio.com/word_document_format.html). And at some point [install $\LaTeX$ on your computer](https://www.latex-project.org/get/) so you can create PDF documents.
+If you do not have `\(\LaTeX\)` installed on your computer, render `gun-deaths.Rmd` as both an HTML document and a [Word document](http://rmarkdown.rstudio.com/word_document_format.html). And at some point [install `\(\LaTeX\)` on your computer](https://www.latex-project.org/get/) so you can create PDF documents.
 
 {{% /callout %}}
 
@@ -539,93 +539,74 @@ This creates a temporary R script which contains the single command `rmarkdown::
 ```
 ## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
-##  version  R version 4.2.1 (2022-06-23)
-##  os       macOS Monterey 12.3
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
 ##  system   aarch64, darwin20
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-22
-##  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+##  tz       America/Chicago
+##  date     2023-06-29
+##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
-##  package       * version    date (UTC) lib source
-##  assertthat      0.2.1      2019-03-21 [2] CRAN (R 4.2.0)
-##  backports       1.4.1      2021-12-13 [2] CRAN (R 4.2.0)
-##  blogdown        1.10       2022-05-10 [2] CRAN (R 4.2.0)
-##  bookdown        0.27       2022-06-14 [2] CRAN (R 4.2.0)
-##  broom           1.0.0      2022-07-01 [2] CRAN (R 4.2.0)
-##  bslib           0.4.0      2022-07-16 [2] CRAN (R 4.2.0)
-##  cachem          1.0.6      2021-08-19 [2] CRAN (R 4.2.0)
-##  cellranger      1.1.0      2016-07-27 [2] CRAN (R 4.2.0)
-##  cli             3.3.0      2022-04-25 [2] CRAN (R 4.2.0)
-##  colorspace      2.0-3      2022-02-21 [2] CRAN (R 4.2.0)
-##  crayon          1.5.1      2022-03-26 [2] CRAN (R 4.2.0)
-##  DBI             1.1.3      2022-06-18 [2] CRAN (R 4.2.0)
-##  dbplyr          2.2.1      2022-06-27 [2] CRAN (R 4.2.0)
-##  digest          0.6.29     2021-12-01 [2] CRAN (R 4.2.0)
-##  dplyr         * 1.0.9      2022-04-28 [2] CRAN (R 4.2.0)
-##  ellipsis        0.3.2      2021-04-29 [2] CRAN (R 4.2.0)
-##  evaluate        0.16       2022-08-09 [1] CRAN (R 4.2.1)
-##  fansi           1.0.3      2022-03-24 [2] CRAN (R 4.2.0)
-##  fastmap         1.1.0      2021-01-25 [2] CRAN (R 4.2.0)
-##  forcats       * 0.5.1      2021-01-27 [2] CRAN (R 4.2.0)
-##  fs              1.5.2      2021-12-08 [2] CRAN (R 4.2.0)
-##  gargle          1.2.0      2021-07-02 [2] CRAN (R 4.2.0)
-##  generics        0.1.3      2022-07-05 [2] CRAN (R 4.2.0)
-##  ggplot2       * 3.3.6      2022-05-03 [2] CRAN (R 4.2.0)
-##  glue            1.6.2      2022-02-24 [2] CRAN (R 4.2.0)
-##  googledrive     2.0.0      2021-07-08 [2] CRAN (R 4.2.0)
-##  googlesheets4   1.0.0      2021-07-21 [2] CRAN (R 4.2.0)
-##  gtable          0.3.0      2019-03-25 [2] CRAN (R 4.2.0)
-##  haven           2.5.0      2022-04-15 [2] CRAN (R 4.2.0)
-##  here          * 1.0.1      2020-12-13 [2] CRAN (R 4.2.0)
-##  hms             1.1.1      2021-09-26 [2] CRAN (R 4.2.0)
-##  htmltools       0.5.3      2022-07-18 [2] CRAN (R 4.2.0)
-##  httr            1.4.3      2022-05-04 [2] CRAN (R 4.2.0)
-##  jquerylib       0.1.4      2021-04-26 [2] CRAN (R 4.2.0)
-##  jsonlite        1.8.0      2022-02-22 [2] CRAN (R 4.2.0)
-##  knitr           1.39       2022-04-26 [2] CRAN (R 4.2.0)
-##  lifecycle       1.0.1      2021-09-24 [2] CRAN (R 4.2.0)
-##  lubridate       1.8.0      2021-10-07 [2] CRAN (R 4.2.0)
-##  magrittr        2.0.3      2022-03-30 [2] CRAN (R 4.2.0)
-##  modelr          0.1.8      2020-05-19 [2] CRAN (R 4.2.0)
-##  munsell         0.5.0      2018-06-12 [2] CRAN (R 4.2.0)
-##  pillar          1.8.0      2022-07-18 [2] CRAN (R 4.2.0)
-##  pkgconfig       2.0.3      2019-09-22 [2] CRAN (R 4.2.0)
-##  purrr         * 0.3.4      2020-04-17 [2] CRAN (R 4.2.0)
-##  R6              2.5.1      2021-08-19 [2] CRAN (R 4.2.0)
-##  rcis          * 0.2.5      2022-08-08 [2] local
-##  readr         * 2.1.2      2022-01-30 [2] CRAN (R 4.2.0)
-##  readxl          1.4.0      2022-03-28 [2] CRAN (R 4.2.0)
-##  reprex          2.0.1.9000 2022-08-10 [1] Github (tidyverse/reprex@6d3ad07)
-##  rlang           1.0.4      2022-07-12 [2] CRAN (R 4.2.0)
-##  rmarkdown       2.14       2022-04-25 [2] CRAN (R 4.2.0)
-##  rprojroot       2.0.3      2022-04-02 [2] CRAN (R 4.2.0)
-##  rstudioapi      0.13       2020-11-12 [2] CRAN (R 4.2.0)
-##  rvest           1.0.2      2021-10-16 [2] CRAN (R 4.2.0)
-##  sass            0.4.2      2022-07-16 [2] CRAN (R 4.2.0)
-##  scales          1.2.0      2022-04-13 [2] CRAN (R 4.2.0)
-##  sessioninfo     1.2.2      2021-12-06 [2] CRAN (R 4.2.0)
-##  stringi         1.7.8      2022-07-11 [2] CRAN (R 4.2.0)
-##  stringr       * 1.4.0      2019-02-10 [2] CRAN (R 4.2.0)
-##  tibble        * 3.1.8      2022-07-22 [2] CRAN (R 4.2.0)
-##  tidyr         * 1.2.0      2022-02-01 [2] CRAN (R 4.2.0)
-##  tidyselect      1.1.2      2022-02-21 [2] CRAN (R 4.2.0)
-##  tidyverse     * 1.3.2      2022-07-18 [2] CRAN (R 4.2.0)
-##  tzdb            0.3.0      2022-03-28 [2] CRAN (R 4.2.0)
-##  utf8            1.2.2      2021-07-24 [2] CRAN (R 4.2.0)
-##  vctrs           0.4.1      2022-04-13 [2] CRAN (R 4.2.0)
-##  withr           2.5.0      2022-03-03 [2] CRAN (R 4.2.0)
-##  xfun            0.31       2022-05-10 [1] CRAN (R 4.2.0)
-##  xml2            1.3.3      2021-11-30 [2] CRAN (R 4.2.0)
-##  yaml            2.3.5      2022-02-21 [2] CRAN (R 4.2.0)
-##  ymlthis       * 0.1.7      2022-08-05 [2] CRAN (R 4.2.0)
+##  package     * version date (UTC) lib source
+##  blogdown      1.18    2023-06-19 [1] CRAN (R 4.3.0)
+##  bookdown      0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib         0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
+##  evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
+##  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
+##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
+##  ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
+##  gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  here        * 1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite      1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr         1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
+##  lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
+##  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
+##  pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
+##  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)
+##  purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  rcis        * 0.2.7   2023-06-19 [1] Github (CFSS-MACSS/rcis@a4b198f)
+##  readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)
+##  rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown     2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass          0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
+##  stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)
+##  tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
+##  tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)
+##  tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
+##  tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
+##  timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
+##  tzdb          0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
+##  utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
+##  vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
+##  xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
+##  ymlthis     * 0.1.7   2022-08-05 [1] CRAN (R 4.3.0)
 ## 
-##  [1] /Users/soltoffbc/Library/R/arm64/4.2/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
 ## 
 ## ──────────────────────────────────────────────────────────────────────────────
 ```

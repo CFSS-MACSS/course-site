@@ -1,6 +1,6 @@
 ---
 title: "A deep dive into R Markdown"
-date: 2023-07-05T12:25:00-05:00
+date: 2023-07-03T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
 
@@ -64,12 +64,13 @@ Consult these resources for further information about R Markdown, it is likely t
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/a-deep-dive-into-r-markdown")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
+
+
+## After class
+*  Complete the [Hw04](/homework/debugging-rmarkdown/)
 
 <!--
 #* [A dive into R Markdown](/notes/r-markdown/)
 -->
-
-<!--
-* Complete the [debugging homework assignment](/homework/debugging-rmarkdown/)
--->
+ 
