@@ -63,7 +63,11 @@ usethis::use_course("css-materials/reproducible-workflow")
 {{% /callout %}}
 -->
 
-## Additional resources
+### Additional resources
 
 * Book [What They Forgot to Teach You About R](https://rstats.wtf/)
 * Article on [Project-oriented workflow](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+
+## After class
+* Complete [Hw04](homework/homework/programming/)
