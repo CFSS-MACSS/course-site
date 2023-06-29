@@ -112,6 +112,8 @@ knitr::opts_chunk$set(
 ```{r pkgs, include = FALSE, cache = FALSE}
 library(tidyverse)
 library(rcis)
+library(knitr)
+library(kableExtra)
 library(here)
 library(ymlthis)
 library(countdown)
@@ -386,25 +388,26 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 **Table**: use `-----` for rows and `|` for columns. See https://www.markdownguide.org/extended-syntax/
 
 
-<!--
+
 
 ## R Markdown: tables
 
 ```{r}
+data(gun_deaths)
 youth <- gun_deaths %>% filter(age <= 65)
-knitr::kable(gun_deaths)
+#knitr::kable(gun_deaths)
 ```
 
 --
 
 ```{r}
 youth <- gun_deaths %>% filter(age <= 65)
-knitr::kable(gun_deaths, col.names = c("new_name1", "new_name2", "new_name3"), 
-                         align = "ccc", 
-                         caption = "Table 1. etc.")
+#knitr::kable(gun_deaths, col.names = c("new_name1", "new_name2", "new_name3"), 
+#                         align = "ccc", 
+#                         caption = "Table 1. etc.")
 ```
 
--->
+
 
 ---
 
@@ -555,7 +558,7 @@ Open **`gun-deaths.Rmd`** (get the repo from the website)
 ````{verbatim, echo = TRUE}
 ---
 title: "Gun deaths"
-author: "Sabrina Nardin"
+author: "Jean Clipperton"
 output: html_document
 ---
 ````
@@ -573,7 +576,7 @@ See Chapter 27 of R for Data Science for more on YAML header (e.g., parameters, 
 ````{verbatim, echo = TRUE}
 ---
 title: "Gun deaths"
-author: "Sabrina Nardin"
+author: "Jean Clipperton"
 output: html_document
 ---
 ````
@@ -585,7 +588,7 @@ output: html_document
 ````{verbatim, echo = TRUE}
 ---
 title: "Gun deaths"
-author: "Sabrina Nardin"
+author: "Jean Clipperton"
 output: 
   html_document
     toc: true
@@ -600,7 +603,7 @@ output:
 ````{verbatim, echo = TRUE}
 ---
 title: "Gun deaths"
-author: "Sabrina Nardin"
+author: "Jean Clipperton"
 output: 
   html_document
     theme: readable
@@ -724,4 +727,7 @@ class: tiny
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Jean Clipperton and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
