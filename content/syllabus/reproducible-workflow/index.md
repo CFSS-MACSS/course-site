@@ -1,6 +1,6 @@
 ---
 title: "Reproducible Workflow"
-date: 2023-07-03T12:25:00-05:00
+date: 2023-06-29T12:25:00-05:00
 publishDate: 2019-05-01T12:25:00-05:00
 draft: false
 
@@ -58,7 +58,7 @@ math: false
 {{% callout note %}}
 Run the code below in your console to download the exercises for today.
 ```r
-usethis::use_course("CFSS-MACSS/reproducible-workflow")
+usethis::use_course("css-materials/reproducible-workflow")
 ```
 {{% /callout %}}
 -->
