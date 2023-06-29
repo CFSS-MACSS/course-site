@@ -1,6 +1,6 @@
 ---
 title: "Debugging and defensive programming"
-date: 2023-06-29T12:25:00-05:00
+date: 2023-06-28T12:25:00-05:00
 publishDate: 2019-04-29T12:25:00-05:00
 draft: false
 
@@ -64,8 +64,10 @@ math: false
 * No in-class materials (today we complete in-class materials for "Data Structures" lecture)
 * Review the assigned readings for further insights and practice 
 
-<!--
+### Additional Resources
 * [Bugs and styling code](/notes/style-guide/)
 * [Debugging and condition handling](/notes/condition-handling/)
 * [*Naming things*](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf) - by Jenny Bryan. A concise guide to naming files.
--->
+
+## After class
+* [Complete Homework 4](/homework/programming/)
