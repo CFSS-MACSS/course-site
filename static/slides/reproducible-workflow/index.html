@@ -45,7 +45,7 @@ Our goal: not to preserve the workspace, but the code that produces that workspa
 
 ## Pets VS Cattle?
 
-&lt;img src="../../../../../../../img/individual-cows-vs-cattle.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../../../../../../../../../../../img/individual-cows-vs-cattle.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 &lt;!-- https://blog.octo.com/en/pet-vs-cattle-from-server-craftsman-to-software-craftsman/ --&gt;
 
@@ -90,13 +90,13 @@ Instead: restart your R session to make sure you are clearing everything from yo
 
 --
 
-**Why doing all of this?**...
+**Why do all of this?**...
 
 ---
 
 class: middle, center
 
-&lt;iframe width="800" height="500" src="https://www.youtube.com/embed/GiPe1OiKQuk?start=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="800" height="500" src="https://www.youtube.com/embed/GiPe1OiKQuk?start=07" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 ---
 
@@ -155,16 +155,23 @@ library(tidyverse)
 getwd()
 
 # modify it
-setwd("/Users/Sabrina Nardin/Desktop/something_something/foofy/data")
+setwd("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/examples/")
+getwd()
 
 # reference directly data to import
-foofy &lt;- read_csv("raw_foofy_data.csv")
+data_ex_tea &lt;- read_csv("data_ex_tea.csv")
+
+relevel months
+data_ex_tea &lt;- data_ex_tea %&gt;%
+  mutate(Months = factor(Months, levels = month.abb))
 
 # plot
-p &lt;- ggplot(foofy, aes(x, y)) + geom_point()
+p &lt;- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
+  geom_point()
+
 
 # save p in figures folder, use .. notation to go up one level 
-ggsave("../figures/foofy_scatterplot.png")
+ggsave("../figures/tea_scatterplot.png")
 ```
 --
 
@@ -197,7 +204,7 @@ For example, every homework and in-class exercise folder that we have been using
 
 Review the previous example using `.Rproj`:
 * Go to File &gt; New Project &gt; Existing Directory
-* If I set the Existing Directory to my project `"/Users/Sabrina Nardin/Desktop/something_something"`, 
+* If I set the Existing Directory to my project `"/Users/jeanclipperton/Desktop/something_something"`, 
 the previous code can be modified as follows:
 
 ```r
@@ -206,11 +213,20 @@ library(tidyverse)
 # get current working directory 
 getwd()
 
-# reference directly the data to import
-foofy &lt;- read_csv("foofy/data/raw_foofy_data.csv")
+# reference data directly to import
+data_ex_tea &lt;- read_csv("data_ex_tea.csv")
 
+#relevel months
+data_ex_tea &lt;- data_ex_tea %&gt;%
+  mutate(Months = factor(Months, levels = month.abb))
+  
 # plot
-p &lt;- ggplot(foofy, aes(x, y)) + geom_point()
+p &lt;- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
+  geom_point()
+
+
+# save p in figures folder, use .. notation to go up one level 
+ggsave("../figures/tea_scatterplot.png")
 
 # save p in figures folder
 ggsave("foofy/figures/foofy_scatterplot.png")
@@ -227,9 +243,9 @@ class: inverse, middle
 
 ### Instructions:
 
-1) In your R Workbench, create a new R Project (File &gt; New Project &gt; New Directory); no need to make it a Version control project for this exercise. Give the name "test" to the new directory and place it in a sub-folder (e.g., your lecture sub-folder, etc.)
+1) In your [R Workbench](https://macs30500.netlify.app/setup/r/r-server/), create a new R Project (File &gt; New Project &gt; New Directory); no need to make it a Version control project for this exercise. Give the name "test" to the new directory and place it in a sub-folder (e.g., your lecture sub-folder, etc.)
 
-2) Inside your newly created "test" folder, create a "data" sub-folder (Go under "Files" and click on the yellow folder icon)
+2) Inside your newly created "test" folder, create a "data" sub-folder (Go under "Files" (lower right menu) and click on the yellow folder icon)
 
 3) In your R Workbench, you should have your HW3 with a folder called "data" and two `.csv` files. You want to take the `scdb-case.csv` and make a copy of it in your newly created "test" folder (if you do not have this data, you can pick any other csv file from another folder). To do so:
 * navigate to the HW3 data folder, find the csv file and check the box next to it
@@ -277,7 +293,7 @@ here()
 ```
 
 ```
-## [1] "C:/Users/Sabrina Nardin/Desktop/course-site"
+## [1] "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site"
 ```
 
 This prints out what it identifies as current project folder (relative to where these slides have been created) 
@@ -290,7 +306,7 @@ If I want to build a file path, based on this directory, I can use the `here()` 
 ```r
 # use here to build the path
 here("static", "extras", "awesome.txt")
-## [1] "C:/Users/Sabrina Nardin/Desktop/course-site/static/extras/awesome.txt"
+## [1] "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/extras/awesome.txt"
 
 # test to see if it works
 cat(readLines(here("static", "extras", "awesome.txt")))
@@ -306,9 +322,9 @@ What happens if we change the working directory?
 
 ```r
 # change the working directory
-setwd("C:/Users/Sabrina Nardin/Desktop/course-site/content")
+setwd("/Users/jeanclipperton/Library")
 getwd()
-## [1] "C:/Users/Sabrina Nardin/Desktop/course-site/content"
+## [1] "/Users/jeanclipperton/Library"
 
 # test to see if this still works
 cat(readLines(here("static", "extras", "awesome.txt")))
@@ -366,7 +382,7 @@ Imagine that in both of the R Markdown files `exploratory-analysis.Rmd` and `fin
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

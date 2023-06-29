@@ -181,13 +181,13 @@ Instead: restart your R session to make sure you are clearing everything from yo
 
 --
 
-**Why doing all of this?**...
+**Why do all of this?**...
 
 ---
 
 class: middle, center
 
-<iframe width="800" height="500" src="https://www.youtube.com/embed/GiPe1OiKQuk?start=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="500" src="https://www.youtube.com/embed/GiPe1OiKQuk?start=07" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
@@ -246,16 +246,23 @@ library(tidyverse)
 getwd()
 
 # modify it
-setwd("/Users/Sabrina Nardin/Desktop/something_something/foofy/data")
+setwd("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/examples/")
+getwd()
 
 # reference directly data to import
-foofy <- read_csv("raw_foofy_data.csv")
+data_ex_tea <- read_csv("data_ex_tea.csv")
+
+relevel months
+data_ex_tea <- data_ex_tea %>%
+  mutate(Months = factor(Months, levels = month.abb))
 
 # plot
-p <- ggplot(foofy, aes(x, y)) + geom_point()
+p <- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
+  geom_point()
+
 
 # save p in figures folder, use .. notation to go up one level 
-ggsave("../figures/foofy_scatterplot.png")
+ggsave("../figures/tea_scatterplot.png")
 ```
 --
 
@@ -288,7 +295,7 @@ For example, every homework and in-class exercise folder that we have been using
 
 Review the previous example using `.Rproj`:
 * Go to File > New Project > Existing Directory
-* If I set the Existing Directory to my project `"/Users/Sabrina Nardin/Desktop/something_something"`, 
+* If I set the Existing Directory to my project `"/Users/jeanclipperton/Desktop/something_something"`, 
 the previous code can be modified as follows:
 
 ```r
@@ -297,11 +304,20 @@ library(tidyverse)
 # get current working directory 
 getwd()
 
-# reference directly the data to import
-foofy <- read_csv("foofy/data/raw_foofy_data.csv")
+# reference data directly to import
+data_ex_tea <- read_csv("data_ex_tea.csv")
 
+#relevel months
+data_ex_tea <- data_ex_tea %>%
+  mutate(Months = factor(Months, levels = month.abb))
+  
 # plot
-p <- ggplot(foofy, aes(x, y)) + geom_point()
+p <- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
+  geom_point()
+
+
+# save p in figures folder, use .. notation to go up one level 
+ggsave("../figures/tea_scatterplot.png")
 
 # save p in figures folder
 ggsave("foofy/figures/foofy_scatterplot.png")
@@ -318,9 +334,9 @@ class: inverse, middle
 
 ### Instructions:
 
-1) In your R Workbench, create a new R Project (File > New Project > New Directory); no need to make it a Version control project for this exercise. Give the name "test" to the new directory and place it in a sub-folder (e.g., your lecture sub-folder, etc.)
+1) In your [R Workbench](https://macs30500.netlify.app/setup/r/r-server/), create a new R Project (File > New Project > New Directory); no need to make it a Version control project for this exercise. Give the name "test" to the new directory and place it in a sub-folder (e.g., your lecture sub-folder, etc.)
 
-2) Inside your newly created "test" folder, create a "data" sub-folder (Go under "Files" and click on the yellow folder icon)
+2) Inside your newly created "test" folder, create a "data" sub-folder (Go under "Files" (lower right menu) and click on the yellow folder icon)
 
 3) In your R Workbench, you should have your HW3 with a folder called "data" and two `.csv` files. You want to take the `scdb-case.csv` and make a copy of it in your newly created "test" folder (if you do not have this data, you can pick any other csv file from another folder). To do so:
 * navigate to the HW3 data folder, find the csv file and check the box next to it
@@ -388,7 +404,7 @@ What happens if we change the working directory?
 
 ```{r, collapse = TRUE}
 # change the working directory
-setwd("C:/Users/Sabrina Nardin/Desktop/course-site/content")
+setwd("/Users/jeanclipperton/Library")
 getwd()
 
 # test to see if this still works
@@ -446,4 +462,4 @@ Imagine that in both of the R Markdown files `exploratory-analysis.Rmd` and `fin
 
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
