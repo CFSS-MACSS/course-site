@@ -108,7 +108,7 @@ Solution: write every script like its running in a fresh process
 
 --
 
-**Exception:** There are some instances where running everything in a new session of R might be challenging, such as storing computationally demanding output:
+**Exception:** There are some instances where running everything in a new session of R might be challenging, such as storing computationally demanding output [see more on data in R here](https://bookdown.org/f_lennert/introduction-to-r/workingwithdata.html):
 * In Rmd: `cache = TRUE`
 * In regular R script: use `write_rds()` to save &amp; `read_rds()` to import back
 
@@ -151,24 +151,18 @@ This example uses `setwd()`to manually set your working dir to a specific folder
 ```r
 library(tidyverse)
 
-# get current working directory
-getwd()
-
-# modify it
+# modify workng directory
 setwd("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/examples/")
 getwd()
 
 # reference directly data to import
 data_ex_tea &lt;- read_csv("data_ex_tea.csv")
 
-relevel months
-data_ex_tea &lt;- data_ex_tea %&gt;%
-  mutate(Months = factor(Months, levels = month.abb))
+#relevel months
+data_ex_tea &lt;- data_ex_tea %&gt;% mutate(Months = factor(Months, levels = month.abb))
 
 # plot
-p &lt;- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
-  geom_point()
-
+p &lt;- ggplot(data_ex_tea, aes(Months, Cups_tea)) + geom_point()
 
 # save p in figures folder, use .. notation to go up one level 
 ggsave("../figures/tea_scatterplot.png")
