@@ -231,7 +231,7 @@ ggsave("foofy/figures/foofy_scatterplot.png")
 
 class: inverse, middle
 
-# Practice using reproducbile workflow within R
+# Practice using reproducible workflow within R
 
 ---
 
@@ -333,13 +333,14 @@ This because the output of the code `here("static", "extras", "awesome.txt")` re
 
 class: inverse, middle
 
-# Practice using reproducbile workflow within R
+# Practice using reproducible workflow within R
 
 ---
 
 ### Instructions:
 
 8) Load the `here` library (already installed on R Workbench). Type `here()` to print out what it identifies as current project folder. Then import the same `scdb-case.csv` file building a path with `here()`
+9) 
 
 ---
 
@@ -357,7 +358,7 @@ Imagine we have a `"court-project"` folder, structured as follows:
 
 ```
 data/
-  scotus.csv
+  scdb-case.csv
 analysis/
   exploratory-analysis.Rmd
 final-report.Rmd
@@ -366,11 +367,11 @@ scotus.Rproj
 
 --
 
-Imagine that in both of the R Markdown files `exploratory-analysis.Rmd` and `final-report.Rmd`, we have this piece of code: `read_csv("data/scotus.csv")`
+Imagine that in both of the R Markdown files `exploratory-analysis.Rmd` and `final-report.Rmd`, we have this piece of code: `read_csv("data/scdb-case.csv")`
 
 * In `final-report.Rmd`, will this code work?
 * In `exploratory-analysis.Rmd`, will this code work?
-* If we replace the `read_csv("data/scotus.csv")` with `read_csv(here("data", "scotus.csv"))`, will this code work in both .Rmd files?
+* If we replace the `read_csv("data/scdb-case.csv")` with `read_csv(here("data", "scdb-case.csv"))`, will this code work in both .Rmd files? **Hint: here can override the particular location of the file while the relational path cannot.**
 
 ---
 
