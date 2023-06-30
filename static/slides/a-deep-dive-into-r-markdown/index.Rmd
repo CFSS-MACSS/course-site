@@ -133,7 +133,7 @@ Additional resources:
 * [R Markdown cheat sheet](https://posit.co/resources/cheatsheets/?_page=2/)
 * [Markdown and R Markdown](https://pjbartlein.github.io/REarthSysSci/markdown.html) by Pat Bartlein
 * [R Markdown from R Studio](https://rmarkdown.rstudio.com/lesson-1.html) official documentation
-* `Rmarkdown.Rmd` from Lecture 2  `usethis::use_course("css-materials/intro-r")`
+* `Rmarkdown.Rmd` from lecture two:  `usethis::use_course("CFSS-MACSS/intro-r")`
 ---
 
 ## R Markdown and Markdown
@@ -225,6 +225,7 @@ __Bold__ and **Bold**
 ````
 ~~Strikethrough~~ 
 
+--
 
 ````
 `inline code`
@@ -387,7 +388,7 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 
 **Table**: use `-----` for rows and `|` for columns. See https://www.markdownguide.org/extended-syntax/
 
-
+---
 
 
 ## R Markdown: tables
@@ -402,9 +403,12 @@ youth <- gun_deaths %>% filter(age <= 65)
 
 ```{r}
 youth <- gun_deaths %>% filter(age <= 65)
-#knitr::kable(gun_deaths, col.names = c("new_name1", "new_name2", "new_name3"), 
-#                         align = "ccc", 
-#                         caption = "Table 1. etc.")
+colsrename <- str_to_title(names(youth))
+
+# note: excerpting table for speed / rendering
+kable(youth[1:15,], col.names = colsrename, 
+                         align = c(rep("c", 7), "l", "r", "l"), 
+                         caption = "Table 1. etc.")
 ```
 
 
@@ -428,9 +432,9 @@ library(rcis)
 ## Gun deaths by age
 
 Data for this plot come from the `gun_deaths` dataset.We have data about `r nrow(gun_deaths)` individuals killed by guns.
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown below.
+Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown in the figure below.
 
-```{r youth-dist, echo = FALSE}
+```{r youth-dist, fig.cap = "Gun Death Victims Over 65",  echo = FALSE}
 youth <- gun_deaths %>% filter(age <= 65)
 youth %>% 
   ggplot(aes(age)) + 
@@ -453,7 +457,7 @@ Data for this plot come from the `gun_deaths` dataset.
 We have data about `r nrow(gun_deaths)` individuals killed by guns.
 
 Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown below.
+The distribution of the remainder is shown in the previous figure.
 ````
 
 --
@@ -462,23 +466,23 @@ Data for this plot come from the `gun_deaths` dataset.
 We have data about `r nrow(gun_deaths)` individuals killed by guns.
 
 Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown below.
+The distribution of the remainder is shown in the previous figure.
 
 
 ---
 
 class: inverse, middle
 
-# Practice 1 (~8 min)
+# Practice 1 (~10 min)
 
 Complete this tutorial (skip the "code" practice): https://commonmark.org/help/
 
 
 ---
 
-## R Markdown: Naming code chuncks 
+## R Markdown: Naming code chunks 
 
-A named code chunck:
+A named code chunk:
 ````{verbatim, lang = 'markdown', echo = TRUE}
 ```{r youth-dist2}
 # code goes here
@@ -495,7 +499,7 @@ Advantages:
 
 --
 
-`cache = TRUE` savea the output of the chunk to a file on memory. On subsequent runs, R will check if the code chunck has changed; if not, R reuses it rather than re-running (Ch. 27 R for Data Science)
+`cache = TRUE` save the output of the chunk to a file on memory. On subsequent runs, R will check if the code chunk has changed; if not, R reuses it rather than re-running (Ch. 27 R for Data Science)
 
 ---
 
@@ -505,7 +509,7 @@ Advantages:
 
 **`include = FALSE`** code is evaluated; code does not appear in the report, nor do results (useful when you do not want to clutter your report with too much code). Default is `include = TRUE`
 
-**`echo = FALSE`** codes is evaluated; code does not appear in the report, results appear in the report (useful to show your output to people that are not interested in the code that produced it, or for demos of hw2 and hw3 which had the graphs but not code). Default is `echo = TRUE`
+**`echo = FALSE`** code is evaluated; code does not appear in the report, results appear in the report (useful to show your output to people that are not interested in the code that produced it, or for demos of hw2 and hw3 which had the graphs but not code). Default is `echo = TRUE`
 
 **`error = TRUE`** code is evaluated and appear in the report even if there is an error (e.g. to knit with errors). Default is `error = FALSE`
 
@@ -513,7 +517,7 @@ Advantages:
 
 ---
 
-## R Markdown: Code chuncks options
+## R Markdown: Code chunks options
 
 ```{r}
 include_graphics(path = "chunk_options.jpg")
@@ -527,9 +531,9 @@ Full list: full list at http://yihui.name/knitr/options/
 
 ## Global options
 
-Use global options if you want to change the default chunck options for all chunks in your file. 
+Use global options if you want to change the default chunk options for all chunks in your file. 
 
-In a code chunck (usually at the top of the document) type `knitr::opts_chunk$set()` with your options. For example, if we want to hide the code by default:
+In a code chunk (usually at the top of the document) type `knitr::opts_chunk$set()` with your options. For example, if we want to hide the code by default:
 
 ```r
 knitr::opts_chunk$set(
@@ -541,9 +545,9 @@ knitr::opts_chunk$set(
 
 class: inverse, middle
 
-# Practice 2 (~8 min)
+# Practice 2 (~10 min)
 
-Open **`gun-deaths.Rmd`** (get the repo from the website)
+Open **`gun-deaths.Rmd`** `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
 
 1. Observe how the file is structured, then knit it, and observe the output
 
@@ -629,7 +633,7 @@ date: "November 7, 2022"
 
 --
 
-But adding the date manually is not scalable. We ca add it automatically instead. 
+But adding the date manually is not scalable. We can add it automatically instead. 
 
 ---
 
@@ -645,7 +649,8 @@ date: "`r lubridate::today()`"
 ---
 ````
 
-For more on the `lubridate` package: Chapter 16 of R for Data Science
+For more on the `lubridate` package: [Chapter 16 of R for Data Science](https://r4ds.had.co.nz/dates-and-times.html)
+
 ---
 
 ## YAML header specifications: `Sys.Date`
@@ -727,7 +732,4 @@ class: tiny
 
 ## Acknowledgments 
 
-
-## Acknowledgments 
-
-The content of these slides is derived in part from Jean Clipperton and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.

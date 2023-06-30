@@ -64,12 +64,11 @@ Consult these resources for further information about R Markdown, it is likely t
 ## Class materials
 
 * Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
+* [A dive into R Markdown](/notes/r-markdown/)
 
 
 ## After class
 *  Complete  [Hw05](/homework/debugging-rmarkdown/)
 
-<!--
-#* [A dive into R Markdown](/notes/r-markdown/)
--->
- 
+
+
