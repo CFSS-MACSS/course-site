@@ -61,6 +61,7 @@ Consult these resources for further information about R Markdown, it is likely t
 * [R Markdown cheat sheet](https://posit.co/resources/cheatsheets/?_page=2/)
 * [Markdown and R Markdown](https://pjbartlein.github.io/REarthSysSci/markdown.html) by Pat Bartlein
 * [R Markdown from R Studio](https://rmarkdown.rstudio.com/lesson-1.html) official documentation
+* Info on the `lubridate` package: [Chapter 16 of R for Data Science](https://r4ds.had.co.nz/dates-and-times.html)
 
 ## Class materials
 
@@ -68,7 +69,7 @@ Consult these resources for further information about R Markdown, it is likely t
 
 
 ## After class
-*  Complete the [Hw04](/homework/debugging-rmarkdown/)
+*  Complete  [Hw05](/homework/debugging-rmarkdown/)
 
 <!--
 #* [A dive into R Markdown](/notes/r-markdown/)
