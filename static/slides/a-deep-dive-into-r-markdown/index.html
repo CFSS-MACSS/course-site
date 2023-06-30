@@ -38,7 +38,7 @@ Additional resources:
 * [R Markdown cheat sheet](https://posit.co/resources/cheatsheets/?_page=2/)
 * [Markdown and R Markdown](https://pjbartlein.github.io/REarthSysSci/markdown.html) by Pat Bartlein
 * [R Markdown from R Studio](https://rmarkdown.rstudio.com/lesson-1.html) official documentation
-* `Rmarkdown.Rmd` from Lecture 2  `usethis::use_course("css-materials/intro-r")`
+* `Rmarkdown.Rmd` from lecture two:  `usethis::use_course("CFSS-MACSS/intro-r")`
 ---
 
 ## R Markdown and Markdown
@@ -128,6 +128,7 @@ __Bold__ and **Bold**
 ````
 ~~Strikethrough~~ 
 
+--
 
 ````
 `inline code`
@@ -290,7 +291,7 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 
 **Table**: use `-----` for rows and `|` for columns. See https://www.markdownguide.org/extended-syntax/
 
-
+---
 
 
 ## R Markdown: tables
@@ -299,7 +300,205 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 
 --
 
-
+&lt;table&gt;
+&lt;caption&gt;Table 1. etc.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Year &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Month &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Intent &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Police &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Sex &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Age &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Race &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Place &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Education &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Asian/Pacific Islander &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Street &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Less than HS &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Undetermined &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 48 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Accidental &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Less than HS &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 34 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Homicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 
 
@@ -323,9 +522,9 @@ library(rcis)
 ## Gun deaths by age
 
 Data for this plot come from the `gun_deaths` dataset.We have data about `r nrow(gun_deaths)` individuals killed by guns.
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown below.
+Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown in the figure below.
 
-```{r youth-dist, echo = FALSE}
+```{r youth-dist, fig.cap = "Gun Death Victims Over 65",  echo = FALSE}
 youth &lt;- gun_deaths %&gt;% filter(age &lt;= 65)
 youth %&gt;% 
   ggplot(aes(age)) + 
@@ -347,7 +546,7 @@ Data for this plot come from the `gun_deaths` dataset.
 We have data about `r nrow(gun_deaths)` individuals killed by guns.
 
 Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown below.
+The distribution of the remainder is shown in the previous figure.
 ```
 
 --
@@ -356,23 +555,23 @@ Data for this plot come from the `gun_deaths` dataset.
 We have data about 100798 individuals killed by guns.
 
 Only 15687 are older than 65.
-The distribution of the remainder is shown below.
+The distribution of the remainder is shown in the previous figure.
 
 
 ---
 
 class: inverse, middle
 
-# Practice 1 (~8 min)
+# Practice 1 (~10 min)
 
 Complete this tutorial (skip the "code" practice): https://commonmark.org/help/
 
 
 ---
 
-## R Markdown: Naming code chuncks 
+## R Markdown: Naming code chunks 
 
-A named code chunck:
+A named code chunk:
 
 ````markdown
 ```{r youth-dist2}
@@ -390,7 +589,7 @@ Advantages:
 
 --
 
-`cache = TRUE` savea the output of the chunk to a file on memory. On subsequent runs, R will check if the code chunck has changed; if not, R reuses it rather than re-running (Ch. 27 R for Data Science)
+`cache = TRUE` save the output of the chunk to a file on memory. On subsequent runs, R will check if the code chunk has changed; if not, R reuses it rather than re-running (Ch. 27 R for Data Science)
 
 ---
 
@@ -400,7 +599,7 @@ Advantages:
 
 **`include = FALSE`** code is evaluated; code does not appear in the report, nor do results (useful when you do not want to clutter your report with too much code). Default is `include = TRUE`
 
-**`echo = FALSE`** codes is evaluated; code does not appear in the report, results appear in the report (useful to show your output to people that are not interested in the code that produced it, or for demos of hw2 and hw3 which had the graphs but not code). Default is `echo = TRUE`
+**`echo = FALSE`** code is evaluated; code does not appear in the report, results appear in the report (useful to show your output to people that are not interested in the code that produced it, or for demos of hw2 and hw3 which had the graphs but not code). Default is `echo = TRUE`
 
 **`error = TRUE`** code is evaluated and appear in the report even if there is an error (e.g. to knit with errors). Default is `error = FALSE`
 
@@ -408,7 +607,7 @@ Advantages:
 
 ---
 
-## R Markdown: Code chuncks options
+## R Markdown: Code chunks options
 
 &lt;img src="chunk_options.jpg" width="80%" style="display: block; margin: auto;" /&gt;
 
@@ -420,9 +619,9 @@ Full list: full list at http://yihui.name/knitr/options/
 
 ## Global options
 
-Use global options if you want to change the default chunck options for all chunks in your file. 
+Use global options if you want to change the default chunk options for all chunks in your file. 
 
-In a code chunck (usually at the top of the document) type `knitr::opts_chunk$set()` with your options. For example, if we want to hide the code by default:
+In a code chunk (usually at the top of the document) type `knitr::opts_chunk$set()` with your options. For example, if we want to hide the code by default:
 
 ```r
 knitr::opts_chunk$set(
@@ -434,9 +633,9 @@ knitr::opts_chunk$set(
 
 class: inverse, middle
 
-# Practice 2 (~8 min)
+# Practice 2 (~10 min)
 
-Open **`gun-deaths.Rmd`** (get the repo from the website)
+Open **`gun-deaths.Rmd`** `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
 
 1. Observe how the file is structured, then knit it, and observe the output
 
@@ -527,7 +726,7 @@ date: "November 7, 2022"
 
 --
 
-But adding the date manually is not scalable. We ca add it automatically instead. 
+But adding the date manually is not scalable. We can add it automatically instead. 
 
 ---
 
