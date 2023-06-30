@@ -212,8 +212,8 @@ We have data about 100798 individuals killed by guns. Only 15687 are older than 
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output: github_document
 ---
@@ -230,8 +230,8 @@ For your homework assignments, we have used `github_document` to generate a [Mar
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output: html_document
 ---
@@ -246,8 +246,8 @@ Each output format has various options to customize the appearance of the final 
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   html_document:
@@ -268,8 +268,8 @@ There are several options that control the visual appearance of HTML documents.
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   html_document:
@@ -285,8 +285,8 @@ Sometimes when knitting an R Markdown document you want to include your R source
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   html_document:
@@ -301,8 +301,8 @@ When `knitr` processes your `.Rmd` document, it creates a Markdown (`.md`) file 
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   html_document:
@@ -323,8 +323,8 @@ output:
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output: pdf_document
 ---
@@ -339,8 +339,8 @@ Many options for HTML documents also work for PDFs. For instance, you create a t
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   pdf_document:
@@ -356,8 +356,8 @@ You cannot customize the `theme` of a `pdf_document` (at least not in the same w
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   pdf_document:
@@ -372,8 +372,8 @@ You can also directly control options in the `\(\LaTeX\)` template itself via th
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output: pdf_document
 geometry: margin=1in
@@ -388,8 +388,8 @@ R Markdown documents are converted first to a `.tex` file, and then use the `\(\
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   pdf_document:
@@ -415,8 +415,8 @@ You can even render your document into multiple output formats by supplying a li
 
 ```
 ---
-author: Benjamin Soltoff
-date: '2023-06-29'
+author: Jean Clipperton
+date: '2023-06-30'
 title: Gun deaths
 output:
   pdf_document: default
@@ -547,7 +547,7 @@ This creates a temporary R script which contains the single command `rmarkdown::
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Chicago
-##  date     2023-06-29
+##  date     2023-06-30
 ##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
@@ -557,7 +557,9 @@ This creates a temporary R script which contains the single command `rmarkdown::
 ##  bslib         0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
 ##  cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
 ##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  codetools     0.2-19  2023-02-01 [1] CRAN (R 4.3.0)
 ##  colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  crayon        1.5.2   2022-09-29 [1] CRAN (R 4.3.0)
 ##  digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
 ##  dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
 ##  evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.0)
@@ -571,6 +573,7 @@ This creates a temporary R script which contains the single command `rmarkdown::
 ##  here        * 1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
 ##  hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
 ##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  httr          1.4.6   2023-05-08 [1] CRAN (R 4.3.0)
 ##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
 ##  jsonlite      1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
 ##  knitr         1.43    2023-05-25 [1] CRAN (R 4.3.0)
@@ -601,6 +604,7 @@ This creates a temporary R script which contains the single command `rmarkdown::
 ##  tzdb          0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
 ##  utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
 ##  vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  whoami        1.3.0   2019-03-19 [1] CRAN (R 4.3.0)
 ##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
 ##  xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)
 ##  yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)

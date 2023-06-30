@@ -217,7 +217,7 @@ We have data about `r nrow(gun_deaths)` individuals killed by guns. Only `r nrow
 ```{r yml-default}
 yml_default <- yml() %>%
   yml_title("Gun deaths") %>%
-  yml_author("Benjamin Soltoff") %>%
+  yml_author("Jean Clipperton") %>%
   yml_date(lubridate::today())
 ```
 
