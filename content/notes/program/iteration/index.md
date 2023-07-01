@@ -29,7 +29,7 @@ theme_set(theme_minimal())
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
-usethis::use_course("cis-ds/vectors-and-iteration")
+usethis::use_course("CFSS-MACSS/vectors-and-iteration")
 ```
 
 {{% /callout %}}
@@ -202,8 +202,8 @@ Let's compare the time it takes to complete each of these loops by replicating e
 
 
 ```
-## Warning in microbenchmark(`No preallocation` = {: less accurate nanosecond times
-## to avoid potential integer overflows
+## Warning in microbenchmark(`No preallocation` = {: less accurate nanosecond
+## times to avoid potential integer overflows
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/preallocate-1.png" width="672" />
@@ -224,22 +224,21 @@ car_prices
 
 ```
 ## # A tibble: 804 × 18
-##     Price Mileage Cylin…¹ Doors Cruise Sound Leather Buick Cadil…² Chevy Pontiac
-##     <dbl>   <int>   <int> <int>  <int> <int>   <int> <int>   <int> <int>   <int>
-##  1 22661.   20105       6     4      1     0       0     1       0     0       0
-##  2 21725.   13457       6     2      1     1       0     0       0     1       0
-##  3 29143.   31655       4     2      1     1       1     0       0     0       0
-##  4 30732.   22479       4     2      1     0       0     0       0     0       0
-##  5 33359.   17590       4     2      1     1       1     0       0     0       0
-##  6 30315.   23635       4     2      1     0       0     0       0     0       0
-##  7 33382.   17381       4     2      1     1       1     0       0     0       0
-##  8 30251.   27558       4     2      1     0       1     0       0     0       0
-##  9 30167.   25049       4     2      1     0       0     0       0     0       0
-## 10 27060.   17319       4     4      1     0       1     0       0     0       0
-## # … with 794 more rows, 7 more variables: Saab <int>, Saturn <int>,
-## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>,
-## #   and abbreviated variable names ¹​Cylinder, ²​Cadillac
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+##     Price Mileage Cylinder Doors Cruise Sound Leather Buick Cadillac Chevy
+##     <dbl>   <int>    <int> <int>  <int> <int>   <int> <int>    <int> <int>
+##  1 22661.   20105        6     4      1     0       0     1        0     0
+##  2 21725.   13457        6     2      1     1       0     0        0     1
+##  3 29143.   31655        4     2      1     1       1     0        0     0
+##  4 30732.   22479        4     2      1     0       0     0        0     0
+##  5 33359.   17590        4     2      1     1       1     0        0     0
+##  6 30315.   23635        4     2      1     0       0     0        0     0
+##  7 33382.   17381        4     2      1     1       1     0        0     0
+##  8 30251.   27558        4     2      1     0       1     0        0     0
+##  9 30167.   25049        4     2      1     0       0     0        0     0
+## 10 27060.   17319        4     4      1     0       1     0        0     0
+## # ℹ 794 more rows
+## # ℹ 8 more variables: Pontiac <int>, Saab <int>, Saturn <int>,
+## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>
 ```
 
 Before you write the `for` loop, identify the three components you need:
@@ -252,7 +251,7 @@ Before you write the `for` loop, identify the three components you need:
 
 * Output - a numeric vector of length 18
 * Sequence - `i in seq_along(car_prices)`
-* Body - calculate the `mean()` of the $i$th column, store the new value as the $i$th element of the vector `output`
+* Body - calculate the `mean()` of the `\(i\)`th column, store the new value as the `\(i\)`th element of the vector `output`
 
 
 ```r
@@ -291,7 +290,7 @@ Before you write the `for` loop, identify the three components you need:
 
 * Output - a vector of length 18
 * Sequence - `i in seq_along(car_prices)`
-* Body - get the maximum value of the $i$th column of the data frame `car_prices`, store the new value as the $i$th element of the list `output`
+* Body - get the maximum value of the `\(i\)`th column of the data frame `car_prices`, store the new value as the `\(i\)`th element of the list `output`
 
 
 ```r
@@ -433,22 +432,21 @@ car_prices
 
 ```
 ## # A tibble: 804 × 18
-##     Price Mileage Cylin…¹ Doors Cruise Sound Leather Buick Cadil…² Chevy Pontiac
-##     <dbl>   <int>   <int> <int>  <int> <int>   <int> <int>   <int> <int>   <int>
-##  1 22661.   20105       6     4      1     0       0     1       0     0       0
-##  2 21725.   13457       6     2      1     1       0     0       0     1       0
-##  3 29143.   31655       4     2      1     1       1     0       0     0       0
-##  4 30732.   22479       4     2      1     0       0     0       0     0       0
-##  5 33359.   17590       4     2      1     1       1     0       0     0       0
-##  6 30315.   23635       4     2      1     0       0     0       0     0       0
-##  7 33382.   17381       4     2      1     1       1     0       0     0       0
-##  8 30251.   27558       4     2      1     0       1     0       0     0       0
-##  9 30167.   25049       4     2      1     0       0     0       0     0       0
-## 10 27060.   17319       4     4      1     0       1     0       0     0       0
-## # … with 794 more rows, 7 more variables: Saab <int>, Saturn <int>,
-## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>,
-## #   and abbreviated variable names ¹​Cylinder, ²​Cadillac
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+##     Price Mileage Cylinder Doors Cruise Sound Leather Buick Cadillac Chevy
+##     <dbl>   <int>    <int> <int>  <int> <int>   <int> <int>    <int> <int>
+##  1 22661.   20105        6     4      1     0       0     1        0     0
+##  2 21725.   13457        6     2      1     1       0     0        0     1
+##  3 29143.   31655        4     2      1     1       1     0        0     0
+##  4 30732.   22479        4     2      1     0       0     0        0     0
+##  5 33359.   17590        4     2      1     1       1     0        0     0
+##  6 30315.   23635        4     2      1     0       0     0        0     0
+##  7 33382.   17381        4     2      1     1       1     0        0     0
+##  8 30251.   27558        4     2      1     0       1     0        0     0
+##  9 30167.   25049        4     2      1     0       0     0        0     0
+## 10 27060.   17319        4     4      1     0       1     0        0     0
+## # ℹ 794 more rows
+## # ℹ 8 more variables: Pontiac <int>, Saab <int>, Saturn <int>,
+## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>
 ```
 
 {{< spoiler text="Click for the solution" >}}
@@ -537,13 +535,11 @@ car_prices %>%
 
 ```
 ## # A tibble: 1 × 18
-##    Price Mileage Cylin…¹ Doors Cruise Sound Leather  Buick Cadil…² Chevy Pontiac
-##    <dbl>   <dbl>   <dbl> <dbl>  <dbl> <dbl>   <dbl>  <dbl>   <dbl> <dbl>   <dbl>
-## 1 21343.  19832.    5.27  3.53  0.752 0.679   0.724 0.0995  0.0995 0.398   0.187
-## # … with 7 more variables: Saab <dbl>, Saturn <dbl>, convertible <dbl>,
-## #   coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>, and abbreviated
-## #   variable names ¹​Cylinder, ²​Cadillac
-## # ℹ Use `colnames()` to see all variable names
+##    Price Mileage Cylinder Doors Cruise Sound Leather  Buick Cadillac Chevy
+##    <dbl>   <dbl>    <dbl> <dbl>  <dbl> <dbl>   <dbl>  <dbl>    <dbl> <dbl>
+## 1 21343.  19832.     5.27  3.53  0.752 0.679   0.724 0.0995   0.0995 0.398
+## # ℹ 8 more variables: Pontiac <dbl>, Saab <dbl>, Saturn <dbl>,
+## #   convertible <dbl>, coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>
 ```
 
 But this process is very repetitive and prone to mistakes - I cannot tell you how many typos I originally had in this code when I first wrote it.
@@ -575,13 +571,11 @@ car_prices %>%
 
 ```
 ## # A tibble: 1 × 18
-##    Price Mileage Cylin…¹ Doors Cruise Sound Leather  Buick Cadil…² Chevy Pontiac
-##    <dbl>   <dbl>   <dbl> <dbl>  <dbl> <dbl>   <dbl>  <dbl>   <dbl> <dbl>   <dbl>
-## 1 21343.  19832.    5.27  3.53  0.752 0.679   0.724 0.0995  0.0995 0.398   0.187
-## # … with 7 more variables: Saab <dbl>, Saturn <dbl>, convertible <dbl>,
-## #   coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>, and abbreviated
-## #   variable names ¹​Cylinder, ²​Cadillac
-## # ℹ Use `colnames()` to see all variable names
+##    Price Mileage Cylinder Doors Cruise Sound Leather  Buick Cadillac Chevy
+##    <dbl>   <dbl>    <dbl> <dbl>  <dbl> <dbl>   <dbl>  <dbl>    <dbl> <dbl>
+## 1 21343.  19832.     5.27  3.53  0.752 0.679   0.724 0.0995   0.0995 0.398
+## # ℹ 8 more variables: Pontiac <dbl>, Saab <dbl>, Saturn <dbl>,
+## #   convertible <dbl>, coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>
 ```
 
 If you want to apply multiple summaries, you store the functions in a `list()`:
@@ -594,17 +588,16 @@ car_prices %>%
 
 ```
 ## # A tibble: 1 × 36
-##   Price_1 Price_2 Mileage_1 Mileage_2 Cylinder_1 Cylin…¹ Doors_1 Doors_2 Cruis…²
-##     <dbl>   <dbl>     <int>     <int>      <int>   <int>   <int>   <int>   <int>
-## 1   8639.  70755.       266     50387          4       8       2       4       0
-## # … with 27 more variables: Cruise_2 <int>, Sound_1 <int>, Sound_2 <int>,
-## #   Leather_1 <int>, Leather_2 <int>, Buick_1 <int>, Buick_2 <int>,
-## #   Cadillac_1 <int>, Cadillac_2 <int>, Chevy_1 <int>, Chevy_2 <int>,
-## #   Pontiac_1 <int>, Pontiac_2 <int>, Saab_1 <int>, Saab_2 <int>,
-## #   Saturn_1 <int>, Saturn_2 <int>, convertible_1 <int>, convertible_2 <int>,
-## #   coupe_1 <int>, coupe_2 <int>, hatchback_1 <int>, hatchback_2 <int>,
-## #   sedan_1 <int>, sedan_2 <int>, wagon_1 <int>, wagon_2 <int>, and …
-## # ℹ Use `colnames()` to see all variable names
+##   Price_1 Price_2 Mileage_1 Mileage_2 Cylinder_1 Cylinder_2 Doors_1 Doors_2
+##     <dbl>   <dbl>     <int>     <int>      <int>      <int>   <int>   <int>
+## 1   8639.  70755.       266     50387          4          8       2       4
+## # ℹ 28 more variables: Cruise_1 <int>, Cruise_2 <int>, Sound_1 <int>,
+## #   Sound_2 <int>, Leather_1 <int>, Leather_2 <int>, Buick_1 <int>,
+## #   Buick_2 <int>, Cadillac_1 <int>, Cadillac_2 <int>, Chevy_1 <int>,
+## #   Chevy_2 <int>, Pontiac_1 <int>, Pontiac_2 <int>, Saab_1 <int>,
+## #   Saab_2 <int>, Saturn_1 <int>, Saturn_2 <int>, convertible_1 <int>,
+## #   convertible_2 <int>, coupe_1 <int>, coupe_2 <int>, hatchback_1 <int>,
+## #   hatchback_2 <int>, sedan_1 <int>, sedan_2 <int>, wagon_1 <int>, …
 ```
 
 To clearly distinguish each summarized variable, we can name them in the list:
@@ -617,17 +610,16 @@ car_prices %>%
 
 ```
 ## # A tibble: 1 × 36
-##   Price_min Price_max Mileage_…¹ Milea…² Cylin…³ Cylin…⁴ Doors…⁵ Doors…⁶ Cruis…⁷
-##       <dbl>     <dbl>      <int>   <int>   <int>   <int>   <int>   <int>   <int>
-## 1     8639.    70755.        266   50387       4       8       2       4       0
-## # … with 27 more variables: Cruise_max <int>, Sound_min <int>, Sound_max <int>,
-## #   Leather_min <int>, Leather_max <int>, Buick_min <int>, Buick_max <int>,
-## #   Cadillac_min <int>, Cadillac_max <int>, Chevy_min <int>, Chevy_max <int>,
-## #   Pontiac_min <int>, Pontiac_max <int>, Saab_min <int>, Saab_max <int>,
-## #   Saturn_min <int>, Saturn_max <int>, convertible_min <int>,
-## #   convertible_max <int>, coupe_min <int>, coupe_max <int>,
-## #   hatchback_min <int>, hatchback_max <int>, sedan_min <int>, …
-## # ℹ Use `colnames()` to see all variable names
+##   Price_min Price_max Mileage_min Mileage_max Cylinder_min Cylinder_max
+##       <dbl>     <dbl>       <int>       <int>        <int>        <int>
+## 1     8639.    70755.         266       50387            4            8
+## # ℹ 30 more variables: Doors_min <int>, Doors_max <int>, Cruise_min <int>,
+## #   Cruise_max <int>, Sound_min <int>, Sound_max <int>, Leather_min <int>,
+## #   Leather_max <int>, Buick_min <int>, Buick_max <int>, Cadillac_min <int>,
+## #   Cadillac_max <int>, Chevy_min <int>, Chevy_max <int>, Pontiac_min <int>,
+## #   Pontiac_max <int>, Saab_min <int>, Saab_max <int>, Saturn_min <int>,
+## #   Saturn_max <int>, convertible_min <int>, convertible_max <int>,
+## #   coupe_min <int>, coupe_max <int>, hatchback_min <int>, …
 ```
 
 Because `across()` is usually used in combination with `summarise()` and `mutate()`, it does not select grouping variables in order to avoid accidentally modifying them:
@@ -641,15 +633,13 @@ car_prices %>%
 
 ```
 ## # A tibble: 3 × 18
-##   Cylinder  Price Mileage Doors Cruise Sound Leather Buick Cadil…¹ Chevy Pontiac
-##      <int>  <dbl>   <dbl> <dbl>  <dbl> <dbl>   <dbl> <dbl>   <dbl> <dbl>   <dbl>
-## 1        4 17863.  20108.  3.44  0.599 0.698   0.746 0      0      0.457   0.127
-## 2        6 20081.  19564.  3.74  0.868 0.706   0.606 0.258  0.0645 0.387   0.258
-## 3        8 38968.  19575.  3.2   1     0.52    1     0      0.6    0.2     0.2  
-## # … with 7 more variables: Saab <dbl>, Saturn <dbl>, convertible <dbl>,
-## #   coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>, and abbreviated
-## #   variable name ¹​Cadillac
-## # ℹ Use `colnames()` to see all variable names
+##   Cylinder  Price Mileage Doors Cruise Sound Leather Buick Cadillac Chevy
+##      <int>  <dbl>   <dbl> <dbl>  <dbl> <dbl>   <dbl> <dbl>    <dbl> <dbl>
+## 1        4 17863.  20108.  3.44  0.599 0.698   0.746 0       0      0.457
+## 2        6 20081.  19564.  3.74  0.868 0.706   0.606 0.258   0.0645 0.387
+## 3        8 38968.  19575.  3.2   1     0.52    1     0       0.6    0.2  
+## # ℹ 8 more variables: Pontiac <dbl>, Saab <dbl>, Saturn <dbl>,
+## #   convertible <dbl>, coupe <dbl>, hatchback <dbl>, sedan <dbl>, wagon <dbl>
 ```
 
 ### `summarize()` and `across()`
@@ -720,7 +710,7 @@ worldbank %>%
 ##   iso3c_1 iso3c_2 date_1 date_2 iso2c_1 iso2c_2 country_1 country_2    
 ##   <chr>   <chr>   <chr>  <chr>  <chr>   <chr>   <chr>     <chr>        
 ## 1 ARG     USA     2005   2017   AR      US      Argentina United States
-## # … with 18 more variables: perc_energy_fosfuel_1 <dbl>,
+## # ℹ 18 more variables: perc_energy_fosfuel_1 <dbl>,
 ## #   perc_energy_fosfuel_2 <dbl>, rnd_gdpshare_1 <dbl>, rnd_gdpshare_2 <dbl>,
 ## #   percgni_adj_gross_savings_1 <dbl>, percgni_adj_gross_savings_2 <dbl>,
 ## #   real_netinc_percap_1 <dbl>, real_netinc_percap_2 <dbl>, gdp_capita_1 <dbl>,
@@ -742,20 +732,33 @@ worldbank %>%
 ```
 
 ```
+## Warning: There was 1 warning in `summarize()`.
+## ℹ In argument: `across(.cols = where(is.numeric), .fns = mean, na.rm = TRUE)`.
+## ℹ In group 1: `country = "Argentina"`.
+## Caused by warning:
+## ! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
+## Supply arguments directly to `.fns` through an anonymous function instead.
+## 
+##   # Previously
+##   across(a:b, mean, na.rm = TRUE)
+## 
+##   # Now
+##   across(a:b, \(x) mean(x, na.rm = TRUE))
+```
+
+```
 ## # A tibble: 6 × 11
-##   country        perc_…¹ rnd_g…² percg…³ real_…⁴ gdp_c…⁵ top10…⁶ emplo…⁷ life_…⁸
-##   <chr>            <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-## 1 Argentina         89.1  0.501     17.5   8560.  10648.    31.6    55.4    75.4
-## 2 China             87.6  1.67      48.3   3661.   5397.    30.8    69.8    74.7
-## 3 Indonesia         65.3  0.0841    30.5   2041.   2881.    31.2    62.5    69.5
-## 4 Norway            58.9  1.60      37.2  70775.  85622.    21.9    67.3    81.3
-## 5 United Kingdom    86.3  1.68      13.5  34542.  43416.    26.2    58.7    80.4
-## 6 United States     84.2  2.69      17.6  42824.  51285.    30.1    60.2    78.4
-## # … with 2 more variables: pop_growth <dbl>, pop <dbl>, and abbreviated
-## #   variable names ¹​perc_energy_fosfuel, ²​rnd_gdpshare,
-## #   ³​percgni_adj_gross_savings, ⁴​real_netinc_percap, ⁵​gdp_capita,
-## #   ⁶​top10perc_incshare, ⁷​employment_ratio, ⁸​life_exp
-## # ℹ Use `colnames()` to see all variable names
+##   country        perc_energy_fosfuel rnd_gdpshare percgni_adj_gross_savings
+##   <chr>                        <dbl>        <dbl>                     <dbl>
+## 1 Argentina                     89.1       0.501                       17.5
+## 2 China                         87.6       1.67                        48.3
+## 3 Indonesia                     65.3       0.0841                      30.5
+## 4 Norway                        58.9       1.60                        37.2
+## 5 United Kingdom                86.3       1.68                        13.5
+## 6 United States                 84.2       2.69                        17.6
+## # ℹ 7 more variables: real_netinc_percap <dbl>, gdp_capita <dbl>,
+## #   top10perc_incshare <dbl>, employment_ratio <dbl>, life_exp <dbl>,
+## #   pop_growth <dbl>, pop <dbl>
 ```
 
 (Note that `na.rm = TRUE` is passed on to `mean()` in the same way as in `purrr::map()`.)
@@ -796,22 +799,21 @@ car_prices %>%
 
 ```
 ## # A tibble: 804 × 18
-##    Price Mileage Cylinder Doors Cruise Sound Leather Buick Cadil…¹ Chevy Pontiac
-##    <dbl>   <dbl>    <dbl> <dbl>  <int> <int>   <int> <int>   <int> <int>   <int>
-##  1  4.36    4.30    0.778 0.602      1     0       0     1       0     0       0
-##  2  4.34    4.13    0.778 0.301      1     1       0     0       0     1       0
-##  3  4.46    4.50    0.602 0.301      1     1       1     0       0     0       0
-##  4  4.49    4.35    0.602 0.301      1     0       0     0       0     0       0
-##  5  4.52    4.25    0.602 0.301      1     1       1     0       0     0       0
-##  6  4.48    4.37    0.602 0.301      1     0       0     0       0     0       0
-##  7  4.52    4.24    0.602 0.301      1     1       1     0       0     0       0
-##  8  4.48    4.44    0.602 0.301      1     0       1     0       0     0       0
-##  9  4.48    4.40    0.602 0.301      1     0       0     0       0     0       0
-## 10  4.43    4.24    0.602 0.602      1     0       1     0       0     0       0
-## # … with 794 more rows, 7 more variables: Saab <int>, Saturn <int>,
-## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>,
-## #   and abbreviated variable name ¹​Cadillac
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+##    Price Mileage Cylinder Doors Cruise Sound Leather Buick Cadillac Chevy
+##    <dbl>   <dbl>    <dbl> <dbl>  <int> <int>   <int> <int>    <int> <int>
+##  1  4.36    4.30    0.778 0.602      1     0       0     1        0     0
+##  2  4.34    4.13    0.778 0.301      1     1       0     0        0     1
+##  3  4.46    4.50    0.602 0.301      1     1       1     0        0     0
+##  4  4.49    4.35    0.602 0.301      1     0       0     0        0     0
+##  5  4.52    4.25    0.602 0.301      1     1       1     0        0     0
+##  6  4.48    4.37    0.602 0.301      1     0       0     0        0     0
+##  7  4.52    4.24    0.602 0.301      1     1       1     0        0     0
+##  8  4.48    4.44    0.602 0.301      1     0       1     0        0     0
+##  9  4.48    4.40    0.602 0.301      1     0       0     0        0     0
+## 10  4.43    4.24    0.602 0.602      1     0       1     0        0     0
+## # ℹ 794 more rows
+## # ℹ 8 more variables: Pontiac <int>, Saab <int>, Saturn <int>,
+## #   convertible <int>, coupe <int>, hatchback <int>, sedan <int>, wagon <int>
 ```
 
 ## Filter
@@ -828,23 +830,22 @@ We cannot directly use `across()` in `filter()` because we need an extra step to
     
     ```
     ## # A tibble: 78 × 14
-    ##    iso3c date  iso2c country   perc_en…¹ rnd_g…² percg…³ real_…⁴ gdp_c…⁵ top10…⁶
-    ##    <chr> <chr> <chr> <chr>         <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-    ##  1 ARG   2005  AR    Argentina      89.1   0.379    15.5   6198.   5110.    35  
-    ##  2 ARG   2006  AR    Argentina      88.7   0.400    22.1   7388.   5919.    33.9
-    ##  3 ARG   2007  AR    Argentina      89.2   0.402    22.8   8182.   7245.    33.8
-    ##  4 ARG   2008  AR    Argentina      90.7   0.421    21.6   8576.   9021.    32.5
-    ##  5 ARG   2009  AR    Argentina      89.6   0.519    18.9   7904.   8225.    31.4
-    ##  6 ARG   2010  AR    Argentina      89.5   0.518    17.9   8803.  10386.    32  
-    ##  7 ARG   2011  AR    Argentina      88.9   0.537    17.9   9528.  12849.    31  
-    ##  8 ARG   2012  AR    Argentina      89.0   0.609    16.5   9301.  13083.    29.7
-    ##  9 ARG   2013  AR    Argentina      89.0   0.612    15.3   9367.  13080.    29.4
-    ## 10 ARG   2014  AR    Argentina      87.7   0.613    16.1   8903.  12335.    29.9
-    ## # … with 68 more rows, 4 more variables: employment_ratio <dbl>,
-    ## #   life_exp <dbl>, pop_growth <dbl>, pop <dbl>, and abbreviated variable names
-    ## #   ¹​perc_energy_fosfuel, ²​rnd_gdpshare, ³​percgni_adj_gross_savings,
-    ## #   ⁴​real_netinc_percap, ⁵​gdp_capita, ⁶​top10perc_incshare
-    ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+    ##    iso3c date  iso2c country   perc_energy_fosfuel rnd_gdpshare
+    ##    <chr> <chr> <chr> <chr>                   <dbl>        <dbl>
+    ##  1 ARG   2005  AR    Argentina                89.1        0.379
+    ##  2 ARG   2006  AR    Argentina                88.7        0.400
+    ##  3 ARG   2007  AR    Argentina                89.2        0.402
+    ##  4 ARG   2008  AR    Argentina                90.7        0.421
+    ##  5 ARG   2009  AR    Argentina                89.6        0.519
+    ##  6 ARG   2010  AR    Argentina                89.5        0.518
+    ##  7 ARG   2011  AR    Argentina                88.9        0.537
+    ##  8 ARG   2012  AR    Argentina                89.0        0.609
+    ##  9 ARG   2013  AR    Argentina                89.0        0.612
+    ## 10 ARG   2014  AR    Argentina                87.7        0.613
+    ## # ℹ 68 more rows
+    ## # ℹ 8 more variables: percgni_adj_gross_savings <dbl>,
+    ## #   real_netinc_percap <dbl>, gdp_capita <dbl>, top10perc_incshare <dbl>,
+    ## #   employment_ratio <dbl>, life_exp <dbl>, pop_growth <dbl>, pop <dbl>
     ```
 
 - `if_all()` keeps the rows where the predicate is true for **all** selected columns:
@@ -857,23 +858,22 @@ We cannot directly use `across()` in `filter()` because we need an extra step to
     
     ```
     ## # A tibble: 42 × 14
-    ##    iso3c date  iso2c country   perc_en…¹ rnd_g…² percg…³ real_…⁴ gdp_c…⁵ top10…⁶
-    ##    <chr> <chr> <chr> <chr>         <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-    ##  1 ARG   2005  AR    Argentina      89.1   0.379    15.5   6198.   5110.    35  
-    ##  2 ARG   2006  AR    Argentina      88.7   0.400    22.1   7388.   5919.    33.9
-    ##  3 ARG   2007  AR    Argentina      89.2   0.402    22.8   8182.   7245.    33.8
-    ##  4 ARG   2008  AR    Argentina      90.7   0.421    21.6   8576.   9021.    32.5
-    ##  5 ARG   2009  AR    Argentina      89.6   0.519    18.9   7904.   8225.    31.4
-    ##  6 ARG   2010  AR    Argentina      89.5   0.518    17.9   8803.  10386.    32  
-    ##  7 ARG   2011  AR    Argentina      88.9   0.537    17.9   9528.  12849.    31  
-    ##  8 ARG   2012  AR    Argentina      89.0   0.609    16.5   9301.  13083.    29.7
-    ##  9 ARG   2013  AR    Argentina      89.0   0.612    15.3   9367.  13080.    29.4
-    ## 10 ARG   2014  AR    Argentina      87.7   0.613    16.1   8903.  12335.    29.9
-    ## # … with 32 more rows, 4 more variables: employment_ratio <dbl>,
-    ## #   life_exp <dbl>, pop_growth <dbl>, pop <dbl>, and abbreviated variable names
-    ## #   ¹​perc_energy_fosfuel, ²​rnd_gdpshare, ³​percgni_adj_gross_savings,
-    ## #   ⁴​real_netinc_percap, ⁵​gdp_capita, ⁶​top10perc_incshare
-    ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+    ##    iso3c date  iso2c country   perc_energy_fosfuel rnd_gdpshare
+    ##    <chr> <chr> <chr> <chr>                   <dbl>        <dbl>
+    ##  1 ARG   2005  AR    Argentina                89.1        0.379
+    ##  2 ARG   2006  AR    Argentina                88.7        0.400
+    ##  3 ARG   2007  AR    Argentina                89.2        0.402
+    ##  4 ARG   2008  AR    Argentina                90.7        0.421
+    ##  5 ARG   2009  AR    Argentina                89.6        0.519
+    ##  6 ARG   2010  AR    Argentina                89.5        0.518
+    ##  7 ARG   2011  AR    Argentina                88.9        0.537
+    ##  8 ARG   2012  AR    Argentina                89.0        0.609
+    ##  9 ARG   2013  AR    Argentina                89.0        0.612
+    ## 10 ARG   2014  AR    Argentina                87.7        0.613
+    ## # ℹ 32 more rows
+    ## # ℹ 8 more variables: percgni_adj_gross_savings <dbl>,
+    ## #   real_netinc_percap <dbl>, gdp_capita <dbl>, top10perc_incshare <dbl>,
+    ## #   employment_ratio <dbl>, life_exp <dbl>, pop_growth <dbl>, pop <dbl>
     ```
 
 ## Exercise: iterate over columns using `across()`
@@ -900,23 +900,22 @@ worldbank %>%
 
 ```
 ## # A tibble: 78 × 14
-##    iso3c date  iso2c country   perc_en…¹ rnd_g…² percg…³ real_…⁴ gdp_c…⁵ top10…⁶
-##    <chr> <chr> <chr> <chr>         <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1 ARG   2005  AR    Argentina     0.955   0.108  0.0944  0.0938  0.0378   1    
-##  2 ARG   2006  AR    Argentina     0.944   0.116  0.262   0.110   0.0458   0.924
-##  3 ARG   2007  AR    Argentina     0.960   0.116  0.279   0.121   0.0589   0.917
-##  4 ARG   2008  AR    Argentina     1       0.124  0.249   0.126   0.0763   0.828
-##  5 ARG   2009  AR    Argentina     0.971   0.159  0.180   0.117   0.0685   0.752
-##  6 ARG   2010  AR    Argentina     0.968   0.159  0.156   0.129   0.0897   0.793
-##  7 ARG   2011  AR    Argentina     0.950   0.166  0.154   0.139   0.114    0.724
-##  8 ARG   2012  AR    Argentina     0.954   0.192  0.120   0.136   0.116    0.634
-##  9 ARG   2013  AR    Argentina     0.953   0.193  0.0907  0.137   0.116    0.614
-## 10 ARG   2014  AR    Argentina     0.918   0.194  0.110   0.130   0.109    0.648
-## # … with 68 more rows, 4 more variables: employment_ratio <dbl>,
-## #   life_exp <dbl>, pop_growth <dbl>, pop <dbl>, and abbreviated variable names
-## #   ¹​perc_energy_fosfuel, ²​rnd_gdpshare, ³​percgni_adj_gross_savings,
-## #   ⁴​real_netinc_percap, ⁵​gdp_capita, ⁶​top10perc_incshare
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+##    iso3c date  iso2c country   perc_energy_fosfuel rnd_gdpshare
+##    <chr> <chr> <chr> <chr>                   <dbl>        <dbl>
+##  1 ARG   2005  AR    Argentina               0.955        0.108
+##  2 ARG   2006  AR    Argentina               0.944        0.116
+##  3 ARG   2007  AR    Argentina               0.960        0.116
+##  4 ARG   2008  AR    Argentina               1            0.124
+##  5 ARG   2009  AR    Argentina               0.971        0.159
+##  6 ARG   2010  AR    Argentina               0.968        0.159
+##  7 ARG   2011  AR    Argentina               0.950        0.166
+##  8 ARG   2012  AR    Argentina               0.954        0.192
+##  9 ARG   2013  AR    Argentina               0.953        0.193
+## 10 ARG   2014  AR    Argentina               0.918        0.194
+## # ℹ 68 more rows
+## # ℹ 8 more variables: percgni_adj_gross_savings <dbl>,
+## #   real_netinc_percap <dbl>, gdp_capita <dbl>, top10perc_incshare <dbl>,
+## #   employment_ratio <dbl>, life_exp <dbl>, pop_growth <dbl>, pop <dbl>
 ```
 
 {{< /spoiler >}}
@@ -937,97 +936,79 @@ sessioninfo::session_info()
 ```
 ## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
-##  version  R version 4.2.1 (2022-06-23)
-##  os       macOS Monterey 12.3
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
 ##  system   aarch64, darwin20
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-30
-##  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+##  tz       America/Chicago
+##  date     2023-07-01
+##  pandoc   3.1.4 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
-##  package        * version    date (UTC) lib source
-##  assertthat       0.2.1      2019-03-21 [2] CRAN (R 4.2.0)
-##  backports        1.4.1      2021-12-13 [2] CRAN (R 4.2.0)
-##  blogdown         1.10       2022-05-10 [2] CRAN (R 4.2.0)
-##  bookdown         0.27       2022-06-14 [2] CRAN (R 4.2.0)
-##  broom            1.0.0      2022-07-01 [2] CRAN (R 4.2.0)
-##  bslib            0.4.0      2022-07-16 [2] CRAN (R 4.2.0)
-##  cachem           1.0.6      2021-08-19 [2] CRAN (R 4.2.0)
-##  cellranger       1.1.0      2016-07-27 [2] CRAN (R 4.2.0)
-##  cli              3.3.0      2022-04-25 [2] CRAN (R 4.2.0)
-##  codetools        0.2-18     2020-11-04 [2] CRAN (R 4.2.1)
-##  colorspace       2.0-3      2022-02-21 [2] CRAN (R 4.2.0)
-##  crayon           1.5.1      2022-03-26 [2] CRAN (R 4.2.0)
-##  DBI              1.1.3      2022-06-18 [2] CRAN (R 4.2.0)
-##  dbplyr           2.2.1      2022-06-27 [2] CRAN (R 4.2.0)
-##  digest           0.6.29     2021-12-01 [2] CRAN (R 4.2.0)
-##  dplyr          * 1.0.9      2022-04-28 [2] CRAN (R 4.2.0)
-##  ellipsis         0.3.2      2021-04-29 [2] CRAN (R 4.2.0)
-##  evaluate         0.16       2022-08-09 [1] CRAN (R 4.2.1)
-##  fansi            1.0.3      2022-03-24 [2] CRAN (R 4.2.0)
-##  fastmap          1.1.0      2021-01-25 [2] CRAN (R 4.2.0)
-##  forcats        * 0.5.1      2021-01-27 [2] CRAN (R 4.2.0)
-##  fs               1.5.2      2021-12-08 [2] CRAN (R 4.2.0)
-##  gargle           1.2.0      2021-07-02 [2] CRAN (R 4.2.0)
-##  generics         0.1.3      2022-07-05 [2] CRAN (R 4.2.0)
-##  ggplot2        * 3.3.6      2022-05-03 [2] CRAN (R 4.2.0)
-##  glue             1.6.2      2022-02-24 [2] CRAN (R 4.2.0)
-##  googledrive      2.0.0      2021-07-08 [2] CRAN (R 4.2.0)
-##  googlesheets4    1.0.0      2021-07-21 [2] CRAN (R 4.2.0)
-##  gtable           0.3.0      2019-03-25 [2] CRAN (R 4.2.0)
-##  haven            2.5.0      2022-04-15 [2] CRAN (R 4.2.0)
-##  here             1.0.1      2020-12-13 [2] CRAN (R 4.2.0)
-##  hms              1.1.1      2021-09-26 [2] CRAN (R 4.2.0)
-##  htmltools        0.5.3      2022-07-18 [2] CRAN (R 4.2.0)
-##  httr             1.4.3      2022-05-04 [2] CRAN (R 4.2.0)
-##  jquerylib        0.1.4      2021-04-26 [2] CRAN (R 4.2.0)
-##  jsonlite         1.8.0      2022-02-22 [2] CRAN (R 4.2.0)
-##  knitr            1.39       2022-04-26 [2] CRAN (R 4.2.0)
-##  lifecycle        1.0.1      2021-09-24 [2] CRAN (R 4.2.0)
-##  lubridate        1.8.0      2021-10-07 [2] CRAN (R 4.2.0)
-##  magrittr         2.0.3      2022-03-30 [2] CRAN (R 4.2.0)
-##  microbenchmark * 1.4.9      2021-11-09 [2] CRAN (R 4.2.0)
-##  modeldata      * 1.0.0      2022-07-01 [2] CRAN (R 4.2.0)
-##  modelr           0.1.8      2020-05-19 [2] CRAN (R 4.2.0)
-##  munsell          0.5.0      2018-06-12 [2] CRAN (R 4.2.0)
-##  palmerpenguins * 0.1.0      2020-07-23 [2] CRAN (R 4.2.0)
-##  pillar           1.8.0      2022-07-18 [2] CRAN (R 4.2.0)
-##  pkgconfig        2.0.3      2019-09-22 [2] CRAN (R 4.2.0)
-##  purrr          * 0.3.4      2020-04-17 [2] CRAN (R 4.2.0)
-##  R6               2.5.1      2021-08-19 [2] CRAN (R 4.2.0)
-##  rcfss          * 0.2.5      2022-08-04 [2] local
-##  rcis           * 0.2.5      2022-08-08 [2] local
-##  readr          * 2.1.2      2022-01-30 [2] CRAN (R 4.2.0)
-##  readxl           1.4.0      2022-03-28 [2] CRAN (R 4.2.0)
-##  reprex           2.0.1.9000 2022-08-10 [1] Github (tidyverse/reprex@6d3ad07)
-##  rlang            1.0.4      2022-07-12 [2] CRAN (R 4.2.0)
-##  rmarkdown        2.14       2022-04-25 [2] CRAN (R 4.2.0)
-##  rprojroot        2.0.3      2022-04-02 [2] CRAN (R 4.2.0)
-##  rstudioapi       0.13       2020-11-12 [2] CRAN (R 4.2.0)
-##  rvest            1.0.2      2021-10-16 [2] CRAN (R 4.2.0)
-##  sass             0.4.2      2022-07-16 [2] CRAN (R 4.2.0)
-##  scales           1.2.0      2022-04-13 [2] CRAN (R 4.2.0)
-##  sessioninfo      1.2.2      2021-12-06 [2] CRAN (R 4.2.0)
-##  stringi          1.7.8      2022-07-11 [2] CRAN (R 4.2.0)
-##  stringr        * 1.4.0      2019-02-10 [2] CRAN (R 4.2.0)
-##  tibble         * 3.1.8      2022-07-22 [2] CRAN (R 4.2.0)
-##  tidyr          * 1.2.0      2022-02-01 [2] CRAN (R 4.2.0)
-##  tidyselect       1.1.2      2022-02-21 [2] CRAN (R 4.2.0)
-##  tidyverse      * 1.3.2      2022-07-18 [2] CRAN (R 4.2.0)
-##  tzdb             0.3.0      2022-03-28 [2] CRAN (R 4.2.0)
-##  utf8             1.2.2      2021-07-24 [2] CRAN (R 4.2.0)
-##  vctrs            0.4.1      2022-04-13 [2] CRAN (R 4.2.0)
-##  withr            2.5.0      2022-03-03 [2] CRAN (R 4.2.0)
-##  xfun             0.31       2022-05-10 [1] CRAN (R 4.2.0)
-##  xml2             1.3.3      2021-11-30 [2] CRAN (R 4.2.0)
-##  yaml             2.3.5      2022-02-21 [2] CRAN (R 4.2.0)
+##  package        * version date (UTC) lib source
+##  blogdown         1.18    2023-06-19 [1] CRAN (R 4.3.0)
+##  bookdown         0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib            0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem           1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  codetools        0.2-19  2023-02-01 [1] CRAN (R 4.3.0)
+##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
+##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
+##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.3.0)
+##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
+##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
+##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)
+##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
+##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  here             1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  highr            0.10    2022-12-22 [1] CRAN (R 4.3.0)
+##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  htmltools        0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib        0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite         1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr            1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
+##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)
+##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
+##  microbenchmark * 1.4.10  2023-04-28 [1] CRAN (R 4.3.0)
+##  modeldata      * 1.1.0   2023-01-25 [1] CRAN (R 4.3.0)
+##  munsell          0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
+##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.3.0)
+##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
+##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.3.0)
+##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
+##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  rcis           * 0.2.7   2023-06-19 [1] Github (CFSS-MACSS/rcis@a4b198f)
+##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)
+##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown        2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot        2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass             0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  scales           1.2.1   2022-08-20 [1] CRAN (R 4.3.0)
+##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
+##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)
+##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
+##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)
+##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
+##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
+##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
+##  tzdb             0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
+##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
+##  vctrs            0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
+##  xfun             0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
 ## 
-##  [1] /Users/soltoffbc/Library/R/arm64/4.2/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
 ## 
 ## ──────────────────────────────────────────────────────────────────────────────
 ```

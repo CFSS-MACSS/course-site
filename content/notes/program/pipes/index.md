@@ -30,21 +30,20 @@ penguins
 
 ```
 ## # A tibble: 344 × 8
-##    species island    bill_length_mm bill_depth_mm flipper_…¹ body_…² sex    year
-##    <fct>   <fct>              <dbl>         <dbl>      <int>   <int> <fct> <int>
-##  1 Adelie  Torgersen           39.1          18.7        181    3750 male   2007
-##  2 Adelie  Torgersen           39.5          17.4        186    3800 fema…  2007
-##  3 Adelie  Torgersen           40.3          18          195    3250 fema…  2007
-##  4 Adelie  Torgersen           NA            NA           NA      NA <NA>   2007
-##  5 Adelie  Torgersen           36.7          19.3        193    3450 fema…  2007
-##  6 Adelie  Torgersen           39.3          20.6        190    3650 male   2007
-##  7 Adelie  Torgersen           38.9          17.8        181    3625 fema…  2007
-##  8 Adelie  Torgersen           39.2          19.6        195    4675 male   2007
-##  9 Adelie  Torgersen           34.1          18.1        193    3475 <NA>   2007
-## 10 Adelie  Torgersen           42            20.2        190    4250 <NA>   2007
-## # … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
-## #   ²​body_mass_g
-## # ℹ Use `print(n = ...)` to see more rows
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # ℹ 334 more rows
+## # ℹ 2 more variables: sex <fct>, year <int>
 ```
 
 We can [decompose the problem](/notes/problem-solving/) into a series of discrete steps:
@@ -207,47 +206,74 @@ sessioninfo::session_info()
 ```
 ## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
-##  version  R version 4.2.1 (2022-06-23)
-##  os       macOS Monterey 12.3
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
 ##  system   aarch64, darwin20
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-22
-##  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+##  tz       America/Chicago
+##  date     2023-07-01
+##  pandoc   3.1.4 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
-##  package     * version date (UTC) lib source
-##  blogdown      1.10    2022-05-10 [2] CRAN (R 4.2.0)
-##  bookdown      0.27    2022-06-14 [2] CRAN (R 4.2.0)
-##  bslib         0.4.0   2022-07-16 [2] CRAN (R 4.2.0)
-##  cachem        1.0.6   2021-08-19 [2] CRAN (R 4.2.0)
-##  cli           3.3.0   2022-04-25 [2] CRAN (R 4.2.0)
-##  digest        0.6.29  2021-12-01 [2] CRAN (R 4.2.0)
-##  evaluate      0.16    2022-08-09 [1] CRAN (R 4.2.1)
-##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.2.0)
-##  here          1.0.1   2020-12-13 [2] CRAN (R 4.2.0)
-##  htmltools     0.5.3   2022-07-18 [2] CRAN (R 4.2.0)
-##  jquerylib     0.1.4   2021-04-26 [2] CRAN (R 4.2.0)
-##  jsonlite      1.8.0   2022-02-22 [2] CRAN (R 4.2.0)
-##  knitr         1.39    2022-04-26 [2] CRAN (R 4.2.0)
-##  magrittr      2.0.3   2022-03-30 [2] CRAN (R 4.2.0)
-##  R6            2.5.1   2021-08-19 [2] CRAN (R 4.2.0)
-##  rlang         1.0.4   2022-07-12 [2] CRAN (R 4.2.0)
-##  rmarkdown     2.14    2022-04-25 [2] CRAN (R 4.2.0)
-##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.2.0)
-##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.2.0)
-##  sass          0.4.2   2022-07-16 [2] CRAN (R 4.2.0)
-##  sessioninfo   1.2.2   2021-12-06 [2] CRAN (R 4.2.0)
-##  stringi       1.7.8   2022-07-11 [2] CRAN (R 4.2.0)
-##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.2.0)
-##  xfun          0.31    2022-05-10 [1] CRAN (R 4.2.0)
-##  yaml          2.3.5   2022-02-21 [2] CRAN (R 4.2.0)
+##  package        * version date (UTC) lib source
+##  blogdown         1.18    2023-06-19 [1] CRAN (R 4.3.0)
+##  bookdown         0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib            0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem           1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  codetools        0.2-19  2023-02-01 [1] CRAN (R 4.3.0)
+##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
+##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)
+##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
+##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
+##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
+##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)
+##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
+##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  here             1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
+##  htmltools        0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib        0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite         1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr            1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
+##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)
+##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
+##  munsell          0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
+##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.3.0)
+##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
+##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.3.0)
+##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
+##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)
+##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown        2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot        2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass             0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  scales           1.2.1   2022-08-20 [1] CRAN (R 4.3.0)
+##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
+##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)
+##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
+##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)
+##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
+##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
+##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
+##  tzdb             0.4.0   2023-05-12 [1] CRAN (R 4.3.0)
+##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
+##  vctrs            0.6.2   2023-04-19 [1] CRAN (R 4.3.0)
+##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
+##  xfun             0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
 ## 
-##  [1] /Users/soltoffbc/Library/R/arm64/4.2/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
 ## 
 ## ──────────────────────────────────────────────────────────────────────────────
 ```

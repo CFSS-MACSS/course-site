@@ -25,7 +25,7 @@ library(palmerpenguins)
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
-usethis::use_course("cis-ds/pipes-and-functions-in-r")
+usethis::use_course("CFSS-MACSS/pipes-and-functions-in-r")
 ```
 
 {{% /callout %}}
