@@ -69,30 +69,30 @@ The relevant bit of GitHub-flavored Markdown is ready to be pasted from your cli
 
 ```
 Warning: The `show` argument of `reprex()` is deprecated as of reprex 1.0.0.
-Please use the `html_preview` argument instead.
+ℹ Please use the `html_preview` argument instead.
 This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.
 ```
 
 ````
 ``` r
 library(tidyverse)
 count(diamonds, colour)
-#> Error in `group_by()`:
+#> Error in `count()`:
 #> ! Must group by variables found in `.data`.
 #> ✖ Column `colour` is not found.
-
 #> Backtrace:
 #>     ▆
 #>  1. ├─dplyr::count(diamonds, colour)
 #>  2. └─dplyr:::count.data.frame(diamonds, colour)
 #>  3.   ├─dplyr::group_by(x, ..., .add = TRUE, .drop = .drop)
 #>  4.   └─dplyr:::group_by.data.frame(x, ..., .add = TRUE, .drop = .drop)
-#>  5.     └─dplyr::group_by_prepare(.data, ..., .add = .add, caller_env = caller_env())
+#>  5.     └─dplyr::group_by_prepare(.data, ..., .add = .add, error_call = current_env())
 #>  6.       └─rlang::abort(bullets, call = error_call)
 ```
 
-<sup>Created on 2022-08-22 by the [reprex package](https://reprex.tidyverse.org) (v2.0.1.9000)</sup>
+<sup>Created on 2023-07-01 with [reprex v2.0.2](https://reprex.tidyverse.org)</sup>
 ````
 
 Here's what that Markdown would look like rendered in a GitHub issue:
@@ -101,21 +101,20 @@ Here's what that Markdown would look like rendered in a GitHub issue:
 ``` r
 library(tidyverse)
 count(diamonds, colour)
-#> Error in `group_by()`:
+#> Error in `count()`:
 #> ! Must group by variables found in `.data`.
 #> ✖ Column `colour` is not found.
-
 #> Backtrace:
 #>     ▆
 #>  1. ├─dplyr::count(diamonds, colour)
 #>  2. └─dplyr:::count.data.frame(diamonds, colour)
 #>  3.   ├─dplyr::group_by(x, ..., .add = TRUE, .drop = .drop)
 #>  4.   └─dplyr:::group_by.data.frame(x, ..., .add = TRUE, .drop = .drop)
-#>  5.     └─dplyr::group_by_prepare(.data, ..., .add = .add, caller_env = caller_env())
+#>  5.     └─dplyr::group_by_prepare(.data, ..., .add = .add, error_call = current_env())
 #>  6.       └─rlang::abort(bullets, call = error_call)
 ```
 
-<sup>Created on 2022-08-22 by the [reprex package](https://reprex.tidyverse.org) (v2.0.1.9000)</sup>
+<sup>Created on 2023-07-01 with [reprex v2.0.2](https://reprex.tidyverse.org)</sup>
 
 Anyone else can copy, paste, and run this immediately. The nice thing is that if your script also produces images or graphs (probably using `ggplot()`) these images are automatically uploaded and included in the issue.
 
@@ -142,13 +141,13 @@ To ensure your example is a reproducible example, you need to make sure to load 
 * Ensure portability of the code
     * Don't use [`rm(list = ls())`](/notes/saving-source/#what-s-wrong-with-rm-list-ls) or [`setwd()`](/notes/project-oriented-workflow/#we-need-to-talk-about-setwd-path-that-only-works-on-my-machine).
 
-{{< figure src="allison_horst_art/reprex.png" caption="Artwork by @allison_horst" >}}
+{{< figure src="allison_horst_art/reprex.png" caption="Artwork by allison_horst" >}}
 
 ## Acknowledgments
 
 * ["How do I ask a good question?" StackOverflow.com](http://stackoverflow.com/help/how-to-ask)
 * [`reprex`](https://reprex.tidyverse.org/index.html)
-* Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
+* Artwork by [allison_horst](https://github.com/allisonhorst/stats-illustrations)
 
 ## Session Info
 
@@ -161,47 +160,43 @@ sessioninfo::session_info()
 ```
 ## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
-##  version  R version 4.2.1 (2022-06-23)
-##  os       macOS Monterey 12.3
+##  version  R version 4.3.0 (2023-04-21)
+##  os       macOS Monterey 12.6.6
 ##  system   aarch64, darwin20
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-22
-##  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+##  tz       America/Chicago
+##  date     2023-07-01
+##  pandoc   3.1.4 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version date (UTC) lib source
-##  blogdown      1.10    2022-05-10 [2] CRAN (R 4.2.0)
-##  bookdown      0.27    2022-06-14 [2] CRAN (R 4.2.0)
-##  bslib         0.4.0   2022-07-16 [2] CRAN (R 4.2.0)
-##  cachem        1.0.6   2021-08-19 [2] CRAN (R 4.2.0)
-##  cli           3.3.0   2022-04-25 [2] CRAN (R 4.2.0)
-##  digest        0.6.29  2021-12-01 [2] CRAN (R 4.2.0)
-##  evaluate      0.16    2022-08-09 [1] CRAN (R 4.2.1)
-##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.2.0)
-##  here          1.0.1   2020-12-13 [2] CRAN (R 4.2.0)
-##  htmltools     0.5.3   2022-07-18 [2] CRAN (R 4.2.0)
-##  jquerylib     0.1.4   2021-04-26 [2] CRAN (R 4.2.0)
-##  jsonlite      1.8.0   2022-02-22 [2] CRAN (R 4.2.0)
-##  knitr         1.39    2022-04-26 [2] CRAN (R 4.2.0)
-##  magrittr      2.0.3   2022-03-30 [2] CRAN (R 4.2.0)
-##  R6            2.5.1   2021-08-19 [2] CRAN (R 4.2.0)
-##  rlang         1.0.4   2022-07-12 [2] CRAN (R 4.2.0)
-##  rmarkdown     2.14    2022-04-25 [2] CRAN (R 4.2.0)
-##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.2.0)
-##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.2.0)
-##  sass          0.4.2   2022-07-16 [2] CRAN (R 4.2.0)
-##  sessioninfo   1.2.2   2021-12-06 [2] CRAN (R 4.2.0)
-##  stringi       1.7.8   2022-07-11 [2] CRAN (R 4.2.0)
-##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.2.0)
-##  xfun          0.31    2022-05-10 [1] CRAN (R 4.2.0)
-##  yaml          2.3.5   2022-02-21 [2] CRAN (R 4.2.0)
+##  blogdown      1.18    2023-06-19 [1] CRAN (R 4.3.0)
+##  bookdown      0.34    2023-05-09 [1] CRAN (R 4.3.0)
+##  bslib         0.5.0   2023-06-09 [1] CRAN (R 4.3.0)
+##  cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
+##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
+##  digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)
+##  evaluate      0.21    2023-05-05 [1] CRAN (R 4.3.0)
+##  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
+##  here          1.0.1   2020-12-13 [1] CRAN (R 4.3.0)
+##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)
+##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)
+##  jsonlite      1.8.5   2023-06-05 [1] CRAN (R 4.3.0)
+##  knitr         1.43    2023-05-25 [1] CRAN (R 4.3.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
+##  rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
+##  rmarkdown     2.22    2023-06-01 [1] CRAN (R 4.3.0)
+##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.3.0)
+##  rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)
+##  sass          0.4.6   2023-05-03 [1] CRAN (R 4.3.0)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
+##  xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)
+##  yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
 ## 
-##  [1] /Users/soltoffbc/Library/R/arm64/4.2/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
 ## 
 ## ──────────────────────────────────────────────────────────────────────────────
 ```
