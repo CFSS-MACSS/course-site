@@ -8,7 +8,7 @@ draft: false
 aliases: ["/notes/project-oriented-workflow/"]
 categories: ["project-management"]
 
-weight: 92
+weight: 92 
 ---
 
 ```{r setup, include = FALSE}
@@ -35,7 +35,7 @@ A common response to the working directory problem is to set the working directo
 
 ```r
 library(ggplot2)
-setwd("/Users/bensoltoff/cuddly_broccoli/verbose_funicular/foofy/data")
+setwd("/Users/jeanclipperton/cuddly_broccoli/verbose_funicular/foofy/data")
 df <- read.delim("raw_foofy_data.csv")
 p <- ggplot(df, aes(x, y)) + geom_point()
 ggsave("../figs/foofy_scatterplot.png")
