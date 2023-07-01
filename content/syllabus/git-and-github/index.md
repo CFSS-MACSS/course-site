@@ -1,6 +1,6 @@
 ---
 title: "R Basics, Git/GitHub, R Markdown"
-date: 2023-06-13T12:25:00-05:00
+date: 2023-07-02T12:25:00-05:00
 publishDate: 2019-05-01T12:25:00-05:00
 draft: false
 
@@ -70,9 +70,10 @@ math: false
 
 * If you haven't yet:
     * [Install and setup software](/setup/)
-    * Fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfV_g4z7rpNWz_ONmH1oLrItXprHjo8-KBpnd19FbEJDCrEDA/viewform?usp=sf_link)
+
 * Start [Homework 1](/homework/edit-readme/)
 
 [^local]: If you are using R from your local machine: first install the library by typing in your console `install.packages("usethis")`; then load it with `library(usethis)`; finally run the code
 
-<!-- [^bryan]: Meeting title courtesy of Jenny Bryan's ["Excuse Me, Do You Have a Moment to Talk About Version Control?"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1399928) -->
+<!-- [^bryan]: Meeting title courtesy of Jenny Bryan's ["Excuse Me, Do You Have a Moment to Talk About Version Control?"](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1399928)
+ * Fill out [this survey](https://forms.gle/J8axkKpKZGxYyxYZA) -->
