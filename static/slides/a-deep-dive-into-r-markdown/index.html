@@ -564,7 +564,7 @@ class: inverse, middle
 
 # Practice 1 (~10 min)
 
-Complete this tutorial (skip the "code" practice): https://commonmark.org/help/
+Complete this tutorial: &lt;https://commonmark.org/help/tutorial/&gt;
 
 
 ---
@@ -635,7 +635,8 @@ class: inverse, middle
 
 # Practice 2 (~10 min)
 
-Open **`gun-deaths.Rmd`** `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
+Open **`gun-deaths.Rmd`**  
+&gt; `usethis::use_course("CFSS-MACSS/a-deep-dive-into-r-markdown")`
 
 1. Observe how the file is structured, then knit it, and observe the output
 
@@ -720,7 +721,7 @@ We can add a date and modify it every time we modify our file. We can add a date
 ---
 title: "Gun deaths"
 output: html_document
-date: "November 7, 2022"
+date: "July 3, 2023"
 ---
 ```
 
@@ -785,24 +786,34 @@ This format says we want the date as: numeric day, full name of the month, and f
 
 ## YAML header specifications: Date formats
 
-&lt;img src="r-dates.png" width="80%" style="display: block; margin: auto;" /&gt;
 
-Source: https://www.statmethods.net/input/dates.html
+Symbol |	Meaning	| Example |
+-------|----------|---------|
+%d |	day as a number | 	01-31 |
+%a | abbreviated weekday | Mon |
+%A |	unabbreviated weekday	| Monday  |
+%m |	month | 00-12 |
+%b | abbreviated month | Jan |
+%B |	unabbreviated month	|January |
+%y | 2-digit year | 07 |
+%Y |	4-digit year	| 2007 |
+
+Source: https://www.statmethods.net/input/dates.html     
 Documentation: https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime 
 
 ---
 
 class: inverse, middle
 
-# Practice 3 (~8 min)
+# Practice 3 (~10 min)
 
 Open **`gun-deaths.Rmd`** (get the repo from the website). Modify the YAML header as follows:
 
-1. Add a table of content (toc), a theme (https://www.datadreaming.org/post/r-markdown-theme-gallery/), and set the default fig_width to 6 and fig_height to 4 
+1. Add a table of contents (toc), a theme (https://www.datadreaming.org/post/r-markdown-theme-gallery/), and set the default fig_width to 6 and fig_height to 4 
 
-2. Instead than using `lubridate`, modify the date using `Sys.time()`. Render the following two dates exaclty as they appear here (with one , in the first and with the / in the second):
-  * November 08, 2022
-  * 2022/11/08
+2. Instead of using `lubridate`, modify the date using `Sys.time()`. Render the following two dates exaclty as they appear here (using a comma (,) in the first and a slash (/) in the second):
+  * July 3, 2023
+  * 2023/07/03
 
 ---
 
