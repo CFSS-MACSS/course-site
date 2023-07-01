@@ -1,6 +1,6 @@
 ---
 title: "A deep dive into Git/GitHub"
-date: 2023-07-06T12:25:00-05:00
+date: 2023-07-05T12:25:00-05:00
 publishDate: 2019-05-01T12:25:00-05:00
 draft: false
 
@@ -51,7 +51,7 @@ math: false
 * Skim chapters 15, 16, and 17 included in the section [Early GitHub Wins](https://happygitwithr.com/usage-intro.html) in *"Happy Git and GitHub for the useR"*
 * Skim chapters 20 to 23 in the section [Git fundamentals](https://happygitwithr.com/git-intro.html) in *"Happy Git and GitHub for the useR"*
 
-We will be using R Workbench for the lecture and the in-class exercises. If you are using R from your laptop (VS. R Workbench), make sure your system is correctly configured, see the [Git page under Setup](https://computing-soc-sci.netlify.app/setup/git/).
+We will be using R Workbench for the lecture and the in-class exercises. If you are using R from your laptop (VS. R Workbench), make sure your system is correctly configured, see the [Git page under Setup](/setup/git/).
 
 
 ## Class materials
@@ -81,8 +81,8 @@ Git commands:
 * `git reset --hard HEAD~1`   to delete a pushed commit (use with caution), followed by `git push -f origin main` to push the deleted commit to the online Github repo 
 
 
-<!--
+# After Class
 * [Generating a reproducible example](/notes/reproducible-examples/)
 * [Recovering from common Git predicaments](/notes/common-git-problems/)
--->
+
 
