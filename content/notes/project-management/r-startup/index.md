@@ -4,7 +4,7 @@ date: 2019-03-01
 
 type: book
 toc: true
-draft: false
+draft: true
 aliases: ["/notes/r-startup/"]
 categories: ["project-management"]
 
@@ -105,8 +105,8 @@ sessioninfo::session_info()
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Chicago
-##  date     2023-06-30
-##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
+##  date     2023-07-01
+##  pandoc   3.1.4 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version date (UTC) lib source
