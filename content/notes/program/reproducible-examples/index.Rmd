@@ -20,7 +20,11 @@ knitr::opts_chunk$set(cache = TRUE)
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
+<<<<<<< HEAD
 usethis::use_course("CFSS-MACSS/reproducible-examples-and-git")
+=======
+usethis::use_course("MACSS-CFSS/reproducible-examples-and-git")
+>>>>>>> fb36ffba74efe33e9530a1b257d37f8fef8dbcc0
 ```
 
 {{% /callout %}}
