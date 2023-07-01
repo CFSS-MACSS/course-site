@@ -15,7 +15,7 @@ weight: 97
 
 Which files should you commit in your Git repository, and which files are safe to ignore?
 
-## What you should commit
+## What you should commit 
 
 * Source files - things like R Markdown (`.Rmd`), R scripts (`.R`), etc. These are almost always plain-text files which are very amenable to tracking changes in Git
 * For R Markdown documents, also commit the rendered Markdown (`.md`) files. GitHub automatically renders `.md` files on the website, so you don't need to commit the `.html` file in your repository
