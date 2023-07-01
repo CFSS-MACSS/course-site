@@ -58,7 +58,7 @@ math: false
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class materials: `usethis::use_course("css-materials/text-analysis-sentiment-and-tm")`
+* Run the code below in your console to download today’s in-class materials: `usethis::use_course("CFSS_MACSS/text-analysis-sentiment-and-tm")`
 
 <!--
 * [Predicting song artist from lyrics](/notes/predicting-song-artist/)

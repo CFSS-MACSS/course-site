@@ -18,7 +18,7 @@ weight: 88
 Run the code below in your console to download this exercise as a set of R scripts.
 
 ```r
-usethis::use_course("cis-ds/reproducible-examples-and-git")
+usethis::use_course("CFSS-MACSS/reproducible-examples-and-git")
 ```
 
 {{% /callout %}}

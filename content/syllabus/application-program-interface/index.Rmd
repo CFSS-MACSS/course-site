@@ -78,7 +78,7 @@ Several packages are needed for this week's lectures (all installed on R workben
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/web-api-access")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/web-api-access")`
 
 <!--
 * [Practice getting data from the Twitter API](/notes/twitter-api-practice/)

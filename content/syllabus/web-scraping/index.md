@@ -64,7 +64,7 @@ Several packages are needed for this week's lectures (all installed on R workben
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS//web-scraping")`
+* Run the code below in your console to download today’s in-class exercises: `usethis::use_course("CFSS-MACSS/web-scraping")`
 
 <!--
 * [Web scraping](/notes/web-scraping/)

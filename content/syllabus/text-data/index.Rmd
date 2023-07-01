@@ -60,7 +60,7 @@ For this and the following lecture we use the book [*Tidy Text Mining with R*](h
 
 ## Class materials
 
-* Run the code below in your console to download today’s in-class materials: `usethis::use_course("css-materials/text-analysis-fundamentals")`
+* Run the code below in your console to download today’s in-class materials: `usethis::use_course("CFSS-MACSS/text-analysis-fundamentals")`
 
 
 <!--
