@@ -1,6 +1,6 @@
 ---
 title: "Text analysis: fundamentals"
-date: 2022-11-29T12:25:00-05:00
+date: 2023-07-11T12:25:00-05:00
 publishDate: 2019-06-03T12:25:00-05:00
 draft: false
 
