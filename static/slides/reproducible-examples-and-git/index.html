@@ -3,7 +3,7 @@
   <head>
     <title>Reproducible examples and Git</title>
     <meta charset="utf-8" />
-    <meta name="author" content="INFO 5940   Cornell University" />
+    <meta name="author" content="MACS 30500   University of Chicago" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
     <link href="index_files/panelset/panelset.css" rel="stylesheet" />
     <script src="index_files/panelset/panelset.js"></script>
@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 # Reproducible examples and Git
 ]
 .author[
-### INFO 5940 <br /> Cornell University
+### MACS 30500 <br /> University of Chicago
 ]
 
 ---
@@ -35,7 +35,7 @@ class: middle
 
 ---
 
-&lt;img src="../../../../../../../../img/reprex.png" title="A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'" alt="A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'" width="80%" style="display: block; margin: auto;" /&gt;
+
 
 .footnote[Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)]
 
@@ -141,7 +141,8 @@ if (TRUE) "true branch" else {
 
 &lt;img src="https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif" width="65%" style="display: block; margin: auto;" /&gt;
 
-<div class="countdown" id="timer_630d1423" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_9455986a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -149,7 +150,7 @@ if (TRUE) "true branch" else {
 
 class: center, middle
 
-&lt;img src="../../../../../../../../img/git-meme.jpeg" width="80%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -195,8 +196,8 @@ class: center, middle
 ## Accidentally cloned from the main
 
 ```bash
-remote: Permission to cfss-su22/hw03.git denied to cfss-student
-fatal: unable to access 'https://github.com/cfss-su22/hw03.git/': The requested URL returned error: 403
+remote: Permission to cfss-hmwks/hw03.git denied to cfss-student
+fatal: unable to access 'https://github.com/cfss-hmwks/hw03.git/': The requested URL returned error: 403
 ```
 
 --
@@ -223,6 +224,27 @@ usethis::use_git_remote(
 &lt;img src="https://imgs.xkcd.com/comics/git.png" width="35%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: [xkcd](https://xkcd.com/1597/)]
+
+
+---
+
+## 
+
+1. Commit early and often as you revise and update your project
+1. Push regularly to GitHub
+1. Each successful push results in a new “worst case scenario”
+1. If you screw things up badly on your local machine, copy all the files in your repo to a safe place on your computer (i.e. a new folder)
+1. Rename the existing local repository as a temporary measure
+1. Clone the repository from GitHub to your local machine. This version of the repository works as intended
+1. Copy all relevant files back over from your safe space. That is, the ones whose updated state you need to commit
+1. Stage, commit, and push
+
+
+---
+
+## Acknowledgments 
+
+Materials adapted from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

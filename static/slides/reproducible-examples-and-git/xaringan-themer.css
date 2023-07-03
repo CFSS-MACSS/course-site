@@ -15,7 +15,7 @@
  *    - xaringan wiki: https://github.com/yihui/xaringan/wiki
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
- *  Version: 0.4.1
+ *  Version: 0.4.2
  *
  * ------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible&display=swap);
@@ -44,21 +44,21 @@
 
   /* Colors */
   --text-color: #222222;
-  --header-color: #B31B1B;
+  --header-color: #011f4b;
   --background-color: #FFFFFF;
-  --link-color: #B31B1B;
-  --text-bold-color: #B31B1B;
+  --link-color: #011f4b;
+  --text-bold-color: #011f4b;
   --code-highlight-color: rgba(255,255,0,0.5);
   --inverse-text-color: #222222;
-  --inverse-background-color: #F8981D;
+  --inverse-background-color: #bbd6c7;
   --inverse-header-color: #222222;
-  --inverse-link-color: #B31B1B;
-  --title-slide-background-color: #B31B1B;
+  --inverse-link-color: #011f4b;
+  --title-slide-background-color: #011f4b;
   --title-slide-text-color: #FFFFFF;
-  --header-background-color: #B31B1B;
+  --header-background-color: #011f4b;
   --header-background-text-color: #FFFFFF;
-  --primary: #B31B1B;
-  --secondary: #F8981D;
+  --primary: #011f4b;
+  --secondary: #bbd6c7;
   --white: #FFFFFF;
   --black: #222222;
 }
@@ -101,10 +101,10 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #B31B1B;
+  color: #011f4b;
 }
 .remark-slide-number {
-  color: #B31B1B;
+  color: #011f4b;
   opacity: 1;
   font-size: 0.9rem;
 }
@@ -152,10 +152,10 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #B31B1B99;
+  color: #011f4b99;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
-  color: #B31B1B;
+  color: #011f4b;
 }
 .right-column {
   width: 75%;
@@ -177,7 +177,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #F8981D80;
+  border-left: solid 5px #bbd6c780;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -191,8 +191,10 @@ blockquote {
 th, td {
   padding: 5px;
 }
-.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #FDEAD1;
+.remark-slide table:not(.table-unshaded) thead,
+.remark-slide table:not(.table-unshaded) tfoot,
+.remark-slide table:not(.table-unshaded) tr:nth-child(even) {
+  background: #F1F6F3;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -202,7 +204,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #FDEAD1;
+  background-color: #F1F6F3;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);

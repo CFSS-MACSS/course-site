@@ -1,6 +1,6 @@
 ---
 title: "Getting data from the web: scraping"
-date: 2023-07-11T12:25:00-05:00
+date: 2023-07-10T12:25:00-05:00
 publishDate: 2019-05-15T12:25:00-05:00
 draft: false
 

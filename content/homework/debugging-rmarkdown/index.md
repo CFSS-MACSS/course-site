@@ -1,8 +1,8 @@
 ---
 title: "HW05: Debugging and practice working with functions"
-date: 2023-07-05T13:30:00-06:00  # Schedule page publish date
+date: 2022-10-28T13:30:00-06:00  # Schedule page publish date
+publishDate: 2019-03-01T12:25:00-05:00
 draft: false
-publishdate: 2019-04-01
 
 summary: "Resolve code errors and practice writing and using functions with social science data."
 ---
@@ -11,21 +11,21 @@ summary: "Resolve code errors and practice writing and using functions with soci
 
 # Overview
 
-**Due by 11:59 pm on July 5.**
+**Due by 11:59 pm on Friday, November 4th.**
 
 The goal of this assignment is to practice debugging common errors in code, and writing/using functions with social science data.
 
 
 # Accessing the `hw05` repository
 
-* Go [to this link](https://classroom.github.com/a/7REwA96x) to accept and create your private `hw05` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw05-<USERNAME>`  
+* Go [at this link](https://classroom.github.com/a/swMrs2jm) to accept and create your private `hw5` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw5-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
 
 # Cloning your `hw05` repository
 
-After you have accessed the `hw05` repository (see above), follow the [same steps you completed for `hw01`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `hw5` repository (see above), follow the [same steps you completed for `hw1`](/homework/edit-readme/) to clone the repository.
 
 
 # General workflow
@@ -39,7 +39,7 @@ Your general workflow will be:
 
 # Part 1: Using functions in social science data analysis
 
-The World Bank publishes extensive socioeconomic data on countries and economies worldwide. In the `data_world_bank` folder included in this assignment, I put a subset (n = 20) of the World Bank’s `csv` data files with economic indicators for each country (https://data.worldbank.org/indicator). Each `csv` file contains data on a given country economy's data.
+The World Bank publishes extensive socioeconomic data on countries and economies worldwide. In the `data_world_bank` folder included in this assignment, I put a subset (n = 20) of the World Bank’s `csv` data files with economic indicators for each country ([https://data.worldbank.org/indicator](https://data.worldbank.org/indicator)). Each `csv` file contains data on a given country economy's data.
 
 Your task is edit the `functions.Rmd` file to write and call a function (give it a meaningful name) that imports each data file and renames some of the columns in each data file:
 * Your function should import a SINGLE data file (e.g., do not try to run an iterative operation inside the function -- technically this can work, but it is far harder to fix errors and write the body of the function if you are performing both tasks simultaneously). The function should take one single argument: the file path to the data file. Given this path, the function should import and rename the data, and return the cleaned data as output.
@@ -63,7 +63,7 @@ Its author made some mistakes and the script currently does not work. Fix the er
 
 # Submit the assignment
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw05-jmclip`) and submit it to Canvas under HW05 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw5-brinasab`) and submit it to Canvas under HW05 before the deadline.
 
 Make sure to stage-commit-push:
 

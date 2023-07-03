@@ -1,6 +1,6 @@
 ---
 title: "Reproducible examples and Git"
-author: "INFO 5940 <br /> Cornell University"
+author: "MACS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -18,8 +18,8 @@ class: middle
 # generate CSS file
 library(xaringanthemer)
 style_duo_accent(
-  primary_color = "#B31B1B",
-  secondary_color = "#F8981D",
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
   inverse_header_color = "#222222",
   black_color = "#222222",
   header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
@@ -126,7 +126,7 @@ include_graphics(path = "https://media.giphy.com/media/uRb2p09vY8lEs/giphy.gif")
 ---
 
 ```{r echo = FALSE, fig.alt = "A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'"}
-include_graphics(path = "/img/reprex.png")
+#include_graphics(path = "/img/reprex.png")
 ```
 
 .footnote[Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)]
@@ -244,7 +244,7 @@ countdown(minutes = 15)
 class: center, middle
 
 ```{r, echo = FALSE}
-knitr::include_graphics("/img/git-meme.jpeg")
+#knitr::include_graphics("/img/git-meme.jpeg")
 ```
 
 ---
@@ -293,8 +293,8 @@ include_graphics(path = "https://media.giphy.com/media/3oxHQKW9lw6rK9kYtq/giphy.
 ## Accidentally cloned from the main
 
 ```bash
-remote: Permission to cfss-su22/hw03.git denied to cfss-student
-fatal: unable to access 'https://github.com/cfss-su22/hw03.git/': The requested URL returned error: 403
+remote: Permission to cfss-hmwks/hw03.git denied to cfss-student
+fatal: unable to access 'https://github.com/cfss-hmwks/hw03.git/': The requested URL returned error: 403
 ```
 
 --
@@ -323,4 +323,25 @@ include_graphics(path = "https://imgs.xkcd.com/comics/git.png")
 ```
 
 .footnote[Source: [xkcd](https://xkcd.com/1597/)]
+
+
+---
+
+## 
+
+1. Commit early and often as you revise and update your project
+1. Push regularly to GitHub
+1. Each successful push results in a new “worst case scenario”
+1. If you screw things up badly on your local machine, copy all the files in your repo to a safe place on your computer (i.e. a new folder)
+1. Rename the existing local repository as a temporary measure
+1. Clone the repository from GitHub to your local machine. This version of the repository works as intended
+1. Copy all relevant files back over from your safe space. That is, the ones whose updated state you need to commit
+1. Stage, commit, and push
+
+
+---
+
+## Acknowledgments 
+
+Materials adapted from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
 
