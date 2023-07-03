@@ -41,7 +41,7 @@ Your general workflow will be:
 
 # Part 1: Using functions in social science data analysis
 
-The World Bank publishes extensive socioeconomic data on countries and economies worldwide. In the `data_world_bank` folder included in this assignment, I put a subset (n = 20) of the World Bank’s `csv` data files with economic indicators for each country (https://data.worldbank.org/indicator). Each `csv` file contains data on a given country economy's data.
+The World Bank publishes extensive socioeconomic data on countries and economies worldwide. In the `data_world_bank` folder included in this assignment, I put a subset (n = 20) of the World Bank’s `csv` data files with economic indicators for each country ([https://data.worldbank.org/indicator](https://data.worldbank.org/indicator)). Each `csv` file contains data on a given country economy's data.
 
 Your task is edit the `functions.Rmd` file to write and call a function (give it a meaningful name) that imports each data file and renames some of the columns in each data file:
 * Your function should import a SINGLE data file (e.g., do not try to run an iterative operation inside the function -- technically this can work, but it is far harder to fix errors and write the body of the function if you are performing both tasks simultaneously). The function should take one single argument: the file path to the data file. Given this path, the function should import and rename the data, and return the cleaned data as output.
