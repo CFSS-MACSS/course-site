@@ -43,7 +43,7 @@ Your general workflow will be as follows:
 
 # Assignment description
 
-At this mid-way point in the term, I want to check and make sure everyone has acquired the major skills learned so far:
+We're nearing the end of our course (!) and I want to check and make sure everyone has acquired the major skills learned so far:
 
 * Importing and tidying data
 * Transforming, visualizing, and exploring data
@@ -153,7 +153,7 @@ Your repo should include everything you have used to produce your analyses (R sc
 
 Make sure to stage-commit-push your original `.Rmd` file (or files if you used more than one Rmd or R script), and the report you generate from it as a `github_document` or a `pdf` document
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw06-jmclip`) and submit it to Canvas under HW06 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/hw6-brinasab`) and submit it to Canvas under HW06 before the deadline.
 
 
 # Rubric
