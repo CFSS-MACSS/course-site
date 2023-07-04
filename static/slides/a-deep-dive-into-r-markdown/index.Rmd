@@ -718,6 +718,8 @@ Open **`gun-deaths.Rmd`** (get the repo from the website). Modify the YAML heade
 2. Instead of using `lubridate`, modify the date using `Sys.time()`. Render the following two dates exaclty as they appear here (using a comma (,) in the first and a slash (/) in the second):
   * July 3, 2023
   * 2023/07/03
+  
+3. Make a table with at least three rows and at least three columns
 
 ---
 

@@ -31,11 +31,18 @@ class: middle
 
 
 
+---
+# Agenda
+
+* Reproducible examples
+* Git / GitHub
+
+---
 &lt;img src="https://media.giphy.com/media/uRb2p09vY8lEs/giphy.gif" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-
+&lt;img src="../../img/allison_horst_art/reprex.png" alt="A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'" width="80%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)]
 
@@ -141,7 +148,7 @@ if (TRUE) "true branch" else {
 
 &lt;img src="https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif" width="65%" style="display: block; margin: auto;" /&gt;
 
-<div class="countdown" id="timer_9455986a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e0553ce1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -156,10 +163,29 @@ class: center, middle
 
 ## Git
 
+* Version control system
+* Repository (repo)
+* GitHub is where we can store / distribute repos
+* COMMIT OFTEN!!
+  * Think of it as taking a photo do of EVERYTHING to document where you are in your project
+  * Try to have a meaningful message to remind yourself what changed (in case you need to go back later!)
+* Push somewhat often (people vary on this)
+
+
+---
+## Why use Git? 
+
+--
+&lt;img src="https://swcarpentry.github.io/git-novice/fig/phd101212s.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Git
+
 ### What files to commit
 
-* Source files
-* Markdown files
+* Source files (includes markdown files)
+* Configuration files (e.g. gitignore, .Rproj)
 * Data files
 
 ### What files to not commit
@@ -177,13 +203,36 @@ class: center, middle
 * Tells Git which files/directories to ignore
 
 ---
-
 ## Git LFS
 
 * [Git Large File Storage](https://git-lfs.github.com/)
 * Separate software for tracking large files
 * Integrates with Git
 * Generally charges a fee
+
+
+---
+
+## Pushing / Pulling
+
+**Pushing** is when you are sending your changes to GitHub while **pulling** is when you are 'refreshing' your copy of the files to your machine. 
+
+The order of your workflow matters less when you are working on your own on a project, but when you are collaborating with others, it becomes crucial to have a good workflow. Think of a google doc you are collaboratively editing. You work offline and when you go back online, someone else has made changes, how could you reconcile this? The analogy is trying to push changes without pulling to update your files first. **It is a good habit to pull before starting work, even when working alone.**
+
+---
+## Git and merge conflicts
+*Typically* these occur when you haven't pulled before pushing changes in a collaborative project. Essentially, there are now two 'current' versions of a file and they need to be reconciled. Sometimes, they can be automatically resolved but sometimes you have to deal with the conflicts. In these instances, you can review the code side-by-side and confirm the changes. (**this option varies by how you interact with Git!**)
+
+
+---
+## Using Git and various interfaces
+
+There are more options to consider XXX
+
+
+---
+
+# Troubleshooting Git
 
 ---
 
@@ -228,7 +277,7 @@ usethis::use_git_remote(
 
 ---
 
-## 
+## Recap
 
 1. Commit early and often as you revise and update your project
 1. Push regularly to GitHub

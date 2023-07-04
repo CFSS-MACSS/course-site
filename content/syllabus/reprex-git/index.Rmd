@@ -61,7 +61,7 @@ We will be using R Workbench for the lecture and the in-class exercises. If you 
 
 #### Today's lecture builds upon the following two resources by *The Carpentries*:
 * [Version Control with Git](https://swcarpentry.github.io/git-novice/)
-* [Library Carpentry: Introduction to Git](https://librarycarpentry.org/lc-git/01-what-is-git/index.html)
+* [Library Carpentry: Introduction to Git](https://librarycarpentry.org/lc-git/01-what-is-git.html)
 
 #### We learned the following commands 
 
