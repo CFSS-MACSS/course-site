@@ -28,7 +28,7 @@ tags: []
 
 # Links (optional).
 url_pdf: ""
-#url_slides: "/slides/intro-to-git/"
+url_slides: "/slides/intro-to-git/"
 url_video: ""
 url_code: ""
 
@@ -53,6 +53,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Before class
 
 * Read chapter 4 "Workflow Basics" in [R for Data Science](https://r4ds.had.co.nz/workflow-basics.html)
+* Read ["Excuse me, do you have a minute for version control?"](https://peerj.com/preprints/3159v2/)
 * Read Data Carpentry [Introduction to R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html) 
 * Read chapter 27 "R Markdown" in [R for Data Science](https://r4ds.had.co.nz/r-markdown.html)
 
