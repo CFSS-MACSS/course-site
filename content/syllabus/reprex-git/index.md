@@ -28,7 +28,7 @@ tags: []
 
 # Links (optional).
 url_pdf: ""
-#url_slides: "/slides/reproducible-examples-and-git/"
+url_slides: "/slides/reproducible-examples-and-git/"
 url_video: ""
 url_code: ""
 
@@ -48,6 +48,7 @@ math: false
 ## Before class
 
 * [Chapter 1 Why Git? Why GitHub?](https://happygitwithr.com/big-picture.html) in *"Happy Git and GitHub for the useR"*
+* Read ["Excuse me, do you have a moment to talk about version control?"](https://peerj.com/preprints/3159v2/)
 * Skim chapters 15, 16, and 17 included in the section [Early GitHub Wins](https://happygitwithr.com/usage-intro.html) in *"Happy Git and GitHub for the useR"*
 * Skim chapters 20 to 23 in the section [Git fundamentals](https://happygitwithr.com/git-intro.html) in *"Happy Git and GitHub for the useR"*
 
