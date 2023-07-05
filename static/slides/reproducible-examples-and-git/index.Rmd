@@ -382,6 +382,7 @@ This is initially quite daunting (at least it was for me, but you get comfortabl
 ## Steps:
 1. (initially) Setup git and navigate to relevant directory
 1. (in terminal) git pull (everything is up to date!) 
+--
 1. (make changes)
 1. git status to verify which files have been changed
 1. git add (file name) OR git add ..
@@ -391,10 +392,28 @@ This is initially quite daunting (at least it was for me, but you get comfortabl
 
 ---
 
+## Command line Git: Vocabulary
+* git init to initialize a new repo
+* git status to check the current status of your repo
+* git add . to add to the git staging area all new or changed files
+* git commit -m "your commit message" to commit the staged files
+* git push to push your committed files the online Github repo
+* git diff to show differences in files
+* git log to show all history of your commits
+* git reset --hard HEAD~1 to delete a pushed commit (use with caution), followed by git push -f origin main to push the deleted commit to the online Github repo
+
+
+---
+
 class: center, middle, inverse
 
 # Troubleshooting Git
 
+
+---
+## Key issues that pop up
+
+* Cloning from main on accident
 
 ---
 
