@@ -410,7 +410,7 @@ This is initially quite daunting (at least it was for me, but you get comfortabl
 
 * pwd to check your current directory
 * cd to navigate to your desired directory and move around terminal 
-  * .. can help you navigate up
+  * .. can help you navigate up (command is cd ..)
   * (tab) can autofill text
   * (tab)(tab) can give you options
 * ls to list all visible content in your current directory
