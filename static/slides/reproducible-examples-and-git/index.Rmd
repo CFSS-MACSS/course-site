@@ -178,10 +178,12 @@ count(diamonds, colour)
 
 ---
 ## Steps to creating a reproducible example:
-
+1. Run your code
 1. Copy your code
 1. Run `reprex` in the console
 1. paste your code into wherever you'd like!
+
+(If it gets mad, you may not be copying your code first)
 
 ```{r reprex-ex}
 
