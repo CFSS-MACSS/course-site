@@ -177,6 +177,40 @@ count(diamonds, colour)
 ```
 
 ---
+## Steps to creating a reproducible example:
+
+1. Copy your code
+1. Run `reprex` in the console
+1. paste your code into wherever you'd like!
+
+```{r reprex-ex}
+
+m <- matrix(
+  c(1:16),
+  nrow = 4,
+  ncol = 4,
+  byrow = TRUE
+)
+m
+#>      [,1] [,2] [,3] [,4]
+#> [1,]    1    2    3    4
+#> [2,]    5    6    7    8
+#> [3,]    9   10   11   12
+#> [4,]   13   14   15   16
+
+
+for (row in 1:nrow(m)){ # going by rows OR columns
+  for (col in 1:ncol(m)) { # by whatever's left (col OR rows)
+
+  #  m_sq[row,col]<-(m[row, col]^2)
+  }
+}
+#> Error: object 'm_sq' not found
+```
+
+<sup>Created on 2023-07-05 with [reprex v2.0.2](https://reprex.tidyverse.org)</sup>
+
+---
 
 ## Customizing `reprex()`
 
