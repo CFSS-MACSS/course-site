@@ -343,6 +343,52 @@ There are more options to consider when using Git, right now, we've mostly been 
 Once you feel comfortable in RStudio, you can switch to the terminal. See this [tutorial on command line Git here](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
 
 
+
+---
+## Command line Git
+
+## Steps:
+1. (initially) Setup git and navigate to relevant directory
+1. (in terminal) git pull (everything is up to date!) 
+1. (make changes)
+1. git status to verify which files have been changed
+1. git add (file name) OR git add ..
+1. git status to double-check you're ready / didn't forget anything
+1. git commit -m "comment you want to appear"
+1. git push
+
+---
+
+## Navigating to the relevant directory: fun with bash!
+This is initially quite daunting (at least it was for me, but you get comfortable after awhile). You can also patch this together a bit if you need by getting file locations in, say, finder, and then using that to help navigate to relevant files. 
+
+--
+### Vocabulary:
+
+* pwd to check your current directory
+* cd to navigate to your desired directory and move around terminal 
+  * .. can help you navigate up
+  * (tab) can autofill text
+* ls to list all visible content in your current directory
+* ls -a to list all visible and hidden contents in your current directory
+* touch to create a new file; provide the filename and the extension
+* :q to exit and end the execution of a process
+* rm remove a file
+* cp copy a file (can copy elsewhere)
+
+---
+## Command line Git
+
+## Steps:
+1. (initially) Setup git and navigate to relevant directory
+1. (in terminal) git pull (everything is up to date!) 
+1. (make changes)
+1. git status to verify which files have been changed
+1. git add (file name) OR git add ..
+1. git status to double-check you're ready / didn't forget anything
+1. git commit -m "comment you want to appear"
+1. git push
+
 ---
 
 class: center, middle, inverse
