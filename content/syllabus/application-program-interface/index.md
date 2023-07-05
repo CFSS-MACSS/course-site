@@ -58,6 +58,11 @@ math: false
 ## Before class
 
 * Chapter 1 and 4 in [Web Scraping with R](https://steviep42.github.io/webscraping/book/)
+* Setup: 
+    1. Go to [the geonames site](http://www.geonames.org/login/) and register an account 
+    2. Click [here](http://www.geonames.org/enablefreewebservice) to enable the free web service
+    3. Go to the [OMDb website and click on the "API Key" tab to generate your API key](https://www.omdbapi.com/)
+
 
 Several packages are needed for this week's lectures (all installed on R workbench). If you are using R from your laptop (VS. R Workbench), I'd suggest following the lectures using R Workbench and installing the packages after class.
 
