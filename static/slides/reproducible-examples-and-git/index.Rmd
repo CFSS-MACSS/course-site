@@ -12,7 +12,7 @@ output:
       countIncrementalSlides: false
 ---
 
-class: middle
+
 
 ```{r setup, include = FALSE}
 # generate CSS file
@@ -128,6 +128,7 @@ theme_set(theme_minimal(base_size = rcis::base_size))
   * Troubleshooting
 
 ---
+class: middle
 ```{r echo = FALSE}
 include_graphics(path = "https://media.giphy.com/media/uRb2p09vY8lEs/giphy.gif")
 ```
@@ -369,6 +370,7 @@ This is initially quite daunting (at least it was for me, but you get comfortabl
 * cd to navigate to your desired directory and move around terminal 
   * .. can help you navigate up
   * (tab) can autofill text
+  * (tab)(tab) can give you options
 * ls to list all visible content in your current directory
 * ls -a to list all visible and hidden contents in your current directory
 * touch to create a new file; provide the filename and the extension
@@ -444,12 +446,6 @@ usethis::use_git_remote(
 
 ---
 
-## Avoiding Git problems
-
-1. Commit early and often
-1. Push regularly to GitHub
-
----
 
 ## Burn it all down
 
@@ -458,6 +454,12 @@ include_graphics(path = "https://imgs.xkcd.com/comics/git.png")
 ```
 
 .footnote[Source: [xkcd](https://xkcd.com/1597/)]
+
+---
+## Avoiding Git problems
+
+1. Commit early and often
+1. Push regularly to GitHub
 
 
 ---
