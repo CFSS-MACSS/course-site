@@ -340,6 +340,12 @@ include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s
 * System file
 * Tells Git which files/directories to ignore
 
+--
+### Getting started with gitignore:
+
+* [example files here](https://github.com/github/gitignore)
+* [creating a git ignore file](https://www.w3schools.com/git/git_ignore.asp?remote=github)
+
 ---
 ## Git LFS
 
@@ -392,7 +398,7 @@ Once you feel comfortable in RStudio, you can switch to the terminal. See this [
 1. git add (file name) OR git add ..
 1. git status to double-check you're ready / didn't forget anything
 1. git commit -m "comment you want to appear"
-1. git push
+1. git push 
 
 ---
 
