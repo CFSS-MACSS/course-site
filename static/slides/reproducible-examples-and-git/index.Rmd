@@ -357,8 +357,8 @@ include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s
 * Branch: used to test out / develop new code in a safe local so you don't have to roll back any changes. These can be merged into the main when you're ready. 
 * Forking:  Copying from the repo to your own repo (typically when you do not have write access to the original)
 * Cloning: Copying from the repo (typically to your machine when you have write access to the original)
-* **Pushing** is when you are sending your changes to GitHub  
 * **Pulling** is when you are 'refreshing' your copy of the files to your machine.  
+* **Pushing** is when you are sending your changes to GitHub  
 
 The order of your workflow matters less when you are working on your own on a project, but when you are collaborating with others, it becomes crucial to have a good workflow. Think of a google doc you are collaboratively editing. You work offline and when you go back online, someone else has made changes, how could you reconcile this? The analogy is trying to push changes without pulling to update your files first. **It is a good habit to pull before starting work, even when working alone.**  
 
