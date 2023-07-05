@@ -119,11 +119,13 @@ set.seed(1234)
 theme_set(theme_minimal(base_size = rcis::base_size))
 ```
 
----
+
 # Agenda
 
 * Reproducible examples
 * Git / GitHub
+  * Vocabulary
+  * Troubleshooting
 
 ---
 ```{r echo = FALSE}
@@ -252,6 +254,7 @@ countdown(minutes = 15)
 class: center, middle
 
 ```{r, echo = FALSE}
+knitr::include_graphics("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/git-meme.jpeg")
 #knitr::include_graphics("/img/git-meme.jpeg")
 ```
 
@@ -261,7 +264,7 @@ class: center, middle
 
 * Version control system
 * Repository (repo)
-* GitHub is where we can store / distribute repos
+* GitHub is where we can store / distribute repos (distinction between Git and GitHub)
 * COMMIT OFTEN!!
   * Think of it as taking a photo do of EVERYTHING to document where you are in your project
   * Try to have a meaningful message to remind yourself what changed (in case you need to go back later!)
@@ -272,8 +275,8 @@ class: center, middle
 ## Why use Git? 
 
 --
-```{r echo = FALSE}
-include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s.png")
+```{r echo = FALSE, out.width = "450px"}
+include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s.png") 
 ```
 
 
@@ -311,11 +314,18 @@ include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s
 
 ---
 
-## Pushing / Pulling
+## Vocabulary 
+* Upstream: typically the original repo (see below on forking)
+* Main / master: where you are typically working (note that )
+* Branch: used to test out / develop new code in a safe local so you don't have to roll back any changes. These can be merged into the main when you're ready. 
+* Forking:  Copying from the repo to your own repo (typically when you do not have write access to the original)
+* Cloning: Copying from the repo (typically to your machine when you have write access to the original)
+* **Pushing** is when you are sending your changes to GitHub  
+* **Pulling** is when you are 'refreshing' your copy of the files to your machine.  
 
-**Pushing** is when you are sending your changes to GitHub while **pulling** is when you are 'refreshing' your copy of the files to your machine. 
+The order of your workflow matters less when you are working on your own on a project, but when you are collaborating with others, it becomes crucial to have a good workflow. Think of a google doc you are collaboratively editing. You work offline and when you go back online, someone else has made changes, how could you reconcile this? The analogy is trying to push changes without pulling to update your files first. **It is a good habit to pull before starting work, even when working alone.**  
 
-The order of your workflow matters less when you are working on your own on a project, but when you are collaborating with others, it becomes crucial to have a good workflow. Think of a google doc you are collaboratively editing. You work offline and when you go back online, someone else has made changes, how could you reconcile this? The analogy is trying to push changes without pulling to update your files first. **It is a good habit to pull before starting work, even when working alone.**
+
 
 ---
 ## Git and merge conflicts
@@ -325,12 +335,20 @@ The order of your workflow matters less when you are working on your own on a pr
 ---
 ## Using Git and various interfaces
 
-There are more options to consider XXX
+There are more options to consider when using Git, right now, we've mostly been using RStudio. You can also use other options, such as GitHub desktop, the terminal, or others. [See here for a partial list of options!](https://git-scm.com/downloads/guis)
+
+
+---
+## Command line Git
+Once you feel comfortable in RStudio, you can switch to the terminal. See this [tutorial on command line Git here](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
 
 
 ---
 
+class: center, middle, inverse
+
 # Troubleshooting Git
+
 
 ---
 
