@@ -4,7 +4,7 @@ date: 2023-07-10T13:30:00-06:00  # Schedule page publish date
 publishdate: 2019-04-01
 
 draft: false
-aliases: ["/hw05-reproducible-research.html"]
+aliases: ["/hw06-reproducible-research.html"]
 
 summary: "Synthesize everything we have learned thus far."
 ---
@@ -62,7 +62,7 @@ I want you to practice these skills by applying them to research **that interest
 * Use social science data and include a description of these data for the reader
 * Some descriptive statistics and plots of the data. You are not expected and do not need to (unless you want to) include complex statistical modeling that we have not learned. The actual analysis can be relatively simple (think exploratory!): analyzing and interpreting the distribution of variables and how they are related to one another at the bivariate level is more than adequate
 * Summarize the relationships you discover with a written summary. Conjecture as to why they occur and/or why they may be [spurious](https://en.wikipedia.org/wiki/Spurious_relationship), and further hypotheses to evaluate
-* The final output should be a `md` (i.e., `github_document`), `word_document`, `pdf_document` or anything else that can be viewed directly on GitHub (do not use `html_document`). Use of code chunk and YAML options to customize your final document. Frame your report as you would if you were submitting it for a substantive seminar in your research field or to a presentation for a company. It should be approximately ~~750-1000~~ 500-750 words in length. It is fine if the report is longer (up to 1000 words), but it should not be less than 500.
+* The final output should be a `md` (i.e., `github_document`), `word_document`, `pdf_document` or anything else that can be viewed directly on GitHub (do not use `html_document`). Use of code chunk and YAML options to customize your final document. Frame your report as you would if you were submitting it for a substantive seminar in your research field or to a presentation for a company. It should be approximately 500-750 words in length. It is fine if the report is longer (up to 1000 words), but it should not be less than 500.
     * You do not need to stuff everything into the final document. Think of this like a traditional report. You might describe how you obtained and prepared the data, but you won't include all the code and output from that process in the final document. For example: if you write several lines of code for data cleaning and tidying, you can write that code in a separate R script (and load into the .Rmd only the cleaned and tidy data); or, if you create multiple plots, you can write the code in a R script, and select only a few plots for the report, etc. As long as all code is stored in the repo, you ensure reproduciblility (refer to the extra code in the README). We will access and grade everything that is included in the repo.
 
 ### In terms of code, your submission should contain the following:
@@ -155,7 +155,7 @@ Your repo should include everything you have used to produce your analyses (R sc
 
 Make sure to stage-commit-push your original `.Rmd` file (or files if you used more than one Rmd or R script), and the report you generate from it as a `github_document` or a `pdf` document
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw05-jmclip`) and submit it to Canvas under HW06 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/cfss-hmwks-s23/hw06-jmclip`) and submit it to Canvas under HW06 before the deadline.
 
 
 # Rubric
