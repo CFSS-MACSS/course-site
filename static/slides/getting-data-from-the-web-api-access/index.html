@@ -30,10 +30,20 @@ class: inverse, middle
 # Getting data from the web (aka web scraping)
 
 ---
+## Agenda
+1. Broad overview of APIs and getting data
+1. Examples: here we're going to increase in order of difficulty / challenge
+  1. world bank data
+  1. geonames
+  1. OMDB
+  
+
+&gt; Note: You'll want to get your accounts setup so that you have an API key for today's exercises if you haven't already: [see class page for links &gt; and details](https://macs30500.netlify.app/syllabus/getting-data-from-the-web-api-access/)
+---
 
 &lt;img src="webscraping.png" width="70%" style="display: block; margin: auto;" /&gt;
 
-Image Source [at this link](https://medium.com/analytics-vidhya/web-scraping-in-python-for-data-analysis-6bf355e4fdc8)
+[Image Source](https://medium.com/analytics-vidhya/web-scraping-in-python-for-data-analysis-6bf355e4fdc8)
 
 ---
 
@@ -144,14 +154,14 @@ Standard HTML syntax, simplified example:
    
 ```
 
-Tree-like structure:[click here](https://www.researchgate.net/figure/HTML-source-code-represented-as-tree-structure_fig10_266611108) for a visual example
+Tree-like structure:[click here for a visual example of html](https://www.researchgate.net/figure/HTML-source-code-represented-as-tree-structure_fig10_266611108) 
 
 
 ---
 
 ## HTML Tags
 
-In web scraping, we collect information from websites using tags. 
+In web scraping, we collect information from websites using **tags**. 
 
 Tags:
 
@@ -159,7 +169,7 @@ Tags:
 * go in pairs: one on each end of the content that they display; for example `&lt;p&gt;ciao&lt;/p&gt;` only the word "ciao" shows up on the webpage (the `/` signals the end of the tag)
 * can have attributes which provide more information
 
-Refer to this **list of tags** for your scraping projects: https://developer.mozilla.org/en-US/docs/Web/HTML/Element 
+Refer to this **[list of tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element )** for your scraping projects
 
 &lt;!-- add more info here
 https://plsc-31101.github.io/course/collecting-data-from-the-web.html#webscraping
@@ -182,7 +192,7 @@ class: inverse, middle
 
 ---
 
-## How do computer interact on the web? Theory
+## High-level: How do computers interact on the web?
 
 Computers talk to each other on the web by sending and receiving (GET) **data requests** and (POST) **data responses**: some making requests, some receiving and answering them, some doing both. Every computer has an address that other computers can refer to.
 
@@ -194,18 +204,24 @@ Image Source [at this link](https://www.linkedin.com/pulse/what-happens-when-you
 
 ---
 
-## How do computer interact on the web? Example
+## Example: How do computers interact on the web? 
 
-Navigating the web basically means **sending a bunch of requests to different servers and asking back different files written in HTML.**
+Navigating the web basically means **sending a bunch of requests to different servers and receiving different files written in HTML.**
 
-For example, if you type `https://macss.uchicago.edu/content/current-student-resources` into your web browser and hit enter, these steps occurs under the hood:
+For example, if you type `https://macss.uchicago.edu/content/current-student-resources` into your web browser and hit enter, these steps occur under the hood:
 
+--
 1. your web browser translates what you typed into a HTTP request to tell the `macss` web server that you would like to access the info stored at `/content/current-student-resources` and that the protocol to use is the `https`
 
+--
 1. the web server that hosts `macss` receives your request and sends back to your web browser an HTTP response and the response content (a bunch of files written in HTML)
 
-1. your browser receives transforms the response content into a nice visual display that might include texts, graphics, hyperlinks, etc.
+--
+1. your browser receives and transforms the response content into a nice visual display that might include texts, graphics, hyperlinks, etc.
 
+--
+
+   
 When we perform these operations with the goal of scraping data, there are packages in R that perform these steps for us (either via APIs or without). 
 
 ---
@@ -220,7 +236,7 @@ class: inverse, middle
 
   &gt; A web API (Application Programming Interface) is an interface provided by the website that helps users to collect data from that specific website.
 
-The majority of web APIs use a particular style know as **REST** or **RESTful** which stays for  *Representational State Transfer*. These allows to query the website database using URLs, just like you would construct an URL to view a web page.
+The majority of web APIs use a particular style know as **REST** or **RESTful** which stands for  *Representational State Transfer*. These allows to query the website database using URLs, just like you would construct an URL to view a web page.
 
 An **URL**, which stays for *Uniform Resource Location*, is a string of characters that uses the **HTTP**, or *HyperText Transfer Protocol*, to send request for data.
 
@@ -242,25 +258,26 @@ The process described in the `macss` example is very similar to how APIs work, w
 
 * Specific packages written for existing APIs. If a package for a given API exists, that package is tailored to that specific API and not transferable to other APIs. 
 
-* Useful because:
+* Wrapper packages can be useful because they are   
     * Reproducible
     * Up-to-date (ideally)
-    * Ease of access
+    * Easy to access
     
-* How do I know if a R wrapper package for a specific API exists? Google it
+* How do I know if a R wrapper package for a specific API exists? **Google it**
 
-* How do I learn how to use a specific R wrapper package? Each package should come with documentation (either a pdf, or a GitHub repo, or both) that explains how to use it and the main functions defined in it. It is essential to read the documentation to understand how to use a package.
+* How do I learn how to use a specific R wrapper package? **Each package should come with documentation (either a pdf, or a GitHub repo, or both) that explains how to use it and the main functions defined in it. It is essential to read the documentation to understand how to use a package.**
 
 ---
 
 ## Using APIs with a wrapper package: examples
 
-The class materials for today (download it from the website) include four examples of APIs that have a wrapper package:
+The class materials for today (download it from the website: `usethis::use_course("CFSS-MACSS/web-api-access")`) include five examples of APIs that have a wrapper package:
 
-* Wordbank
+* Omdb database
 * GeoNames
 * Census
 * Manifesto Project
+* Wordbank
 
 We will review the first two in class. Please, work through the other two examples on your own.
 
@@ -272,6 +289,7 @@ We will review the first two in class. Please, work through the other two exampl
 * rich set of socioeconomic indicators spanning several decades and dozens of topics
 * full data available for bulk download as CSV files from their website (see HW5); but frequently you only need to obtain a handful of indicators or a subset of countries
 * the `wbstats` package provides a wrapper for R for easier access to the API; it returns the results in a tidy data frame 
+
 
 **GeoNames geographical database API**: `geonames` R wrapper package
 * geographical information for all countries and other locations
@@ -290,13 +308,14 @@ We will review the first two in class. Please, work through the other two exampl
 * covers 1,000+ parties from 1945 until today in 50+ countries on five continents. 
 * the `manifestoR` package provides a wrapper for R
 
+
 ---
 
 ## Using APIs directly (without a wrapper package)
 
 Not all APIs have a R wrapper package to help us interact with them. If such wrapper does not exist, we can always interact directly with the API! This usually entrails more code (such as writing our own functions), but also the ability to customize our data requests. 
 
-The class materials for today (download it from the website) includes one example of this kind: **OMDb Open Movie Database**
+The class materials for today also include one example of this kind: **OMDb Open Movie Database**
 
 **Looking for more examples?** See the HW7 instructions for suggestions
 
@@ -310,7 +329,7 @@ class: inverse, middle
 
 ## Using APIs: register for access
 
-**Many APIs require you to register for access.** Sometimes this is as quick as providing email and password; and receiving an email with your username, private API key, etc.. Other times you have to submit an application and go through a review process (e.g., Twitter). Often this process is free, but some APIs require you to pay a few. 
+**Many APIs require you to register for access.** Sometimes this is as quick as providing email and password; and receiving an email with your username, private API key, etc.. Other times you have to submit an application and go through a review process (e.g., Twitter). Often this process is free, but some APIs require you to pay. 
 
 Registering for access, allows APIs to track which users are submitting queries and manage demand. If you submit too many queries too quickly, you might be **rate-limited** and your requests de-prioritized or blocked: when in doubt, check the API access policy of the web site to determine what these limits are.
 
@@ -338,11 +357,20 @@ Important:
 * Restart RStudio after modifying `.Rprofile` in order to load any new keys into memory
 * Spelling is important when you set the option in your `.Rprofile`
 
+
+---
+## Exercises
+
+For the remainder of class, we'll walk through these resources: `usethis::use_course("CFSS-MACSS/web-api-access")`
+1. **world bank**: this has a wrapper and does not require any user names / prior registration
+1. **geonames**: this has ai wrapper and requires a user name with prior registration (free)
+1. **OMDB**: this does not have a wrapper and requires an api key with prior registration (free)
+
 ---
 
 ## Acknowledgments 
 
-APIs examples are drawn from Rochelle Terman’s "Finding APIs" page [here](https://plsc-31101.github.io/course/collecting-data-from-the-web.html#finding-apis) and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+APIs examples are drawn from Rochelle Terman’s "Finding APIs" page [here](https://plsc-31101.github.io/course/collecting-data-from-the-web.html#finding-apis) and Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
