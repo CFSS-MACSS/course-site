@@ -361,6 +361,12 @@ We can think at the basic workflow as a 4-step process:
 1. Perform analysis *basic histogram*
 
 ---
+class: inverse, middle
+
+# WARNING: GRAPHICS ARE NOT NICELY FORMATTED!!
+*do as I say, not as I do!*
+
+---
 ## Analysis: what does this mean?
 
 ```{r echo=FALSE, fig.cap="Histogram of text from exercise 1", out.width = '60%', dpi = 300}
