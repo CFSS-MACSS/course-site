@@ -30,7 +30,7 @@ For the homework, you will create a new dataset using an API or web scraping and
 
 # Accessing the `hw07` repository
 
-Go [to this link](https://classroom.github.com/a/ZuGDMiSQ) and find your copy of the `hw07` repository. It follows the naming convention `hw07-<USERNAME>`. Clone the repository to your computer.
+Go [to this link](https://classroom.github.com/a/14OamkML) and find your copy of the `hw07` repository. It follows the naming convention `hw07-<USERNAME>`. Clone the repository to your computer.
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
