@@ -102,6 +102,7 @@ style_duo_accent(
   )
 )
 
+xaringanExtra::use_panelset()
 source(here::here("R", "slide-opts.R"))
 ```
 
@@ -116,11 +117,22 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(rvest)
 library(lubridate)
+library(xaringanExtra)
 
 set.seed(1234)
 theme_set(theme_minimal(base_size = rcis::base_size))
 ```
 
+# Agenda
+* Recap: APIs
+* Intro to rvest
+* Example: Scraping presidential statements
+* Applications: work in groups
+* Ethics / considerations when scraping
+* Recap
+
+
+---
 class: inverse, middle
 
 # Scraping without an API
@@ -132,7 +144,7 @@ class: inverse, middle
 ### Last time we learned two main concepts...
 
 #### Concept 1: What is behind a website
-* a website is made of HTML, CSS, JS, other random stuff 
+* a website is made of mostly HTML, CSS, JS
 * **HTML** the website's "skeleton"; it is built with **tags** that follow a hierarchical, tree-like structure 
 * **CSS** builds on top of HTML and makes it prettier
 
@@ -325,26 +337,53 @@ Find the HTML/CSS code to extract:
 
 ]
 
+
 ---
 
 class: inverse, middle
 
-# Practice all of this in R using `rvest`
+# `rvest`
+
+---
+## Packages to read html: rvest
+
+* [`rvest`](https://rvest.tidyverse.org/): allows you to scrape (harvest...get it...) data from the web
+* works great with tidyverse
+* can 'flatten' the hierarchical html/css elements into something we can more easily work with:
+  * by HTML tags or attributes
+  * by CSS selectors
+
+
+---
+## Using `rvest` to read HTML: functions to know
+
+`read_html` - read HTML data from a url or character string.
+
+`html_nodes` - select specified nodes from the HTML document using CSS selectors.
+
+`html_table` - parse an HTML table into a data frame.
+
+`html_text` - extract tag pairs' content.
+
+`html_name` - extract tags' names.
+
+`html_attrs` - extract all of each tag's attributes.
+
+`html_attr` - extract tags' attribute value by name.
+
+
+
+---
+
+class: inverse, middle
+
+# Exercise: Practice all of this in R using `rvest`
 
 ### `rvest`: https://rvest.tidyverse.org/
 ### Scraping presidential statements
 
 ---
-
-## Using `rvest` to read HTML
-
-**The R package [`rvest`](`https://rvest.tidyverse.org/`) allows us to:**
-1. Collect and read the HTML source code of a webpage
-1. Find and keep the specific HTLM/CSS elements that we want from that webpage:
-  * by HTML tags or attributes
-  * by CSS selectors
-
---
+# Exercise: Practice all of this in R using `rvest`
 
 **Let’s start with step one:**
 
@@ -367,7 +406,7 @@ dwight
 ```
 --
 
-This is not very informative. We can do better! How? `rvest` lets us find and grab the specific HTLM/CSS elements that we want from a webpage:
+This is not very informative. We can do better! How? `rvest` lets us find and grab the specific HTML/CSS elements that we want from a webpage:
   * by HTML tags or attributes
   * by CSS selectors
 
@@ -377,14 +416,23 @@ This is not very informative. We can do better! How? `rvest` lets us find and gr
 
 For example, if we want to find **all `a` elements** in the HTML of our webpage (which we saved in the object `dwight`), we run the following code:
 
+.panelset[
+.panel[.panel-name[R Code]
 ```{r nodes, dependson = "get-statement", eval = FALSE}
-html_elements(x = dwight, css = "a")
+out<-html_elements(x = dwight, css = "a")
 ```
+]
+.panel[.panel-name[R output]
+```{r nodes-out, dependson = "get-statement", eval = FALSE}
+out
+```
+]
+]
 
 --
 
 Observe the output: 
-* Many elements on the same page have the same HTML tag. So, if we search for all `a` tags, we likely get a lot of stuff, much of which we do not want.
+* Many elements on the same page have the same HTML tag. So, if we search for all `a` tags, we will likely get a lot of stuff, much of which we do not want.
 * We can be more precise! For example, we might want to find **only the element that contains the document's speaker: "Dwight D. Eisenhower"**. How?
   * find it on the webpage
   * modify the above code accordingly
@@ -569,6 +617,8 @@ scrape_doc(url_2)
 * notice each page has about 10 URLs, so we need to tell the scraper to turn page
 * apply our `scrape_doc` function to the list of URLs, one at a time 
 
+*recall your practice with homework 05 to loop over filenames!*
+
 ---
 
 class: inverse, middle
@@ -652,6 +702,15 @@ class: inverse, middle
 
 ---
 
+## Recap
+
+* Use an API when you can
+* Be `polite`
+* Read `robots.txt`
+* Use publicly available data
+
+---
+
 ## Acknowledgments 
 
-The content of these slides is derived in part from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
