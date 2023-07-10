@@ -363,8 +363,8 @@ We can think at the basic workflow as a 4-step process:
 ---
 ## Analysis: what does this mean?
 
-```{r echo=FALSE, fig.cap="Histogram of text from exercise 1", out.width = '90%'}
-knitr::include_graphics(here("../text-analysis-fundamentals/ex_plums.png"))
+```{r echo=FALSE, fig.cap="Histogram of text from exercise 1", out.width = '60%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ex_plums.png"))
 
 ```
 
@@ -415,8 +415,8 @@ Recall the following graphic:
 Now, if we were to follow and replicate what we did in example one, we'd end up with this:
 
 --
-```{r echo=FALSE, fig.cap="Histogram of text containing stop wordws", out.width = '90%'}
-knitr::include_graphics(here("../text-analysis-fundamentals/austen_no_stop.png"))
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "austen_no_stop.png"))
 
 ```
 
@@ -449,8 +449,8 @@ tidy_books <- tidy_books %>%
 ```
 
 --
-```{r echo=FALSE, fig.cap="Histogram of text containing stop wordws", out.width = '90%'}
-knitr::include_graphics(here("../text-analysis-fundamentals/austen.png"))
+```{r echo=FALSE, fig.cap="Histogram of text containing stop wordws", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "austen.png"))
 
 ```
 ---
@@ -469,12 +469,12 @@ Once you have your data, you can start looking at the text to get a sense of wha
 
 .panelset[
 .panel[.panel-name[Plot of books]
-```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '90%'}
-knitr::include_graphics(here("../text-analysis-fundamentals/austen_bybook.png"))
+```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '60%', dpi = 300}
+knitr::include_graphics(here("static", "img", "austen_bybook.png"))
 ```
 ]
 .panel[.panel-name[Table of Books]
-```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '90%'}
+```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '60%', dpi = 300}
 library(tidyverse)
 library(here)
 read_csv(here("../text-analysis-fundamentals/austen_bybooks")) %>%
