@@ -419,7 +419,7 @@ For example, if we want to find **all `a` elements** in the HTML of our webpage 
 .panelset[
 .panel[.panel-name[R Code]
 ```{r nodes, dependson = "get-statement", eval = FALSE}
-out<-html_elements(x = dwight, css = "a")
+html_elements(x = dwight, css = "a") 
 ```
 ]
 .panel[.panel-name[R output]
