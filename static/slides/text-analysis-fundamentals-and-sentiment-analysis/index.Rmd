@@ -121,6 +121,18 @@ set.seed(1234)
 theme_set(theme_minimal(base_size = 16))
 ```
 
+# Agenda
+
+* Regular Expressions
+    * basic understaning of how it workds
+    * intro to stringr package 
+* Workflow for text analysis
+    *Three examples:
+      * Emily Dickinson (basic process with small example)
+      * Jane Austen (more complex example with some analysis)
+      * Billboard hot 100: merging data, answering quesitons, building workflow
+
+---
 class: inverse, middle
 
 # Regular Expressions
@@ -143,16 +155,39 @@ Regular Expressions are used:
 Given our ability to manipulate strings and our ability to test for equivalence (==) or test whether some string contains another (in), we don't technically need special functions for pattern matching (e.g. regular expressions). That said, it becomes very tedious very quickly if we have to write all our pattern-matching code ourselves
 -->
 
+
+---
+# Regex: how we match
+
+* **Anchors**: match a position before or after other characters
+* **Types**: matching types of characters
+* **Classes**: ranges or sets of characters
+* **Quantifiers**: specify how it matches
+    * **Repetition**: matching more than a single instance
+    * **Patterns and backreferences**: can name and extract specific chunks
+* **Lookahead**: specify that certain elements must appear before your chunk (regardless of whether it appears within it)
+* **Literal matches and modifiers**: you can specify particular matches (e.g. case)
+* **Unicode**: particularly useful if you're working with other languages
+
+---
+# Regex: lazy vs greedy
+
+Examples of Lazy or Non-Greedy quantifiers are `??`, `*?`, `+?`, and `{}?`:
+
+* They match as few characters as possible, and stop at the first recurrence of a character (e.g., the regex moves forward through the string one character at a time, and stops at the first match)
+* Example: the regex `a+?` will match as few "a" as possible in the string "aaaa". Thus, it matches the first character "a" and is done with it
+
 ---
 
 ### Regex examples
 
-Examples: download today's in-class materials from the website
+Examples: download today's in-class materials from the website: `usethis::use_course("CFSS-MACSS/text-analysis-fundamentals")`
 
 Resources:
 * [stringr cheat sheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf) for a complete overview of all `stringr` functions
 * [Chapter 14 "Strings" of R for Data Science](https://r4ds.had.co.nz/strings.html#strings), especially section 14.4 "Tools" for examples of each of these functions
-* [Excellent tutorial](https://github.com/ziishaned/learn-regex/blob/master/README.md)
+* [Regular expressions cheat sheet](https://www.datacamp.com/cheat-sheet/regular-expresso)
+* [Excellent (but a bit complex) tutorial](https://github.com/ziishaned/learn-regex/blob/master/README.md)
 
 ---
 
@@ -200,6 +235,12 @@ We can think at the basic workflow as a 4-step process:
 
 Let's review each step...
 
+---
+class: inverse, middle
+
+![visualization of textual analysis process](https://www.tidytextmining.com/images/tmwr_0101.png)
+
+*Source: [Text Mining with R](https://www.tidytextmining.com/tidytext.html#the-unnest_tokens-function)*
 ---
 
 ## 1. Obtain your textual data
@@ -295,7 +336,7 @@ Usually you want to transform your raw textual data (your document) into a vecto
 
 ## 4. Perform analysis
 
-This week we learn the following:
+We will learn the following:
 
 * Basic exploratory analysis
     * Word frequency
@@ -305,6 +346,27 @@ This week we learn the following:
 * More Advanced
     * Sentiment analysis
     * Topic modeling
+
+---
+# Motivating example 1: Emily Dickinson
+
+We can think at the basic workflow as a 4-step process:
+
+1. Obtain your textual data: *Emily Dickinson's could not stop for Death*
+
+1. Data cleaning and pre-processing  *(simple)*
+
+1. Data transformation *transform one token per row* [see next slides!]
+
+1. Perform analysis *basic histogram*
+
+---
+## Analysis: what does this mean?
+
+```{r echo=FALSE, fig.cap="Histogram of text from exercise 1", out.width = '90%'}
+knitr::include_graphics(here("../text-analysis-fundamentals/ex_plums.png"))
+
+```
 
 ---
 
@@ -321,7 +383,6 @@ There are different ways to complete all steps in R, and different packages have
 
 For the data cleaning and pre-processing step: we start by converting text into a tidy format, which follows the same principle of tidy analysis we have learned so far.
 
-Take a look at [Figure 1.1](https://www.tidytextmining.com/tidytext.html#fig:tidyflow-ch1) from the assigned readings
 
 ---
 
@@ -340,11 +401,99 @@ Steps:
 See [`tidytext`](https://github.com/juliasilge/tidytext) for more info
 
 ---
+## Example 2: Jane Austen example (more complex)
 
-### The tidy text format
+We're going to move onto our next example, using Jane Austen's novels. Now that we have a lot more text to work with, we need to do a bit more cleaning. 
+--
+Recall the following graphic:
+![visualization of textual analysis process](https://www.tidytextmining.com/images/tmwr_0101.png)
+
+
+---
+## Example 2: Jane Austen example (more complex)
+
+Now, if we were to follow and replicate what we did in example one, we'd end up with this:
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop wordws", out.width = '90%'}
+knitr::include_graphics(here("../text-analysis-fundamentals/austen_no_stop.png"))
+
+```
+
+---
+## Tidy text: Stop words
+
+Whoops! Without further cleaning, the elimination of "stop words," we aren't going to have much insightful to say.    
+
+## **HOW TO ELIMINATE STOP WORDS?**    
+--
+We have a dataset of stop words we can use, but how?!
+
+```{r}
+library(tidytext)
+data(stop_words)
+head(stop_words)
+```
+
+--
+ANTI JOIN!!!
+
+
+---
+### Removing stop words with an anti join
+```{r, eval=FALSE}
+# remove stop words with anti_join()
+data(stop_words)
+tidy_books <- tidy_books %>%
+  anti_join(stop_words)
+```
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop wordws", out.width = '90%'}
+knitr::include_graphics(here("../text-analysis-fundamentals/austen.png"))
+
+```
+---
+# COOL!! NOW WHAT?!!!
+
+Once you have your data, you can start looking at the text to get a sense of what's there, what isn't there, and then can move into multiple future directions:
+
+* What words are and are not there (ex: authorship of Federalist documents)
+* What words are connected to one another and are not (ex: Garkov)    
+--
+* What ideas / themes ... **TOPICS** come up
+* The overall feelings (**SENTIMENT**) in the text
+
+---
+## Example: building on this (next steps)
+
+.panelset[
+.panel[.panel-name[Plot of books]
+```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '90%'}
+knitr::include_graphics(here("../text-analysis-fundamentals/austen_bybook.png"))
+```
+]
+.panel[.panel-name[Table of Books]
+```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '90%'}
+library(tidyverse)
+library(here)
+read_csv(here("../text-analysis-fundamentals/austen_bybooks")) %>%
+  knitr::kable()
+```
+]
+]
+
+---
+# TIME TO FLY FREE! Example 3
+In groups: work through the example below and see what you learn.    
+
+**Example 3:** How often is each U.S. state mentioned in a popular song? We’ll define popular songs as those in Billboard’s Year-End Hot 100 from 1958 to the present. Data from  Billboard Year-End Hot 100 (1958-present) and the Census Bureau ACS
+
+---
+### Recap: The tidy text format
 
 Examples of basic exploratory text analysis using R tidyverse.
-These examples all in your in-class materials for today and might be useful for your HW8.
+These examples all in your in-class materials for today and might be useful for your HW08.
 
 **Example 1:** from book "1.2 Emily Dickinson example"
 
@@ -352,4 +501,16 @@ These examples all in your in-class materials for today and might be useful for 
 
 **Example 3:** How often is each U.S. state mentioned in a popular song? We’ll define popular songs as those in Billboard’s Year-End Hot 100 from 1958 to the present. Data from  Billboard Year-End Hot 100 (1958-present) and the Census Bureau ACS
 
-**More examples:** in the assigned readings and suggested resources 
+**More examples available** in the assigned readings and suggested resources 
+
+---
+# Recap
+
+* Regex: how we can deal with text. Need this to find particular terms, have a basic understanding of text. 
+
+* Workflow: multiple steps -- need to start thinking about the process and the complexity of your text can be crucial for your success. 
+
+---
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
