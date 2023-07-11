@@ -126,7 +126,14 @@ library(countdown)
 set.seed(1234)
 theme_set(theme_minimal(base_size = 16))
 ```
+# Agenda
+* Topic Modeling
+  * LDA
+* Sentiment Analysis
+  * Positive / negative sentiment
+* Future applications: author prediction
 
+---
 class: inverse, middle
 
 # Topic Modeling
@@ -138,7 +145,7 @@ class: inverse, middle
 Method to organize and understand large collections of textual information (without reading them).
 
 How? 
-
+--
 By **finding groups of words ("topics") that go together.** Words that co-occur more frequently that chance alone would predict are assigned to the same topic.
 
 Example: organizing 1.2M books into 2000 topics see David Mimno [slides here](https://mimno.infosci.cornell.edu/slides/details.pdf) and [video here](https://vimeo.com/53080123). 
@@ -272,7 +279,7 @@ If we give to LDA the document-term matrix from these 5 documents, and we ask fo
 
 **Document 3 and 4**: 100% Topic B (we can label it "cute animals")
 
-**Sentence 5:** 60% Topic A, 40% Topic B
+**Document 5:** 60% Topic A, 40% Topic B
 
 ---
 
