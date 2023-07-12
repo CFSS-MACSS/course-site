@@ -126,6 +126,7 @@ library(tidyverse)
 set.seed(1234)
 theme_set(theme_minimal(base_size = 16))
 ```
+HMMM
 
 # Agenda
 * Topic Modeling
@@ -436,7 +437,7 @@ knitr::include_graphics(here("static", "img", "ts_idf_words.png"))
 Across each album, we can get a sense of a trajectory: time and love seem to feature in quite frequently, while we see a shift from 'girl' in her early albums to 'woman' in later ones. We can dig into this a bit more deeply as we look at the sentiment of the words. 
 
 ---
-# (reminder / review) LDA: TOPICS
+# LDA: TOPICS
 LDA (Laten Dirichlet Allocation) is one method for fitting a topic model. It offers a means of *unsupervised* classification of a collection of documents. (I think of it as you dump a bunch of items into a pile and it sorts them for you based on patterns it finds...although the same item could appear in multiple piles). 
 
 Small / simple example: suppose you have a list of a bunch of animals that you want grouped. You give it the following: dog, cat, parakeet, tiger, polar bear, lion, penguin. If you tell the model you want three topics, it might provide the following groups:
@@ -491,14 +492,6 @@ knitr::include_graphics(here("static", "img", "ts_10topics.png"))
 ``` 
 ]
 ]
-
----
-
-# Reflection: 
-
-
-I think two topics makes sense here, of our options. However, I would be interested in pooling albums and reassessing to see. Alternatively, we might want to think about other ways to explore the meaning / distinctions. 
-
 
 ---
 
@@ -666,5 +659,4 @@ class: inverse, middle, center
 class: middle, center, inverse
 
 # THANK YOU ALL FOR A GREAT CLASS! I have genuinely enjoyed getting to know you and your work and hope you keep in touch regarding how you use R in the future!
-
-We have one assignment remaining. Have a great rest of your summer!
+Have a great rest of your summer!
