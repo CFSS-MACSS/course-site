@@ -32,8 +32,8 @@ class: center, middle, inverse, title-slide
 * Sentiment Analysis
   * Positive / negative sentiment
 * Application: TS!
-* Future applications: 
-    *author prediction
+* Future applications:  
+      * Author prediction
 
 ---
 class: inverse, middle
@@ -46,7 +46,7 @@ class: inverse, middle
 
 Method to organize and understand large collections of textual information (without reading them).
 
-How? 
+How?  
 --
 By **finding groups of words ("topics") that go together.** Words that co-occur more frequently that chance alone would predict are assigned to the same topic.
 
@@ -127,7 +127,7 @@ The topic structure is hidden ("latent"): we can only observe the documents and 
 
 1. words most frequently associated with each of the `k` topics specified by the researcher 
 
-1. documents most frequently associated with each of the `k` topics (the researcher defines a probabilty theresold)
+1. documents most frequently associated with each of the `k` topics (the researcher defines a probability threshold)
 
 ---
 
@@ -219,15 +219,20 @@ We can think at the basic workflow as a 4-step process:
 
 
 ---
-# Steps: Data cleaning and pre-processing (see: data/swift_data_raw)  
+# Steps: Data cleaning and pre-processing    
+(see: data/swift_data_raw)  
 To find the data, I googled things like, 'taylor swift lyrics dataset' before finding the dataset on kaggle. I then spot-checked some of the albums and songs to be sure that things looked generally OK. (remember, once you use someone else's data, it becomes your problem!)     
 
 I pulled all this in and tried to use specific code and packages that we've used in class as much as possible so you could see where the pieces came from.     
 
 Without belaboring this too much, you can see in today's files where I have the raw data I imported and cleaned, and how I timmed out unwanted characteristics / elements, e.g. [Chorus]. 
 
+---
+# Steps: Data cleaning and pre-processing    
+(see: data/swift_data_raw)  
 Here is a snippet of what the raw structure was: `data &gt; albums &gt; 1989 &gt; song.txt`    
 
+--
 Here is what the raw txt file looked like: 
 
 ```r
@@ -329,6 +334,8 @@ strwrap(read_lines(here("..", "text-analysis-fundamentals-and-sentiment-analysis
 # Steps: Cleaning (see: data/swift_data_raw)
 Obviously, there's a lot of work that was needed here. I did a rough clean -- for publication, I would probably do another pass or two and do some more spot checks. (I like to use a random number generator to select a row of my dataframe to verify that everything is good / looks OK). 
 
+--
+
 **Steps**:
 1. Generate list of file paths (note I had to loop through albums to get songs). (HW05 was helpful for this)
 1. Extract album title
@@ -373,6 +380,12 @@ For this, we want to explore the most common words used by Taylor Swift overall.
 &lt;p class="caption"&gt;Wordcloud of most frequent tokens in Taylor Swift songs&lt;/p&gt;
 &lt;/div&gt;
 ]
+.panel[.panel-name[Wordcloud: Pos/Neg]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_wordcloud_pos_neg.png" alt="Most frequent Positive (dark gray) and Negative (light gray) tokens in Taylor Swift Lyrics" width="40%" /&gt;
+&lt;p class="caption"&gt;Most frequent Positive (dark gray) and Negative (light gray) tokens in Taylor Swift Lyrics&lt;/p&gt;
+&lt;/div&gt;
+]
 .panel[.panel-name[Analysis by Album]
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="../../img/ts_frequent_words_album.png" alt="Histogram of most frequent words in Taylor Swift songs by album" width="40%" /&gt;
@@ -381,75 +394,92 @@ For this, we want to explore the most common words used by Taylor Swift overall.
 ]
 ]
 
+---
+# Steps: Visualizations (Wordcloud)
+Here, we can explore the word cloud generated from the text. THESE ARE NOT FOR ANALYSIS. YES THEY ARE COOL. NO THEY ARE NOT ANALYSIS!!!
+--
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_wordcloud.png" alt="Word cloud of popular tokens" width="40%" /&gt;
+&lt;p class="caption"&gt;Word cloud of popular tokens&lt;/p&gt;
+&lt;/div&gt;
+
+---
+## Trajectory: Thinking about word use
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_frequent_words_album.png" alt="Histogram of most frequent words in Taylor Swift songs by album" width="70%" /&gt;
+&lt;p class="caption"&gt;Histogram of most frequent words in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+Across each album, we can get a sense of a trajectory: time and love seem to feature in quite frequently, while we see a shift from 'girl' in her early albums to 'woman' in later ones. We can dig into this a bit more deeply as we look at the sentiment of the words. 
+
+
+
+---
+## Trajectory: Thinking about word use (tf-idf)    
+When calculating tf-idf, we're looking for words that are more common relative to the rest of the corpus. We can think of this as an 'album signature' in our case. Here, we can see that we get a collection of different words than when we just look at the most frequent words. 
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_idf_words.png" alt="Histogram of most frequent words in Taylor Swift songs by album" width="70%" /&gt;
+&lt;p class="caption"&gt;Histogram of most frequent words in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
 Across each album, we can get a sense of a trajectory: time and love seem to feature in quite frequently, while we see a shift from 'girl' in her early albums to 'woman' in later ones. We can dig into this a bit more deeply as we look at the sentiment of the words. 
 
 ---
-# Steps: Analysis -- Sentiment
-Here, we can look at the sentiment within her work: specifically, what are the positive and negative words used, both overall and by album? 
+# LDA: TOPICS
+LDA (Laten Dirichlet Allocation) is one method for fitting a topic model. It offers a means of *unsupervised* classification of a collection of documents. (I think of it as you dump a bunch of items into a pile and it sorts them for you based on patterns it finds...although the same item could appear in multiple piles). 
+
+Small / simple example: suppose you have a list of a bunch of animals that you want grouped. You give it the following: dog, cat, parakeet, tiger, polar bear, lion, penguin. If you tell the model you want three topics, it might provide the following groups:
+
+* Topic 1: Dog, cat, parakeet
+* Topic 2: Parakeet, penguin, polar bear
+* Topic 3: Cat, tiger, lion
 
 --
+It's up to you, the researcher, to determine what meaning or value lies within these topics / allocations. You may also determine how many topics you would like (more topics can mean a slower model). If you had said two topics, you might have gotten the following instead: 
+
+* Topic 1: Dog, cat, parakeet
+* Topic 2: Penguin, polar bear, tiger, lion
+
+Notice that the 'sense' you make of the topics might be different in the two situations. 
+
+---
+# LDA: Two topic model
+Let's start with a simple two-topic model (we'll get more complicated soon!)
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_frequent_words_topics.png" alt="Frequent words in a two-topic model" width="70%" /&gt;
+&lt;p class="caption"&gt;Frequent words in a two-topic model&lt;/p&gt;
+&lt;/div&gt;
+
+--
+We can think about what we might 'call' these topics and how we might want to explore this further. (Again, note this is unsupervised!)
+
+---
+# LDA: understanding the right number of topics
+Let's try that again, but now with different numbers of topics. I have a visualization that is a little different from the text because I felt like it helped visualize the results better. We could do boxplots, but those were a bit messy for this particular dataset. 
+
+--
+
 .panelset[
-.panel[.panel-name[Overall Analysis]
+.panel[.panel-name[Two topics]
+
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_sentiment.png" alt="Histogram of positive and negative sentiment in Taylor Swift songs" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of positive and negative sentiment in Taylor Swift songs&lt;/p&gt;
+&lt;img src="../../img/ts_2topics.png" alt="Text plot of songs, colored by albums (two topics)" width="40%" /&gt;
+&lt;p class="caption"&gt;Text plot of songs, colored by albums (two topics)&lt;/p&gt;
 &lt;/div&gt;
 ]
-.panel[.panel-name[Analysis by Album: Positive]
+.panel[.panel-name[Three topics]
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_positive_words_album.png" alt="Histogram of positive sentiment in Taylor Swift songs by album" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of positive sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;img src="../../img/ts_3topics.png" alt="Text plot of songs, colored by albums (three topics)" width="40%" /&gt;
+&lt;p class="caption"&gt;Text plot of songs, colored by albums (three topics)&lt;/p&gt;
 &lt;/div&gt;
 ]
-.panel[.panel-name[Analysis by Album: Positive]
+.panel[.panel-name[Ten topics!]
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_negative_words_album.png" alt="Histogram of negative sentiment in Taylor Swift songs by album" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of negative sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;img src="../../img/ts_10topics.png" alt="Text plot of songs, colored by albums (ten topics)" width="40%" /&gt;
+&lt;p class="caption"&gt;Text plot of songs, colored by albums (ten topics)&lt;/p&gt;
 &lt;/div&gt;
 ]
 ]
-
-
----
-# Steps:
-
---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_negative_words_album.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
-&lt;/div&gt;
-
----
-# Steps:
-
---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_positive_words_album.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
-&lt;/div&gt;
-
----
-# Steps: Visualizations (Wordcloud)
-
---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_wordcloud.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
-&lt;/div&gt;
-
-
----
-# Steps: Visualizations
-
---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_sentiment_album.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
-&lt;/div&gt;
----
-class: inverse, middle, center
-
-![](https://media.giphy.com/media/ej1WNA2G75DfUai7NR/giphy.gif)
 
 ---
 
@@ -535,6 +565,70 @@ Dictionary-based methods like these find the total sentiment of a piece of text 
 **Examples from the book**: Chapter 2, and the three case-study chapters
 
 **Another example (in today's class-materials)**: sentiment analysis of Harry Potter textual data. 
+
+**Another example (in today's class-materials)**: sentiment analysis of Taylor Swift albums
+
+---
+class: middle, inverse, center
+
+# Back to TS
+![](https://tenor.com/view/matin%C3%A9e-inthevault-gif-23143928)
+
+
+---
+# Steps: Analysis -- Sentiment
+Here, we can look at the sentiment within her work: specifically, what are the positive and negative words used, both overall and by album? 
+
+--
+.panelset[
+.panel[.panel-name[Overall Analysis]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_sentiment.png" alt="Histogram of positive and negative sentiment in Taylor Swift songs" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of positive and negative sentiment in Taylor Swift songs&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Analysis by Album: Positive]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_positive_words_album.png" alt="Histogram of positive sentiment in Taylor Swift songs by album" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of positive sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Analysis by Album: Negative]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_negative_words_album.png" alt="Histogram of negative sentiment in Taylor Swift songs by album" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of negative sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+
+
+---
+# Steps: Analysis (Negative Sentiment)
+Again, here some expertise / background on Taylor Swift can be helpful to make sense of our analysis. We can see that her early work has less 'intense' (generally) language and the negative sentiment features words like, 'crazy,' 'sad,' and 'bad'. With Reputation, we see a shift (this makes sense given the album and its role in her discography). Here, we see words like 'hate' come in and, as we move into more recent albums, words like 'death,' 'shit,' 'kill.'  
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_negative_words_album.png" alt="Histogram of negative words by album" width="45%" /&gt;
+&lt;p class="caption"&gt;Histogram of negative words by album&lt;/p&gt;
+&lt;/div&gt;
+
+# Steps: Analysis (Negative Sentiment)
+With positive words, we see a lot of consistency ('like') and while there are some more 'innocent' words appearing with more frequency in earlier albums, we don't see as much change / evolution as we did with the negative words. If anything, the language has gotten more direct in the later work (which, particularly thinking about 1989 and Midnights, makes sense). 
+
+--
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_positive_words_album.png" alt="Histogram of postive words used by album" width="45%" /&gt;
+&lt;p class="caption"&gt;Histogram of postive words used by album&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+# Steps: Visualizations
+
+--
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_sentiment_album.png" alt="Emotional arc of TS albums" width="40%" /&gt;
+&lt;p class="caption"&gt;Emotional arc of TS albums&lt;/p&gt;
+&lt;/div&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
