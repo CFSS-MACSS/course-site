@@ -131,7 +131,9 @@ theme_set(theme_minimal(base_size = 16))
   * LDA
 * Sentiment Analysis
   * Positive / negative sentiment
-* Future applications: author prediction
+* Application: TS!
+* Future applications: 
+    *author prediction
 
 ---
 class: inverse, middle
