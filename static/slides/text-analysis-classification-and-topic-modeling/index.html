@@ -193,13 +193,43 @@ Download today's class materials to access the code. () We have additional resou
 ---
 class: inverse, middle, center
 
-![](https://media.giphy.com/media/tNTq5fw9apN2OzZID9/giphy.gif)
+![](https://media.giphy.com/media/tNTq5fw9apN2OzZID9/giphy.gif) 
 
 ---
-# A thorough examination of Taylor Swift Lyrics
+# A thorough examination of Taylor Swift Lyrics   
 --
-Recall the following graphic:
-![visualization of textual analysis process](https://www.tidytextmining.com/images/tmwr_0101.png)
+Recall the following graphic:  
+![visualization of textual analysis process](https://www.tidytextmining.com/images/tmwr_0101.png)  
+--
+
+We will move through this process using [this dataset of Taylor Swift albums and lyrics from Kaggle](https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums?resource=download)
+
+---
+## Basic workflow for text analysis
+
+We can think at the basic workflow as a 4-step process:
+
+1. Obtain your textual data: **Kaggle, check!**
+
+1. Data cleaning and pre-processing **OOF THIS WAS A PAIN** *see end of slides for more detail*
+
+1. Data transformation **building on last class's materials**
+
+1. Perform analysis **the fun part**
+
+
+---
+# Steps: Data cleaning and pre-processing    
+Without belaboring this too much, you can see in today's files where I have the raw data I imported and cleaned, and how I timmed out unwanted characteristics / elements, e.g. [Chorus]. 
+
+Here is a snippet of what the raw structure was: `data &gt; albums &gt; 1989 &gt; song.txt`    
+
+Here is what the raw txt file looked like: 
+
+```r
+read_file(here("..", "text-analysis-fundamentals-and-sentiment-analysis-and-tm", "data", "swift_data_raw", "Albums", "1989", "BlankSpace.txt"))
+## [1] "237 ContributorsTranslationsTürkçeEspañolPortuguêsPolskiΕλληνικάFrançaisBlank Space Lyrics[Verse 1]\nNice to meet you, where you been?\nI could show you incredible things\nMagic, madness, heaven, sin\nSaw you there and I thought\n\"Oh, my God, look at that face\nYou look like my next mistake\nLove's a game, wanna play?\" Ayy\nNew money, suit and tie\nI can read you like a magazine\nAin't it funny? Rumors fly\nAnd I know you heard about me\nSo, hey, let's be friends\nI'm dying to see how this one ends\nGrab your passport and my hand\nI can make the bad guys good for a weekend\n[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over, mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane\n'Cause you know I love the players\nAnd you love the game\n'Cause we're young and we're reckless\nWe'll take this way too far\nIt'll leave you breathless, mm\nOr with a nasty scar\nGot a long list of ex-lovers\nThey'll tell you I'm insane\nBut I've got a blank space, baby\nAnd I'll write your name\n\n[Verse 2]\nCherry lips, crystal skies\nI could show you incredible things\nStolen kisses, pretty lies\nYou're the king, baby, I'm your queen\nFind out what you want\nBe that girl for a month\nWait, the worst is yet to come, oh, no\nScreaming, crying, perfect storms\nI can make all the tables turn\nRose garden filled with thorns\nKeep you second guessing, like\n\"Oh, my God, who is she?\"\nI get drunk on jealousy\nBut you'll come back each time you leave\n'Cause, darling, I'm a nightmare dressed like a daydream\nYou might also like[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over, mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane\n'Cause you know I love the players\nAnd you love the game\n'Cause we're young and we're reckless (Oh)\nWe'll take this way too far\nIt'll leave you breathless (Oh-oh), mm\nOr with a nasty scar\nGot a long list of ex-lovers\nThey'll tell you I'm insane (Insane)\nBut I've got a blank space, baby\nAnd I'll write your name\n\n[Bridge]\nBoys only want love if it's torture\nDon't say I didn't, say I didn't warn ya\nBoys only want love if it's torture\nDon't say I didn't, say I didn't warn ya\n\n[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over (Over), mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane (I'm insane)\n'Cause you know I love the players\nAnd you love the game (And you love the game)\n'Cause we're young and we're reckless (Yeah)\nWe'll take this way too far (Ooh)\nIt'll leave you breathless, mm\nOr with a nasty scar (With a nasty scar)\nGot a long list of ex-lovers\nThey'll tell you I'm insane\nBut I've got a blank space, baby\nAnd I'll write your name1KEmbed"
+```
 
 ---
 # Steps:
@@ -251,7 +281,7 @@ Recall the following graphic:
 
 --
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_sentiment.png" alt="Histogram of text containing stop words" width="40%" /&gt;
+&lt;img src="../../img/ts_sentiment_album.png" alt="Histogram of text containing stop words" width="40%" /&gt;
 &lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
 &lt;/div&gt;
 ---
