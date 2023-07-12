@@ -124,7 +124,7 @@ theme_set(theme_minimal(base_size = 16))
 # Agenda
 
 * Regular Expressions
-    * basic understaning of how it workds
+    * basic understanding of how it workds
     * intro to stringr package 
 * Workflow for text analysis  
     * Three examples:
