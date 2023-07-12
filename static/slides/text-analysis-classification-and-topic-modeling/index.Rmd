@@ -287,9 +287,79 @@ If we give to LDA the document-term matrix from these 5 documents, and we ask fo
 
 # Topic Modeling: LDA example in R
 
-Download today's class materials to access the code, we use the textbook example in Chapter 6
+Download today's class materials to access the code. () We have additional resources you can practice with as well!
 
 **Examples from the book**: Chapter 6, and the three case-study chapters + Chapter 2 to reshape the data into the appropriate format for LDA
+
+
+---
+class: inverse, middle, center
+
+![](https://media.giphy.com/media/tNTq5fw9apN2OzZID9/giphy.gif)
+
+---
+# A thorough examination of Taylor Swift Lyrics
+--
+Recall the following graphic:
+![visualization of textual analysis process](https://www.tidytextmining.com/images/tmwr_0101.png)
+
+---
+# Steps:
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_frequent_words.png"))
+
+```
+
+---
+# Steps:
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_frequent_words.png"))
+
+```
+---
+# Steps:
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_negative_words_album.png"))
+
+```
+
+---
+# Steps:
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_positive_words_album.png"))
+
+```
+
+---
+# Steps: Visualizations (Wordcloud)
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_wordcloud.png"))
+
+```
+
+
+---
+# Steps: Visualizations
+
+--
+```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_sentiment_album.png"))
+
+```
+---
+class: inverse, middle, center
+
+![](https://media.giphy.com/media/ej1WNA2G75DfUai7NR/giphy.gif)
 
 ---
 
