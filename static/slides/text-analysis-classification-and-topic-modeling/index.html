@@ -219,7 +219,11 @@ We can think at the basic workflow as a 4-step process:
 
 
 ---
-# Steps: Data cleaning and pre-processing    
+# Steps: Data cleaning and pre-processing (see: data/swift_data_raw)  
+To find the data, I googled things like, 'taylor swift lyrics dataset' before finding the dataset on kaggle. I then spot-checked some of the albums and songs to be sure that things looked generally OK. (remember, once you use someone else's data, it becomes your problem!)     
+
+I pulled all this in and tried to use specific code and packages that we've used in class as much as possible so you could see where the pieces came from.     
+
 Without belaboring this too much, you can see in today's files where I have the raw data I imported and cleaned, and how I timmed out unwanted characteristics / elements, e.g. [Chorus]. 
 
 Here is a snippet of what the raw structure was: `data &gt; albums &gt; 1989 &gt; song.txt`    
@@ -227,27 +231,185 @@ Here is a snippet of what the raw structure was: `data &gt; albums &gt; 1989 &gt
 Here is what the raw txt file looked like: 
 
 ```r
-read_file(here("..", "text-analysis-fundamentals-and-sentiment-analysis-and-tm", "data", "swift_data_raw", "Albums", "1989", "BlankSpace.txt"))
-## [1] "237 ContributorsTranslationsTürkçeEspañolPortuguêsPolskiΕλληνικάFrançaisBlank Space Lyrics[Verse 1]\nNice to meet you, where you been?\nI could show you incredible things\nMagic, madness, heaven, sin\nSaw you there and I thought\n\"Oh, my God, look at that face\nYou look like my next mistake\nLove's a game, wanna play?\" Ayy\nNew money, suit and tie\nI can read you like a magazine\nAin't it funny? Rumors fly\nAnd I know you heard about me\nSo, hey, let's be friends\nI'm dying to see how this one ends\nGrab your passport and my hand\nI can make the bad guys good for a weekend\n[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over, mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane\n'Cause you know I love the players\nAnd you love the game\n'Cause we're young and we're reckless\nWe'll take this way too far\nIt'll leave you breathless, mm\nOr with a nasty scar\nGot a long list of ex-lovers\nThey'll tell you I'm insane\nBut I've got a blank space, baby\nAnd I'll write your name\n\n[Verse 2]\nCherry lips, crystal skies\nI could show you incredible things\nStolen kisses, pretty lies\nYou're the king, baby, I'm your queen\nFind out what you want\nBe that girl for a month\nWait, the worst is yet to come, oh, no\nScreaming, crying, perfect storms\nI can make all the tables turn\nRose garden filled with thorns\nKeep you second guessing, like\n\"Oh, my God, who is she?\"\nI get drunk on jealousy\nBut you'll come back each time you leave\n'Cause, darling, I'm a nightmare dressed like a daydream\nYou might also like[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over, mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane\n'Cause you know I love the players\nAnd you love the game\n'Cause we're young and we're reckless (Oh)\nWe'll take this way too far\nIt'll leave you breathless (Oh-oh), mm\nOr with a nasty scar\nGot a long list of ex-lovers\nThey'll tell you I'm insane (Insane)\nBut I've got a blank space, baby\nAnd I'll write your name\n\n[Bridge]\nBoys only want love if it's torture\nDon't say I didn't, say I didn't warn ya\nBoys only want love if it's torture\nDon't say I didn't, say I didn't warn ya\n\n[Chorus]\nSo, it's gonna be forever\nOr it's gonna go down in flames?\nYou can tell me when it's over (Over), mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane (I'm insane)\n'Cause you know I love the players\nAnd you love the game (And you love the game)\n'Cause we're young and we're reckless (Yeah)\nWe'll take this way too far (Ooh)\nIt'll leave you breathless, mm\nOr with a nasty scar (With a nasty scar)\nGot a long list of ex-lovers\nThey'll tell you I'm insane\nBut I've got a blank space, baby\nAnd I'll write your name1KEmbed"
+strwrap(read_lines(here("..", "text-analysis-fundamentals-and-sentiment-analysis-and-tm", "data", "swift_data_raw", "Albums", "1989", "BlankSpace.txt")), 80)
+##  [1] "237 ContributorsTranslationsTürkçeEspañolPortuguêsPolskiΕλληνικάFrançaisBlank"
+##  [2] "Space Lyrics[Verse 1]"                                                        
+##  [3] "Nice to meet you, where you been?"                                            
+##  [4] "I could show you incredible things"                                           
+##  [5] "Magic, madness, heaven, sin"                                                  
+##  [6] "Saw you there and I thought"                                                  
+##  [7] "\"Oh, my God, look at that face"                                              
+##  [8] "You look like my next mistake"                                                
+##  [9] "Love's a game, wanna play?\" Ayy"                                             
+## [10] "New money, suit and tie"                                                      
+## [11] "I can read you like a magazine"                                               
+## [12] "Ain't it funny? Rumors fly"                                                   
+## [13] "And I know you heard about me"                                                
+## [14] "So, hey, let's be friends"                                                    
+## [15] "I'm dying to see how this one ends"                                           
+## [16] "Grab your passport and my hand"                                               
+## [17] "I can make the bad guys good for a weekend"                                   
+## [18] "[Chorus]"                                                                     
+## [19] "So, it's gonna be forever"                                                    
+## [20] "Or it's gonna go down in flames?"                                             
+## [21] "You can tell me when it's over, mm"                                           
+## [22] "If the high was worth the pain"                                               
+## [23] "Got a long list of ex-lovers"                                                 
+## [24] "They'll tell you I'm insane"                                                  
+## [25] "'Cause you know I love the players"                                           
+## [26] "And you love the game"                                                        
+## [27] "'Cause we're young and we're reckless"                                        
+## [28] "We'll take this way too far"                                                  
+## [29] "It'll leave you breathless, mm"                                               
+## [30] "Or with a nasty scar"                                                         
+## [31] "Got a long list of ex-lovers"                                                 
+## [32] "They'll tell you I'm insane"                                                  
+## [33] "But I've got a blank space, baby"                                             
+## [34] "And I'll write your name"                                                     
+## [35] ""                                                                             
+## [36] "[Verse 2]"                                                                    
+## [37] "Cherry lips, crystal skies"                                                   
+## [38] "I could show you incredible things"                                           
+## [39] "Stolen kisses, pretty lies"                                                   
+## [40] "You're the king, baby, I'm your queen"                                        
+## [41] "Find out what you want"                                                       
+## [42] "Be that girl for a month"                                                     
+## [43] "Wait, the worst is yet to come, oh, no"                                       
+## [44] "Screaming, crying, perfect storms"                                            
+## [45] "I can make all the tables turn"                                               
+## [46] "Rose garden filled with thorns"                                               
+## [47] "Keep you second guessing, like"                                               
+## [48] "\"Oh, my God, who is she?\""                                                  
+## [49] "I get drunk on jealousy"                                                      
+## [50] "But you'll come back each time you leave"                                     
+## [51] "'Cause, darling, I'm a nightmare dressed like a daydream"                     
+## [52] "You might also like[Chorus]"                                                  
+## [53] "So, it's gonna be forever"                                                    
+## [54] "Or it's gonna go down in flames?"                                             
+## [55] "You can tell me when it's over, mm"                                           
+## [56] "If the high was worth the pain"                                               
+## [57] "Got a long list of ex-lovers"                                                 
+## [58] "They'll tell you I'm insane"                                                  
+## [59] "'Cause you know I love the players"                                           
+## [60] "And you love the game"                                                        
+## [61] "'Cause we're young and we're reckless (Oh)"                                   
+## [62] "We'll take this way too far"                                                  
+## [63] "It'll leave you breathless (Oh-oh), mm"                                       
+## [64] "Or with a nasty scar"                                                         
+## [65] "Got a long list of ex-lovers"                                                 
+## [66] "They'll tell you I'm insane (Insane)"                                         
+## [67] "But I've got a blank space, baby"                                             
+## [68] "And I'll write your name"                                                     
+## [69] ""                                                                             
+## [70] "[Bridge]"                                                                     
+## [71] "Boys only want love if it's torture"                                          
+## [72] "Don't say I didn't, say I didn't warn ya"                                     
+## [73] "Boys only want love if it's torture"                                          
+## [74] "Don't say I didn't, say I didn't warn ya"                                     
+## [75] ""                                                                             
+## [76] "[Chorus]"                                                                     
+## [77] "So, it's gonna be forever"                                                    
+## [78] "Or it's gonna go down in flames?"                                             
+## [79] "You can tell me when it's over (Over), mm"                                    
+## [80] "If the high was worth the pain"                                               
+## [81] "Got a long list of ex-lovers"                                                 
+## [82] "They'll tell you I'm insane (I'm insane)"                                     
+## [83] "'Cause you know I love the players"                                           
+## [84] "And you love the game (And you love the game)"                                
+## [85] "'Cause we're young and we're reckless (Yeah)"                                 
+## [86] "We'll take this way too far (Ooh)"                                            
+## [87] "It'll leave you breathless, mm"                                               
+## [88] "Or with a nasty scar (With a nasty scar)"                                     
+## [89] "Got a long list of ex-lovers"                                                 
+## [90] "They'll tell you I'm insane"                                                  
+## [91] "But I've got a blank space, baby"                                             
+## [92] "And I'll write your name1KEmbed"
 ```
+---
+# Steps: Cleaning (see: data/swift_data_raw)
+Obviously, there's a lot of work that was needed here. I did a rough clean -- for publication, I would probably do another pass or two and do some more spot checks. (I like to use a random number generator to select a row of my dataframe to verify that everything is good / looks OK). 
+
+**Steps**:
+1. Generate list of file paths (note I had to loop through albums to get songs). (HW05 was helpful for this)
+1. Extract album title
+    * Get title from path string
+    * Add spaces back in where needed
+1. Extract song title from file path
+    * Get title from path string
+    * Add spaces back in where needed
+1. Read in data:
+    * Read lines from path
+    * Remove the top line
+    * Get rid of any chunks about song structure
+1. Merge data (Album, Song, Lyrics) and export as data frame
+
+
 
 ---
-# Steps:
+# Steps: Data transformation
 
---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_frequent_words.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
-&lt;/div&gt;
+* Remove stop words (sort of interesting, what do you do about songs like, 'the 1'?).  
+* Perform analysis on entire corpus and by album:   
+    * Frequency of words (histogram and wordcloud)
+    * Sentiment of words (positive / negative)
+    * Emotional score for text and albums
+* Consider future steps: "eras" and "eras tour"???   
+
 
 ---
-# Steps:
+# Steps: Perform analysis on entire corpus vs albums
+For this, we want to explore the most common words used by Taylor Swift overall. We can then consider how we might want to break things out in future anlaysis. *(Note, this was a rough clean, so we have some words that don't fully make sense in here).*
+--
+.panelset[
+.panel[.panel-name[Overall Analysis]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_frequent_words.png" alt="Histogram of most frequent words in Taylor Swift songs" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of most frequent words in Taylor Swift songs&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Wordcloud]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_wordcloud.png" alt="Wordcloud of most frequent tokens in Taylor Swift songs" width="40%" /&gt;
+&lt;p class="caption"&gt;Wordcloud of most frequent tokens in Taylor Swift songs&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Analysis by Album]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_frequent_words_album.png" alt="Histogram of most frequent words in Taylor Swift songs by album" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of most frequent words in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+
+Across each album, we can get a sense of a trajectory: time and love seem to feature in quite frequently, while we see a shift from 'girl' in her early albums to 'woman' in later ones. We can dig into this a bit more deeply as we look at the sentiment of the words. 
+
+---
+# Steps: Analysis -- Sentiment
+Here, we can look at the sentiment within her work: specifically, what are the positive and negative words used, both overall and by album? 
 
 --
+.panelset[
+.panel[.panel-name[Overall Analysis]
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="../../img/ts_frequent_words.png" alt="Histogram of text containing stop words" width="40%" /&gt;
-&lt;p class="caption"&gt;Histogram of text containing stop words&lt;/p&gt;
+&lt;img src="../../img/ts_sentiment.png" alt="Histogram of positive and negative sentiment in Taylor Swift songs" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of positive and negative sentiment in Taylor Swift songs&lt;/p&gt;
 &lt;/div&gt;
+]
+.panel[.panel-name[Analysis by Album: Positive]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_positive_words_album.png" alt="Histogram of positive sentiment in Taylor Swift songs by album" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of positive sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Analysis by Album: Positive]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../../img/ts_negative_words_album.png" alt="Histogram of negative sentiment in Taylor Swift songs by album" width="40%" /&gt;
+&lt;p class="caption"&gt;Histogram of negative sentiment in Taylor Swift songs by album&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+
+
 ---
 # Steps:
 

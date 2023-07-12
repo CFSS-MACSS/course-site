@@ -321,34 +321,105 @@ We can think at the basic workflow as a 4-step process:
 
 
 ---
-# Steps: Data cleaning and pre-processing    
+# Steps: Data cleaning and pre-processing (see: data/swift_data_raw)  
+To find the data, I googled things like, 'taylor swift lyrics dataset' before finding the dataset on kaggle. I then spot-checked some of the albums and songs to be sure that things looked generally OK. (remember, once you use someone else's data, it becomes your problem!)     
+
+I pulled all this in and tried to use specific code and packages that we've used in class as much as possible so you could see where the pieces came from.     
+
 Without belaboring this too much, you can see in today's files where I have the raw data I imported and cleaned, and how I timmed out unwanted characteristics / elements, e.g. [Chorus]. 
 
 Here is a snippet of what the raw structure was: `data > albums > 1989 > song.txt`    
 
 Here is what the raw txt file looked like: 
 ```{r}
-read_file(here("..", "text-analysis-fundamentals-and-sentiment-analysis-and-tm", "data", "swift_data_raw", "Albums", "1989", "BlankSpace.txt"))
+strwrap(read_lines(here("..", "text-analysis-fundamentals-and-sentiment-analysis-and-tm", "data", "swift_data_raw", "Albums", "1989", "BlankSpace.txt")), 80)
 
 ```
+---
+# Steps: Cleaning (see: data/swift_data_raw)
+Obviously, there's a lot of work that was needed here. I did a rough clean -- for publication, I would probably do another pass or two and do some more spot checks. (I like to use a random number generator to select a row of my dataframe to verify that everything is good / looks OK). 
+
+**Steps**:
+1. Generate list of file paths (note I had to loop through albums to get songs). (HW05 was helpful for this)
+1. Extract album title
+    * Get title from path string
+    * Add spaces back in where needed
+1. Extract song title from file path
+    * Get title from path string
+    * Add spaces back in where needed
+1. Read in data:
+    * Read lines from path
+    * Remove the top line
+    * Get rid of any chunks about song structure
+1. Merge data (Album, Song, Lyrics) and export as data frame
+
+
 
 ---
-# Steps:
+# Steps: Data transformation
 
---
-```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
-knitr::include_graphics(here("static", "img", "ts_frequent_words.png"))
+* Remove stop words (sort of interesting, what do you do about songs like, 'the 1'?).  
+* Perform analysis on entire corpus and by album:   
+    * Frequency of words (histogram and wordcloud)
+    * Sentiment of words (positive / negative)
+    * Emotional score for text and albums
+* Consider future steps: "eras" and "eras tour"???   
 
-```
 
 ---
-# Steps:
-
+# Steps: Perform analysis on entire corpus vs albums
+For this, we want to explore the most common words used by Taylor Swift overall. We can then consider how we might want to break things out in future anlaysis. *(Note, this was a rough clean, so we have some words that don't fully make sense in here).*
 --
-```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+.panelset[
+.panel[.panel-name[Overall Analysis]
+```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs", out.width = '40%', dpi = 300}
+
 knitr::include_graphics(here("static", "img", "ts_frequent_words.png"))
+``` 
+]
+.panel[.panel-name[Wordcloud]
+```{r echo=FALSE, fig.cap="Wordcloud of most frequent tokens in Taylor Swift songs", out.width = '40%', dpi = 300}
+
+knitr::include_graphics(here("static", "img", "ts_wordcloud.png"))
+``` 
+]
+.panel[.panel-name[Analysis by Album]
+```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs by album", out.width = '40%', dpi = 300}
+knitr::include_graphics(here("static", "img", "ts_frequent_words_album.png"))
 
 ```
+]
+]
+
+Across each album, we can get a sense of a trajectory: time and love seem to feature in quite frequently, while we see a shift from 'girl' in her early albums to 'woman' in later ones. We can dig into this a bit more deeply as we look at the sentiment of the words. 
+
+---
+# Steps: Analysis -- Sentiment
+Here, we can look at the sentiment within her work: specifically, what are the positive and negative words used, both overall and by album? 
+
+--
+.panelset[
+.panel[.panel-name[Overall Analysis]
+```{r echo=FALSE, fig.cap="Histogram of positive and negative sentiment in Taylor Swift songs", out.width = '40%', dpi = 300}
+
+knitr::include_graphics(here("static", "img", "ts_sentiment.png"))
+``` 
+]
+.panel[.panel-name[Analysis by Album: Positive]
+```{r echo=FALSE, fig.cap="Histogram of positive sentiment in Taylor Swift songs by album", out.width = '40%', dpi = 300}
+
+knitr::include_graphics(here("static", "img", "ts_positive_words_album.png"))
+``` 
+]
+.panel[.panel-name[Analysis by Album: Positive]
+```{r echo=FALSE, fig.cap="Histogram of negative sentiment in Taylor Swift songs by album", out.width = '40%', dpi = 300}
+
+knitr::include_graphics(here("static", "img", "ts_negative_words_album.png"))
+``` 
+]
+]
+
+
 ---
 # Steps:
 
