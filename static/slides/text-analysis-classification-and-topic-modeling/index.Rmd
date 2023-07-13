@@ -288,7 +288,7 @@ If we give to LDA the document-term matrix from these 5 documents, and we ask fo
 
 # Topic Modeling: LDA example in R
 
-Download today's class materials to access the code. () We have additional resources you can practice with as well!
+Download today's class materials to access the code. (`usethis::use_course("CFSS-MACSS/text-analysis-fundamentals-and-sentiment-analysis-and-tm")`) We have additional resources you can practice with as well!
 
 **Examples from the book**: Chapter 6, and the three case-study chapters + Chapter 2 to reshape the data into the appropriate format for LDA
 
@@ -380,7 +380,7 @@ For this, we want to explore the most common words used by Taylor Swift overall.
 --
 .panelset[
 .panel[.panel-name[Overall Analysis]
-```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs", out.width = '40%', dpi = 300}
+```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs", out.width = '30%', dpi = 300}
 
 knitr::include_graphics(here("static", "img", "ts_frequent_words.png"))
 ``` 
@@ -398,7 +398,7 @@ knitr::include_graphics(here("static", "img", "ts_wordcloud_pos_neg.png"))
 ``` 
 ]
 .panel[.panel-name[Analysis by Album]
-```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs by album", out.width = '40%', dpi = 300}
+```{r echo=FALSE, fig.cap="Histogram of most frequent words in Taylor Swift songs by album", out.width = '50%', dpi = 300}
 knitr::include_graphics(here("static", "img", "ts_frequent_words_album.png"))
 
 ```
@@ -456,7 +456,7 @@ Notice that the 'sense' you make of the topics might be different in the two sit
 ---
 # LDA: Two topic model
 Let's start with a simple two-topic model (we'll get more complicated soon!)
-```{r echo=FALSE, fig.cap="Frequent words in a two-topic model", out.width = '70%', dpi = 300}
+```{r echo=FALSE, fig.cap="Frequent words in a two-topic model", out.width = '50%', dpi = 300}
 
 knitr::include_graphics(here("static", "img", "ts_frequent_words_topics.png"))
 ``` 
@@ -663,8 +663,15 @@ class: inverse, middle, center
 * Lots of room for researcher to interpret: can be difficult to do well and needs some expertise to evaluate. 
 
 ---
+# Acknowledgements
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. I developed the Taylor Swift example using data from [Kaggle](https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums/versions/12?resource=download) and building on code from [Text Mining in R](https://www.tidytextmining.com/). Any errors or oversights are mine alone.
+
+
+---
 class: middle, center, inverse
 
 # THANK YOU ALL FOR A GREAT CLASS! I have genuinely enjoyed getting to know you and your work and hope you keep in touch regarding how you use R in the future!
 
 We have one assignment remaining. Have a great rest of your summer!
+
