@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Computing for the Social Sciences # Website name
-baseURL: "computing-soc-sci.netlify.app" # Website URL
+baseURL: "https://macs40700.netlify.app/" # Website URL
 
 ############################
 ## LANGUAGE
