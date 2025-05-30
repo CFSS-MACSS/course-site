@@ -15,15 +15,36 @@ hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
 
+enableGitInfo: true
+
+outputFormats:
+  Redirects:
+    mediaType: "text/plain"
+    baseName: "_redirects"
+    isPlainText: true
+    notAlternative: true
+    permalinkable: false
+  Headers:
+    mediaType: "text/plain"
+    baseName: "_headers"
+    isPlainText: true
+    notAlternative: true
+    permalinkable: false
+
+outputs:
+  home:
+    - HTML
+    - Redirects
+
 ############################
 ## MODULES
 ############################
 
 module:
+  path: github.com/your-org/your-repo/course-site
   imports:
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
+      version: "v5.9.0"
 
 ############################
 ## ADVANCED
